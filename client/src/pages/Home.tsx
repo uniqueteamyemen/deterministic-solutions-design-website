@@ -1,77 +1,57 @@
-// Style reminder: Signal / State — Swiss technical editorial, graphite field, bone text, signal-lime proof accents, asymmetric field-guide layout.
+// Style reminder: Signal / State authority with the second version’s information architecture. Use engineering weight, graphite surfaces, signal-lime proof states, and explicit evidence boundaries.
 import { useEffect, useState } from "react";
-import { ArrowDownRight, ArrowUpRight, Check, Menu, X } from "lucide-react";
+import { ArrowDownRight, ArrowRight, ArrowUpRight, Check, Menu, X } from "lucide-react";
 
-const products = [
-  { id: "01", type: "R&D", status: "Research", name: "HC-CXL", title: "Human-Centric CXL Protocol", copy: "Translating human operational intent into prioritized memory operations and governed hardware execution over compute fabrics.", tags: ["Architecture", "Protocol"], accent: "lime" },
-  { id: "02", type: "SYSTEM", status: "In development", name: "SSDD", title: "Scalable Sovereign Deterministic Design", copy: "The software-facing expression of HC-CXL: a hardware-agnostic systems layer for deterministic execution across distributed infrastructure.", tags: ["Software", "Systems"], accent: "bone" },
-  { id: "03", type: "SYSTEM", status: "Experimental", name: "HOSSAM", title: "Executive Autonomous Operations", copy: "An executive-grade digital secretary architecture integrating local AI models, deterministic workflow orchestration, and enterprise automation.", tags: ["AI", "Agents", "Automation"], accent: "rust" },
-  { id: "04", type: "PRODUCT", status: "Commercial", name: "PayLock", title: "Operational Governance for Digital Commerce", copy: "A verification layer above existing payment and supply infrastructure that enforces operational intent and issues cryptographic proof without handling custody.", tags: ["Commerce", "Verification"], accent: "lime" },
+const continuum = [
+  { no: "01", label: "Research", title: "Push the boundaries", copy: "We explore ideas at the intersection of computing, architecture, and human needs—turning theory into protocols.", tags: ["HC-CXL", "Protocols", "Architecture"], accent: "lime" },
+  { no: "02", label: "Systems", title: "Build deterministic foundations", copy: "We design software layers and frameworks that transform complex operations into predictable, verifiable behavior.", tags: ["SSDD", "Runtimes", "Verification"], accent: "bone" },
+  { no: "03", label: "Products", title: "Deliver real-world value", copy: "We ship systems that organizations can trust—bringing transparency, governance, and assurance to digital operations.", tags: ["PayLock", "Integrations", "APIs"], accent: "lime" },
+];
+
+const projects = [
+  { type: "PRODUCT", name: "PayLock", title: "Operational governance for commerce and payment systems.", copy: "Intent → Execution → Verification → Proof. A governance layer above existing infrastructure, without custody.", tags: ["Commerce", "APIs", "Verification", "Proof"], accent: "lime" },
+  { type: "SYSTEMS", name: "SSDD", title: "The software-facing expression of HC-CXL.", copy: "Deterministic systems, protocols, and frameworks for the next era of distributed computing.", tags: ["Runtimes", "Libraries", "Tooling", "SDKs"], accent: "blue" },
+  { type: "RESEARCH", name: "HC-CXL", title: "Human-Centric Interfaces as an Abstraction Layer over the CXL Protocol.", copy: "Bringing human intent into memory-centric computing through governed protocol design.", tags: ["CXL", "Abstraction", "Architecture", "PMP"], accent: "violet" },
+];
+
+const evidence = [
+  { label: "Runtime records", copy: "Observable deployments, logs, traces, and state transitions from real systems.", action: "Add runtime record ↗" },
+  { label: "Published research", copy: "Protocol specifications, whitepapers, and formal work that can be read and challenged.", action: "Link publication ↗" },
+  { label: "Source & tooling", copy: "Repositories, SDKs, test harnesses, or implementation artifacts where available.", action: "Link source ↗" },
+  { label: "Explicit boundaries", copy: "A visible record of what the system does, what it does not do, and where proof ends.", action: "Read boundary ↗" },
 ];
 
 const states = [
-  { no: "01", label: "Intent", code: "H0.INTENT_FROZEN", copy: "Execution boundaries and order terms are immutably locked." },
-  { no: "02", label: "Execution", code: "PROVIDER_ACK", copy: "Provider events and transit metrics are verified against intent." },
-  { no: "03", label: "Proof", code: "H1.PROOF_GENERATED", copy: "Cryptographic proof is issued to settle operations and end disputes." },
+  { no: "01", label: "Intent", code: "H0.INTENT_FROZEN", copy: "Execution boundaries and order terms are immutably locked before a provider acts." },
+  { no: "02", label: "Execution", code: "PROVIDER_ACK", copy: "Provider events and transit metrics are verified against the frozen intent." },
+  { no: "03", label: "Proof", code: "H1.PROOF_GENERATED", copy: "A cryptographic execution record is issued to settle operations and end disputes." },
 ];
 
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [activeState, setActiveState] = useState(1);
+  const [activeState, setActiveState] = useState(0);
   const [scrolled, setScrolled] = useState(false);
+  useEffect(() => { const onScroll = () => setScrolled(window.scrollY > 24); window.addEventListener("scroll", onScroll, { passive: true }); return () => window.removeEventListener("scroll", onScroll); }, []);
+  return <main className="site-shell">
+    <header className={`topbar ${scrolled ? "topbar-scrolled" : ""}`}>
+      <a className="brand" href="#top" aria-label="Deterministic Solutions & Design home"><img src="/manus-storage/deterministic-mark_ee0c8467.png" alt="" className="brand-mark" /><span>DS<span className="brand-slash">/</span><span className="brand-full">Deterministic Solutions & Design</span></span></a>
+      <nav className="desktop-nav" aria-label="Primary navigation"><a href="#continuum">Continuum</a><a href="#projects">Projects</a><a href="#evidence">Evidence</a><a href="#paylock">PayLock</a></nav>
+      <a className="nav-cta" href="#contact">Contact us <ArrowUpRight size={14} /></a>
+      <button className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)} aria-label={menuOpen ? "Close navigation" : "Open navigation"}>{menuOpen ? <X size={20} /> : <Menu size={20} />}</button>
+      {menuOpen && <div className="mobile-menu"><a href="#continuum" onClick={() => setMenuOpen(false)}>Continuum</a><a href="#projects" onClick={() => setMenuOpen(false)}>Projects</a><a href="#evidence" onClick={() => setMenuOpen(false)}>Evidence</a><a href="#paylock" onClick={() => setMenuOpen(false)}>PayLock</a><a href="#contact" onClick={() => setMenuOpen(false)}>Contact us <ArrowUpRight size={14} /></a></div>}
+    </header>
 
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 24);
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+    <section className="hero" id="top"><div className="hero-art" aria-hidden="true"><img src="/manus-storage/hero-signal-grid_51a7fe5e.png" alt="" /><div className="hero-art-overlay" /></div><div className="hero-content container"><div className="eyebrow reveal"><span className="status-dot" /> Research · Systems · Products</div><h1 className="hero-title reveal delay-1">We build digital systems<br /><em>you can verify.</em></h1><p className="hero-copy reveal delay-2">From foundational research to production systems, we engineer digital operations that are <strong>deterministic, observable, and provably execution-bound.</strong></p><div className="hero-principles reveal delay-2"><div><span className="principle-icon">⌾</span><b>Understand</b><small>Intent is clear</small></div><div><span className="principle-icon">▷</span><b>Control</b><small>Execution is constrained</small></div><div><span className="principle-icon">⌕</span><b>Verify</b><small>Every step is traceable</small></div><div><span className="principle-icon">◇</span><b>Prove</b><small>Outcomes are undeniable</small></div></div><div className="hero-actions"><a className="button button-primary" href="#continuum">Follow the continuum <ArrowRight size={16} /></a><a className="button button-outline" href="#projects">Explore our systems <ArrowRight size={16} /></a></div><div className="hero-state"><div><span>Direction</span><b>Research <i>→</i> Systems <i>→</i> Products</b></div><div><span>System state</span><b className="lime-text">Verifiable <i>//</i> Intent · Execution · Proof</b></div></div></div><div className="hero-index">00 <span>/</span> Thesis</div></section>
 
-  return (
-    <main className="site-shell">
-      <header className={`topbar ${scrolled ? "topbar-scrolled" : ""}`}>
-        <a className="brand" href="#top" aria-label="Deterministic Solutions & Design home">
-          <img src="/manus-storage/deterministic-mark_ee0c8467.png" alt="" className="brand-mark" />
-          <span>DS<span className="brand-slash">/</span><span className="brand-full">Deterministic Solutions & Design</span></span>
-        </a>
-        <nav className="desktop-nav" aria-label="Primary navigation">
-          <a href="#continuum">Systems</a><a href="#continuum">Infrastructure</a><a href="#research">Research</a><a href="#evidence">Evidence</a>
-        </nav>
-        <a className="nav-cta" href="#contact">Start a conversation <ArrowUpRight size={14} /></a>
-        <button className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)} aria-label={menuOpen ? "Close navigation" : "Open navigation"}>{menuOpen ? <X size={20} /> : <Menu size={20} />}</button>
-        {menuOpen && <div className="mobile-menu"><a href="#continuum" onClick={() => setMenuOpen(false)}>Systems</a><a href="#continuum" onClick={() => setMenuOpen(false)}>Infrastructure</a><a href="#research" onClick={() => setMenuOpen(false)}>Research</a><a href="#evidence" onClick={() => setMenuOpen(false)}>Evidence</a><a href="#contact" onClick={() => setMenuOpen(false)}>Start a conversation <ArrowUpRight size={14} /></a></div>}
-      </header>
+    <section className="continuum section" id="continuum"><div className="container"><div className="section-index">01 <span>/</span> Our continuum</div><div className="center-head"><div className="section-kicker">Our continuum</div><h2>Ideas become systems.<br /><em>Systems drive impact.</em></h2><p>We move from deep research, to robust systems, to production-ready solutions that solve real problems in commerce, infrastructure, and beyond.</p></div><div className="continuum-cards">{continuum.map((item, index) => <article className={`continuum-card accent-${item.accent}`} key={item.no}><div className="card-top"><span>{item.no}</span><b>{item.label}</b></div><h3>{item.title}</h3><p>{item.copy}</p><div className="tag-row">{item.tags.map(tag => <span key={tag}>{tag}</span>)}</div>{index < continuum.length - 1 && <ArrowRight className="card-arrow" size={21} />}</article>)}</div></div></section>
 
-      <section className="hero" id="top">
-        <div className="hero-art" aria-hidden="true"><img src="/manus-storage/hero-signal-grid_51a7fe5e.png" alt="" /><div className="hero-art-overlay" /></div>
-        <div className="hero-content container">
-          <div className="eyebrow reveal"><span className="status-dot" /> Systems · Infrastructure · Research</div>
-          <h1 className="hero-title reveal delay-1">Digital systems<br /><em>you can verify.</em></h1>
-          <div className="hero-lower reveal delay-2"><p className="hero-copy">Deterministic Solutions & Design engineers infrastructure that turns unpredictable digital operations into <strong>observable, controllable, and provably execution-bound systems.</strong></p><div className="hero-actions"><a className="button button-primary" href="#continuum">Explore what we're building <ArrowDownRight size={16} /></a><a className="text-link" href="#evidence">See the evidence <ArrowUpRight size={14} /></a></div></div>
-          <div className="hero-state reveal delay-3"><div><span>Direction</span><b>Research <i>→</i> Systems <i>→</i> Products</b></div><div><span>System state</span><b className="lime-text">Verifiable <i>//</i> Intent · Execution · Proof</b></div></div>
-        </div>
-        <div className="hero-index">00 <span>/</span> Thesis</div>
-      </section>
+    <section className="projects section container" id="projects"><div className="section-index">02 <span>/</span> Our projects</div><div className="section-head-row"><div><div className="section-kicker">Our projects</div><h2>Built to solve.<br /><em>Designed to last.</em></h2></div><a className="text-link" href="#contact">View all projects <ArrowRight size={14} /></a></div><div className="project-grid">{projects.map(project => <article className={`project-card project-${project.accent}`} key={project.name}><div className="project-card-top"><span className="project-glyph">⌬</span><span>{project.type}</span></div><h3>{project.name}</h3><strong>{project.title}</strong><p>{project.copy}</p><div className="tag-row">{project.tags.map(tag => <span key={tag}>{tag}</span>)}</div><a className="card-link" href={project.name === "PayLock" ? "#paylock" : "#contact"}>Explore {project.name} <ArrowRight size={14} /></a></article>)}</div></section>
 
-      <section className="throughline section container" id="research">
-        <div className="section-index">01 <span>/</span> Through-line</div>
-        <div className="throughline-body"><div className="section-kicker">Different domains. One engineering discipline.</div><h2>Uncertainty in digital operations is an engineering failure — <em>not an inevitability.</em></h2><p>We bridge deep architecture and production software by turning assumptions into verifiable proofs.</p><div className="flow-steps"><div><span>01</span><strong>Research</strong><small>becomes protocol.</small></div><div><span>02</span><strong>Protocol</strong><small>becomes software.</small></div><div><span>03</span><strong>Software</strong><small>becomes infrastructure.</small></div><div><span>04</span><strong>Infrastructure</strong><small>becomes product.</small></div></div></div>
-      </section>
+    <section className="evidence section" id="evidence"><div className="container"><div className="section-index">03 <span>/</span> Evidence</div><div className="evidence-head"><div><div className="section-kicker">Evidence over assumptions</div><h2>We ship. We test.<br /><em>We prove.</em></h2><p>Every system we build should generate verifiable evidence. Not claims. The visible record matters: experiments, systems, integrations, and monitoring that make the work inspectable.</p></div><div className="evidence-art"><img src="/manus-storage/evidence-trace_042d07b0.png" alt="Abstract runtime evidence trace" /></div></div><div className="metrics-band"><div><b>120+</b><span>Experiments<br />and prototypes</span></div><div><b>30+</b><span>Systems<br />in progress</span></div><div><b>15+</b><span>Integrations<br />and platforms</span></div><div><b>24/7</b><span>Monitoring<br />and validation</span></div></div><div className="evidence-records">{evidence.map((item, index) => <div className="evidence-record" key={item.label}><span className="record-no">0{index + 1}</span><b>{item.label}</b><p>{item.copy}</p><a href="#contact">{item.action}</a></div>)}</div><div className="evidence-note"><span>[ EVIDENCE POLICY ]</span><p>The metrics communicate the current operating scope. Link the underlying runtime records, research publications, or source repositories wherever they are ready for inspection.</p></div></div></section>
 
-      <section className="continuum section" id="continuum">
-        <div className="container"><div className="section-index">02 <span>/</span> Continuum</div><div className="continuum-head"><div><div className="section-kicker">From deep architecture to production platforms.</div><h2>An unbroken continuum of <em>execution determinism.</em></h2></div><p>Research and product are not separate tracks here. Each system carries the principle forward, one layer closer to the real world.</p></div><div className="product-layout"><div className="route-art"><img src="/manus-storage/continuum-route_c8b83564.png" alt="Abstract route diagram connecting four system layers" /></div><div className="product-list">{products.map((product) => <article className={`product-card accent-${product.accent}`} key={product.id}><div className="product-top"><span>{product.type} {product.id}</span><span className="product-status"><i />{product.status}</span></div><h3>{product.name}</h3><div className="product-title">{product.title}</div><p>{product.copy}</p><div className="product-bottom"><span>{product.tags.join(" · ")}</span><a href="#contact" aria-label={`Explore ${product.name}`}>Explore <ArrowUpRight size={14} /></a></div></article>)}</div></div></div>
-      </section>
+    <section className="paylock section container" id="paylock"><div className="section-index">04 <span>/</span> Flagship product</div><div className="paylock-grid"><div><div className="section-kicker">PayLock · Operational governance for digital commerce</div><h2>Make digital delivery <em>provable.</em></h2><p className="lead">Disputes happen when state transitions are unverified. PayLock sits above existing payment and supply infrastructure to capture, verify, and govern deterministic execution records.</p><div className="boundary"><span className="boundary-mark">[!]</span><div><b>Key architecture boundary</b><p>No custody. No payment processing. Pure execution governance over legacy systems.</p></div></div></div><div className="proof-panel"><div className="panel-label">PAYLOCK / STATE MACHINE / ACTIVE</div><img src="/manus-storage/paylock-proof_d1d2df7a.png" alt="Abstract diagram of PayLock verification states" /><div className="state-tabs">{states.map((state, index) => <button key={state.no} className={activeState === index ? "active" : ""} onClick={() => setActiveState(index)}><span>{state.no}</span>{state.label}</button>)}</div><div className="state-detail"><div className="state-code"><Check size={13} /> {states[activeState].code}</div><p>{states[activeState].copy}</p></div></div></div></section>
 
-      <section className="paylock section container" id="paylock">
-        <div className="section-index">03 <span>/</span> Flagship product</div><div className="paylock-grid"><div><div className="section-kicker">PayLock · Operational governance for digital commerce</div><h2>Make digital delivery <em>provable.</em></h2><p className="lead">Disputes happen when state transitions are unverified. PayLock sits inside your existing stack to capture, verify, and enforce deterministic execution records.</p><div className="boundary"><span className="boundary-mark">[!]</span><div><b>Key architecture boundary</b><p>No custody. No payment processing. Pure execution governance over legacy systems.</p></div></div></div><div className="proof-panel"><img src="/manus-storage/paylock-proof_d1d2df7a.png" alt="Abstract diagram of PayLock verification states" /><div className="state-tabs">{states.map((state, index) => <button key={state.no} className={activeState === index ? "active" : ""} onClick={() => setActiveState(index)}><span>{state.no}</span>{state.label}</button>)}</div><div className="state-detail"><div className="state-code"><Check size={13} /> {states[activeState].code}</div><p>{states[activeState].copy}</p></div></div></div>
-      </section>
-
-      <section className="evidence section" id="evidence"><div className="container"><div className="section-index">04 <span>/</span> Evidence over assumptions</div><div className="evidence-grid"><div><div className="section-kicker">Built systems leave runtime traces.</div><h2>Claims are cheap.<br /><em>Traces are not.</em></h2><p>We value verifiable behavior over polished marketing. The work is designed to make system state visible at every layer.</p></div><div className="evidence-art"><img src="/manus-storage/evidence-trace_042d07b0.png" alt="Abstract runtime evidence trace" /></div></div><div className="evidence-list"><div><b>Runtime validation</b><span>Live, observable deployments operating in real environments.</span></div><div><b>Rigorous testing</b><span>Empirical stress-testing to locate boundaries and failure points.</span></div><div><b>Peer-reviewed research</b><span>Published protocols providing formal verification.</span></div><div><b>Explicit boundaries</b><span>Zero hidden assumptions; visible system state at all times.</span></div></div></div></section>
-
-      <section className="principles section container"><div className="section-index">05 <span>/</span> First principles</div><div className="principles-head"><div className="section-kicker">The engineering stance</div><h2>Build the boundary.<br /><em>Prove the state.</em></h2></div><div className="principles-list"><div><span>01</span><b>Determinism</b><p>Make system behavior explicit and mathematically reason-able.</p></div><div><span>02</span><b>Governance</b><p>Maintain visible boundary enforcement across connected nodes.</p></div><div><span>03</span><b>Evidence</b><p>Prove runtime claims through immutable logs and cryptographic records.</p></div><div><span>04</span><b>Pragmatism</b><p>Integrate with legacy infrastructure before extending it.</p></div></div></section>
-
-      <section className="contact section" id="contact"><div className="contact-grid container"><div className="section-index">06 <span>/</span> Contact</div><div className="contact-body"><div className="section-kicker">For the people who maintain the hard parts.</div><h2>Building a system<br />where <em>proof matters?</em></h2><p>If you are engineering infrastructure, commerce, or AI operations that require strict observability and provable state, let’s talk.</p><a className="button button-primary" href="mailto:hello@deterministicsolutionsdesign.com">Contact Deterministic Solutions <ArrowUpRight size={16} /></a></div></div></section>
-
-      <footer className="footer container"><div className="footer-brand"><img src="/manus-storage/deterministic-mark_ee0c8467.png" alt="" className="brand-mark" /><span>Deterministic Solutions & Design LLC</span></div><div>deterministicsolutionsdesign.com</div><div>© 2026 DS&D. All rights reserved.</div></footer>
-    </main>
-  );
+    <section className="contact section" id="contact"><div className="contact-grid container"><div className="section-index">05 <span>/</span> Contact</div><div className="contact-body"><div className="section-kicker">For the people who maintain the hard parts.</div><h2>Let’s build what’s <em>next.</em></h2><p>We partner with organizations that value integrity, transparency, and long-term impact in infrastructure, commerce, and AI operations.</p><a className="button button-primary" href="mailto:hello@deterministicsolutionsdesign.com">Start a conversation <ArrowRight size={16} /></a></div></div></section>
+    <footer className="footer container"><div className="footer-brand"><img src="/manus-storage/deterministic-mark_ee0c8467.png" alt="" className="brand-mark" /><span>Deterministic Solutions & Design LLC</span></div><div>deterministicsolutionsdesign.com</div><div>© 2026 DS&D. All rights reserved.</div></footer>
+  </main>;
 }
