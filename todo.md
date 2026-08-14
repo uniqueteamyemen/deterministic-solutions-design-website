@@ -8,3 +8,10 @@
 - [x] Frame the numeric evidence band with clear evidence-language and optional links to runtime records, research publications, or source repositories.
 - [x] Strengthen PayLock as the flagship commercial object with an explicit Intent → Execution → Proof sequence.
 - [x] Validate desktop and mobile layout, interactions, and final checkpoint.
+
+## PayLock detail page
+
+- [x] Convert the supplied PayLock product document into an evidence-led page narrative.
+- [x] Create the PayLock page with lifecycle, architecture, resilience, and market sections.
+- [x] Link public technical evidence and update the approved contact email.
+- [x] Connect the landing-page PayLock routes and validate desktop/mobile rendering.
