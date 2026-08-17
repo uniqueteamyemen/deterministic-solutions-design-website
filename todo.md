@@ -87,3 +87,35 @@
 - [x] Verify and publish the Python-to-Rust reference-chain comparison result and implementation provenance.
 - [x] Verify and publish the scaling and load metrics, including counters and latency-component boundaries.
 - [x] Verify and publish the Q32.32 boundary, saturation, multiplication, and rounding outcomes.
+
+## Separate research repositories
+
+- [x] Inventory SSDD, PayLock, and HC-CXL source materials and classify every file by its appropriate repository.
+- [x] Create and organize a clean SSDD repository with reproducible validation artifacts, clear licensing, and evidence-scoped documentation.
+- [x] Audit the SSDD repository for duplicate content, secrets, unpublished material, and unsupported claims before publication.
+- [x] Create the SSDD GitHub repository and publish the approved curated contents.
+- [ ] Prepare separate professional repository structures and publication inventories for PayLock and HC-CXL.
+
+## Existing repository alignment
+
+- [x] Identify the existing PayLock and HC-CXL repository paths under the owner account; do not create replacement repositories.
+- [x] Create and publish only the new SSDD repository after final curation and audit.
+
+## Repository allocation audit
+
+- [x] Save and verify a publication-allocation inventory for SSDD source materials and the existing PayLock and HC-CXL repository scopes.
+
+## SSDD public pre-hardware baseline
+
+- [x] Review the SSDD repository for public-release boundaries and documentation links before changing visibility.
+- [x] Create an immutable pre-hardware baseline commit and annotated tag containing the verification harness, manifests, retained evidence, reports, and test definitions.
+- [x] Execute the defined 8-to-128-node scaling matrix and retain its raw result records.
+- [x] Execute the scoped gem5 baseline and controlled workload simulations and retain their raw result records.
+- [x] Publish the curated evidence, reports, and acceptance records to the SSDD repository with explicit model limitations.
+- [x] Change the SSDD repository to public visibility and verify the published links and repository contents.
+
+## SSDD publication follow-up
+
+- [x] Create a new annotated baseline tag pointing to the fully runnable controlled gem5 harness and retained results.
+- [x] Replace local-only paths in the gem5 baseline report with repository-relative public artifacts.
+- [x] Recheck the public repository’s validation documents and tag-specific contents after the correction.
