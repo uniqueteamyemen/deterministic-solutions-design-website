@@ -162,3 +162,40 @@
 
 - [x] Document a deferred-ready PayLock repository structure and publication inventory without modifying its existing repository.
 - [x] Document a deferred-ready HC-CXL repository structure and publication inventory without modifying its existing repository.
+
+## PayLock independent commercial audit
+
+- [x] Superseded approval gate: the owner authorized autonomous DS&D public-site improvements and a final review before publishing; PayLock, Yaqeen, and HC-CXL source/repository files remain protected from modification unless separately approved.
+- [x] Define PayLock as an independent commercial proof-and-governance layer, with paid AI/API services as a first application rather than its fixed identity, without positioning SSDD as a prerequisite in public product messaging.
+- [x] Read and inventory the PayLock Core, Yaqeen, Dictionary, and Adapter repositories, plus any accessible local source materials, without modifying them.
+- [x] Produce a source-grounded architecture and API-proof map that distinguishes implemented capabilities, evidence, assumptions, and commercial gaps.
+- [ ] Present a staged PayLock commercial readiness and launch roadmap for owner approval before changing repositories, product claims, or public site copy.
+- [x] Enforce the owner-approved read scope: PayLock Core, Yaqeen, Dictionary, and Adapter only; exclude all other repositories and materials unless separately authorized.
+- [x] Document and verify the two owner-approved deployment cases: a merchant-owned execution platform connected through an Adapter, or optional Yaqeen as a visible reference platform when the merchant lacks one.
+- [x] Verify the two deployment cases against the designated PayLock Core, Yaqeen, Dictionary, and Adapter source materials, recording evidence for Core independence from Yaqeen and the exact Adapter and Dictionary roles.
+- [x] Verify from source that Dictionary defines the shared semantic contract and Adapter applies that mapping before invoking Core, then correct the architecture report accordingly.
+- [x] Complete a detailed read-only review of PayLock sources and deliver a source-grounded understanding summary for owner confirmation before any proposal or edit.
+- [x] Prepare owner-reviewable landing-page segmentation that presents PayLock as the primary standalone product, treats Yaqeen, Adapter, and Dictionary as need-based components, and labels any multi-language translation engine as future work only.
+- [x] Revise the owner-reviewable institutional positioning so DS&D is an international office portfolio, PayLock is its leading commercial product, the Yemen Medicine Platform remains excluded pending a separate decision, and any New Mexico entity is described only as in formation.
+- [x] Correct the owner-reviewable positioning to state that the New Mexico virtual office, address, and correspondence are legally ready while the EIN alone remains pending, without publishing legal claims before explicit approval.
+- [x] Remove any proposed public reference to EIN status and reserve tax, banking, and Stripe details for a later owner-approved update after the underlying details are ready.
+- [x] Explicitly deprecate every superseded private positioning draft that still contains pending EIN or financial-status wording.
+- [x] Audit all public-site and owner-reviewable DS&D/PayLock positioning materials for EIN, banking, Stripe, and pending-financial-status references, then record the clean result.
+- [x] Incorporate the verified DS&D LLC name, New Mexico jurisdiction, software-development industry, and advanced-computing description into the private positioning proposal while withholding the registered address and responsible-party details from public copy unless separately approved.
+- [x] Prepare a review-only visual landing-page improvement layout that preserves the current Signal / State identity and makes PayLock the clearest primary product.
+- [x] Draft concise English homepage copy for owner review before modifying any public text.
+- [x] Recommend whether the Yemen Medicine Platform should appear as a discreet portfolio product, with evidence-based inclusion criteria and no local-only framing.
+- [x] Create a review-only four-tier portfolio layout that distinguishes ready products, products in preparation, engineering-validation programmes, and research programmes.
+- [x] Draft precise English portfolio explanations and boundaries for PayLock, the Medicine Platform, SSDD, and HC-CXL before any public-page modification.
+- [x] Define American English as the launch language and propose a staged localization path, with Arabic considered first only after explicit approval and no Hindi or Chinese launch version without market evidence.
+- [ ] Integrate the owner-approved DS&D and PayLock visual marks into the site’s existing Signal / State identity, using production-ready web assets and preserving accessibility.
+- [ ] Refine the homepage so PayLock is the first commercial message, then present DS&D’s portfolio by readiness without redesigning the established landing-page identity.
+- [ ] Strengthen global navigation, page transitions, service explanations, and related-work links so the experience operates as a complete institutional site rather than an isolated landing page.
+- [ ] Connect evidence-backed SSDD, HC-CXL, PayLock, and Technical Library routes through clear contextual links while preserving their distinct readiness and execution-domain boundaries.
+- [ ] Add or update focused automated tests for all material public-site changes, then verify responsive rendering, TypeScript, and the production build.
+- [ ] Prepare a final checkpoint and owner-review summary without publishing the website.
+- [ ] Review route-level code splitting and reduce the production bundle warning without weakening the existing page experience.
+- [ ] Prepare a private 72-hour PayLock and Yaqeen launch-readiness plan after the DS&D site verification is complete.
+- [ ] Complete a read-only readiness assessment of PayLock and Yaqeen for product, demonstration, documentation, and marketing needs.
+- [ ] Prepare launch materials and a final confirmation checklist without publishing, sending external messages, or enabling payments.
+- [ ] Create and maintain a private PayLock and Yaqeen launch-verification handoff file for continuity across future conversations.
