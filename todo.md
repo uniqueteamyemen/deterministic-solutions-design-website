@@ -119,3 +119,41 @@
 - [x] Create a new annotated baseline tag pointing to the fully runnable controlled gem5 harness and retained results.
 - [x] Replace local-only paths in the gem5 baseline report with repository-relative public artifacts.
 - [x] Recheck the public repository’s validation documents and tag-specific contents after the correction.
+
+## Preview HMR repair
+
+- [x] Diagnose the failed Vite HMR WebSocket connection through the managed preview proxy.
+- [x] Apply a proxy-compatible HMR configuration and verify the preview reconnects without client console errors.
+- [x] Diagnose the renewed public-preview HMR connection that closes before opening.
+- [x] Reproduce or rule out the renewed HMR failure on a fresh public-preview session using the automatic Vite client.
+- [x] Apply and verify a durable proxy-compatible HMR fallback without interrupting the ongoing SSDD simulation.
+
+## SSDD CXL-aware simulation pathway
+
+- [x] Keep PayLock and HC-CXL source repositories out of scope until the SSDD CXL-aware simulation pathway is complete.
+- [x] Evaluate CXL-aware simulators against the SSDD reference workload and existing gem5 validation structure.
+- [x] Record the selected CXL-aware simulation architecture, reproducibility prerequisites, and a simulation-only claim boundary.
+- [x] Define a retained-evidence experiment matrix for CXL memory latency, bandwidth, contention, ordering, disruption, scaling, and non-CXL comparison.
+- [x] Run a limited reproducible next-stage validation path and retain its generated artifacts without replacing the existing baseline.
+- [x] Add the validation plan and RTL/FPGA transition decision record to the SSDD repository, then verify the documented path.
+
+## SSDD parallel evidence programme
+
+- [x] Retain the current SimCXL Type-3 run provenance, raw outputs, failure context, and Atomic-boot boundary without interrupting it.
+- [x] Specify Snapshot/Epoch-aware CXL measurements and a small, evidence-led follow-up experiment set after the current result is known.
+- [x] Select a bounded first RTL target and record its interface, reference vectors, acceptance criteria, and proof boundary.
+- [x] Assess the non-hardware FPGA toolchain path and the separate real-CXL-hardware route without mislabelling simulation or synthesis as hardware validation.
+- [x] Preserve failed and accepted records in domain-separated SSDD evidence, and update the website only with completed evidence-backed results.
+- [x] Complete only the active SimCXL proof-corruption case; retain its raw logs, manifests, commands, configurations, workload identity, and artifact hashes without starting another SimCXL run.
+- [x] Extend SSC RTL validation for rotated arrival order, canonical four-key ordering, three-key-prefix tie-breaking, exact collisions, reject-then-valid recovery, and repeated independent invocations, retaining two complete runs.
+- [x] Compare retained Python reference vectors against RTL simulation output and preserve all source, testbench, vector, command, simulator, and result hashes.
+- [x] Prepare an FPGA target, toolchain, clock, interface, resource, and synthesis-feasibility record while labelling any output as pre-hardware only.
+- [x] Record the shortest credible real-CXL Type-3 hardware path, independent exerciser/analyzer options, measurement plan, and blockers without claiming hardware validation.
+- [x] Define a realistic commercial baseline-versus-SSDD workload and its latency, jitter, throughput, overhead, deterministic-state, and recovery measurements before executing a large campaign.
+- [x] Define the smallest adversarial matrix capable of falsifying Snapshot/Epoch, lateness, ordering, collision, proof, replay, and latency/jitter invariants.
+
+## SSDD persistent-compute transition
+
+- [x] Document the approved persistent-compute operating model for future long-running SSDD validation campaigns without moving or interrupting the active SimCXL evidence run.
+- [x] Define reproducibility, evidence-retention, access-control, and cost-review gates before any future migration of simulation or FPGA workloads to persistent compute.
+- [x] Record the deferred multi-option decision across the current environment, user-connected compute, independent persistent compute, external cloud, and future partner hardware access.

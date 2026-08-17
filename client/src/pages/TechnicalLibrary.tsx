@@ -65,8 +65,40 @@ export const libraryRecords: LibraryRecord[] = [
     route: { href: "/ssdd", label: "Read SSDD pre-hardware framing" },
   },
   {
-    id: "ssdd-validation-plan",
+    id: "ssdd-simcxl-limited",
     index: "04",
+    className: "CXL-AWARE SIMULATION",
+    status: "COMPLETED / SIMULATION-ONLY",
+    title: "SSDD SimCXL Type-3 limited integrity matrix",
+    copy: "A retained two-case full-system SimCXL Type-3 matrix observed the named reference workload in a guest exposing separate local-DRAM and CXL-memory NUMA nodes. The normal case accepted its reference digest; the controlled proof mutation at record 18 produced the planned bounded rejection. The guest booted with an Atomic CPU because KVM was unavailable.",
+    facts: [
+      { value: "1 / 1", label: "accepted normal case" },
+      { value: "1 / 1", label: "proof mutation rejected" },
+      { value: "2,935 + 8,063 MB", label: "guest NUMA node capacities" },
+      { value: "ATOMIC", label: "boot CPU model" },
+    ],
+    boundary: "This is CXL-aware simulation evidence only. Atomic boot makes the record unsuitable for a timing or throughput comparison; it does not establish physical CXL behavior, FPGA operation, silicon timing, certification, or production readiness.",
+    route: { href: "/ssdd", label: "Read SimCXL evidence boundaries" },
+  },
+  {
+    id: "ssdd-rtl-ssc",
+    index: "05",
+    className: "RTL SIMULATION",
+    status: "COMPLETED / BOUNDED CONTRACT",
+    title: "Bounded SSC RTL behavioral verification",
+    copy: "The retained Snapshot/Epoch SSC test bench ran 128 affine arrival trials across 32 complete unique permutations, repeated four times. Two independent simulator invocations were byte-identical, and an independent Python reference comparison accepted all 128 canonical batches. Exact four-key collisions were rejected and valid post-rejection recovery was retained.",
+    facts: [
+      { value: "128", label: "affine arrival trials" },
+      { value: "32 × 4", label: "unique permutations × repeats" },
+      { value: "2", label: "byte-identical replays" },
+      { value: "128 / 128", label: "reference-vector batches accepted" },
+    ],
+    boundary: "This record demonstrates behavioral RTL simulation of one bounded ordering controller. It is not timing closure, a target-device resource result, FPGA hardware, CXL operation, an SSDD runtime, or production-readiness evidence.",
+    route: { href: "/ssdd", label: "Read RTL validation boundaries" },
+  },
+  {
+    id: "ssdd-validation-plan",
+    index: "06",
     className: "VALIDATION PLAN",
     status: "RESEARCH WORK / IN PROGRESS",
     title: "SSDD deterministic validation pathway",
@@ -82,7 +114,7 @@ export const libraryRecords: LibraryRecord[] = [
   },
   {
     id: "hc-cxl-reference",
-    index: "05",
+    index: "07",
     className: "RESEARCH REBUILD",
     status: "REFERENCE ASSUMPTIONS / VALIDATION PENDING",
     title: "HC-CXL v2.1R physical-governance reference",
@@ -98,7 +130,7 @@ export const libraryRecords: LibraryRecord[] = [
   },
   {
     id: "evidence-boundaries",
-    index: "06",
+    index: "08",
     className: "READINESS REGISTER",
     status: "PUBLIC POSITIONING / CURRENT",
     title: "Readiness and evidence boundaries",
@@ -131,7 +163,7 @@ export default function TechnicalLibrary() {
               <div className="library-signal">
                 <BookOpen size={20} />
                 <span>PUBLIC RECORD INDEX</span>
-                <b>6</b>
+                <b>8</b>
                 <small>source-backed entries</small>
               </div>
             </div>
