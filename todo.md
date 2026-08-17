@@ -23,3 +23,31 @@
 - [x] Add HC-CXL, SSDD, Evidence, About, and Contact experiences using only currently supported content.
 - [x] Connect project pages, evidence records, and contact actions across the site.
 - [x] Validate desktop/mobile behavior and production build.
+
+## Source-backed research and readiness expansion
+
+- [x] Catalog the supplied SSDD, HC-CXL, and deterministic execution source materials.
+- [x] Reframe SSDD and HC-CXL as research and validation-stage initiatives with clear readiness labels.
+- [x] Reinforce PayLock as the sole commercial offering while showing its relationship to the research stack.
+- [x] Create source-backed evidence records and technical-library links.
+- [x] Validate the upgraded site and save an evidence-backed checkpoint.
+
+## SSDD gem5 validation pathway
+
+- [x] Define which SSDD properties can be modeled and measured in gem5 without representing unvalidated physical silicon behavior.
+- [x] Create a reproducible gem5 experiment plan for deterministic ordering, replay, timing, and fault-injection scenarios.
+- [x] Prepare a portable SSDD reference workload and validation-artifact structure for gem5 execution.
+- [x] Publish only simulation-scoped findings and limitations in the website evidence library.
+
+## Source-backed public evidence update
+
+- [x] Replace placeholder SSDD and HC-CXL page narratives with source-backed research and validation framing.
+- [x] Integrate the supplied HC-CXL deterministic execution-model infographic with descriptive context and accessibility text.
+- [x] Publish the completed gem5 baseline replay result as a model-scoped evidence artifact.
+- [x] Add coverage for research-page copy and verify the final source-backed update before checkpointing.
+
+## Public technical-library completion
+
+- [x] Add a source-backed technical library with direct record links for the SSDD gem5 baseline, validation plan, readiness boundaries, and HC-CXL reference model.
+- [x] Link the evidence page and research pages to the technical library with simulation and validation labels intact.
+- [x] Verify the technical-library flow on desktop and mobile before checkpointing.

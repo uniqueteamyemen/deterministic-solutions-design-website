@@ -7,6 +7,7 @@ import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
 import PayLock from "./pages/PayLock";
 import InstitutionalPage from "./pages/InstitutionalPage";
+import TechnicalLibrary from "./pages/TechnicalLibrary";
 
 
 function Router() {
@@ -17,6 +18,7 @@ function Router() {
       <Route path={"/hc-cxl"} component={InstitutionalPage} />
       <Route path={"/ssdd"} component={InstitutionalPage} />
       <Route path={"/evidence"} component={InstitutionalPage} />
+      <Route path={"/technical-library"} component={TechnicalLibrary} />
       <Route path={"/about"} component={InstitutionalPage} />
       <Route path={"/contact"} component={InstitutionalPage} />
       <Route path={"/404"} component={NotFound} />
