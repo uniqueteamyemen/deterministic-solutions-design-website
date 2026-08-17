@@ -6,6 +6,7 @@ import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
 import PayLock from "./pages/PayLock";
+import InstitutionalPage from "./pages/InstitutionalPage";
 
 
 function Router() {
@@ -13,6 +14,11 @@ function Router() {
     <Switch>
       <Route path={"/"} component={Home} />
       <Route path={"/paylock"} component={PayLock} />
+      <Route path={"/hc-cxl"} component={InstitutionalPage} />
+      <Route path={"/ssdd"} component={InstitutionalPage} />
+      <Route path={"/evidence"} component={InstitutionalPage} />
+      <Route path={"/about"} component={InstitutionalPage} />
+      <Route path={"/contact"} component={InstitutionalPage} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />

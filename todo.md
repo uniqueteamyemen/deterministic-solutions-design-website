@@ -15,3 +15,11 @@
 - [x] Create the PayLock page with lifecycle, architecture, resilience, and market sections.
 - [x] Link public technical evidence and update the approved contact email.
 - [x] Connect the landing-page PayLock routes and validate desktop/mobile rendering.
+
+## Institutional website expansion
+
+- [x] Audit the current routes and define the full institutional information architecture.
+- [x] Build a shared site shell with navigation, footer, metadata, and consistent cross-links.
+- [x] Add HC-CXL, SSDD, Evidence, About, and Contact experiences using only currently supported content.
+- [x] Connect project pages, evidence records, and contact actions across the site.
+- [x] Validate desktop/mobile behavior and production build.
