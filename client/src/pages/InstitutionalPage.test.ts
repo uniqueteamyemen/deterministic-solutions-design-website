@@ -2,17 +2,19 @@ import { describe, expect, it } from "vitest";
 import { pageMap } from "./InstitutionalPage";
 
 describe("institutional research evidence", () => {
-  it("frames SSDD as a model-scoped simulation artifact", () => {
+  it("frames SSDD as a model-scoped pre-hardware record", () => {
     const evidence = pageMap.ssdd.researchEvidence;
 
     expect(evidence?.status).toContain("MODEL-SCOPED");
     expect(evidence?.measures).toEqual(expect.arrayContaining([
-      expect.objectContaining({ value: "5 / 5" }),
-      expect.objectContaining({ value: "6 / 6" }),
-      expect.objectContaining({ value: "ff05ec2371488ba1" }),
+      expect.objectContaining({ value: "128 / 128" }),
+      expect.objectContaining({ value: "100 / 100" }),
+      expect.objectContaining({ value: "4 / 4" }),
+      expect.objectContaining({ value: "9 / 9" }),
+      expect.objectContaining({ value: "8 → 128" }),
     ]));
     expect(evidence?.caveat).toContain("not hardware validation");
-    expect(evidence?.libraryId).toBe("ssdd-controlled-matrix");
+    expect(evidence?.libraryId).toBe("ssdd-prehardware");
   });
 
   it("keeps HC-CXL explicitly in research and validation framing", () => {

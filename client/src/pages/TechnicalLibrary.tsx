@@ -47,8 +47,26 @@ export const libraryRecords: LibraryRecord[] = [
     route: { href: "/ssdd", label: "Inspect the controlled SSDD matrix" },
   },
   {
-    id: "ssdd-validation-plan",
+    id: "ssdd-prehardware",
     index: "03",
+    className: "REFERENCE VALIDATION",
+    status: "COMPLETED / MODEL-SCOPED",
+    title: "SSDD pre-hardware deterministic verification",
+    copy: "A retained reference suite translated the supplied SSDD specification, implementation manual, and prototype roadmap into an ordering, 100-epoch replay, fault-containment, ledger-forensics, Q32.32, cross-language, scaling, and load record. It retains 8→128 logical-node and 1k→100k events/s-equivalent matrices with component timings; these are native-reference wall-clock and modeled-byte records, not network or hardware measurements. The native-reference suite and the earlier gem5 fixture remain separate, explicitly scoped evidence domains.",
+    facts: [
+      { value: "128 / 128", label: "random arrivals, one ordered batch" },
+      { value: "100 / 100", label: "independent replay chain entries" },
+      { value: "4 / 4", label: "ledger modifications detected" },
+      { value: "4 / 4", label: "fault cases preserve last valid state" },
+      { value: "100 / 100", label: "Python / Rust reference chain hashes" },
+      { value: "9 / 9", label: "Q32.32 boundary outcomes" },
+    ],
+    boundary: "The suite exercises retained software references and modeled controls. It is not a hardware, firmware, CXL, NIC-bandwidth, cluster-resilience, security, or production-readiness result. The Rust comparison is a retained reference because no supplied Rust implementation was available; its agreement does not validate a production Rust runtime.",
+    route: { href: "/ssdd", label: "Read SSDD pre-hardware framing" },
+  },
+  {
+    id: "ssdd-validation-plan",
+    index: "04",
     className: "VALIDATION PLAN",
     status: "RESEARCH WORK / IN PROGRESS",
     title: "SSDD deterministic validation pathway",
@@ -64,7 +82,7 @@ export const libraryRecords: LibraryRecord[] = [
   },
   {
     id: "hc-cxl-reference",
-    index: "04",
+    index: "05",
     className: "RESEARCH REBUILD",
     status: "REFERENCE ASSUMPTIONS / VALIDATION PENDING",
     title: "HC-CXL v2.1R physical-governance reference",
@@ -80,7 +98,7 @@ export const libraryRecords: LibraryRecord[] = [
   },
   {
     id: "evidence-boundaries",
-    index: "05",
+    index: "06",
     className: "READINESS REGISTER",
     status: "PUBLIC POSITIONING / CURRENT",
     title: "Readiness and evidence boundaries",
@@ -113,7 +131,7 @@ export default function TechnicalLibrary() {
               <div className="library-signal">
                 <BookOpen size={20} />
                 <span>PUBLIC RECORD INDEX</span>
-                <b>5</b>
+                <b>6</b>
                 <small>source-backed entries</small>
               </div>
             </div>

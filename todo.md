@@ -65,3 +65,25 @@
 - [x] Run an expanded fixed-latency replay set to confirm accepted-trace reproducibility across repeated model executions.
 - [x] Run additional deterministic proof-corruption positions to confirm bounded rejection behavior in the current reference validator.
 - [x] Document preliminary matrix results and the resulting public-claim boundary statement.
+
+## Pre-hardware deterministic verification program
+
+- [x] Catalog the newly supplied SSDD specifications, implementation sources, test plans, and artifact materials with their evidence boundaries.
+- [x] Test SSC canonical ordering under randomized arrival permutations and designed collisions across the four-key tuple.
+- [x] Run 100-epoch full replay with complete hash-chain comparison across an independent restart.
+- [x] Expand fault safety testing to packet drop, node delay, aggregator failure, and corrupted state or ledger while asserting preservation of the last valid state.
+- [x] Verify forensic detection of state hash, previous hash, aggregate, and epoch-ID tampering through ledger recomputation.
+- [x] Compare a canonical Python ledger implementation against a Rust ledger implementation, or record the Rust implementation as unavailable if source is absent.
+- [x] Measure a source-scoped scaling and load matrix, including latency components, epoch success, throughput, and network-model counters.
+- [x] Validate Q32.32 saturation, multiplication, boundary values, and symmetric rounding behavior.
+- [x] Publish only model-scoped results, explicit limitations, and reproducibility artifacts after all checks pass.
+
+## Pre-hardware evidence audit
+
+- [x] Verify and publish the manifest evidence for SSC permutations and four-key collision cases.
+- [x] Verify and publish the independent 100-epoch full-chain replay comparison artifact.
+- [x] Verify and publish last-valid-state results for all four fault classes.
+- [x] Verify and publish the four ledger-tamper recomputation outcomes.
+- [x] Verify and publish the Python-to-Rust reference-chain comparison result and implementation provenance.
+- [x] Verify and publish the scaling and load metrics, including counters and latency-component boundaries.
+- [x] Verify and publish the Q32.32 boundary, saturation, multiplication, and rounding outcomes.
