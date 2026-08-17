@@ -31,8 +31,24 @@ export const libraryRecords: LibraryRecord[] = [
     route: { href: "/ssdd", label: "Read SSDD validation framing" },
   },
   {
-    id: "ssdd-validation-plan",
+    id: "ssdd-controlled-matrix",
     index: "02",
+    className: "SIMULATION ARTIFACT",
+    status: "COMPLETED / MODEL-SCOPED",
+    title: "SSDD controlled latency and fault matrix",
+    copy: "The same five-stage, seven-engine reference workload was executed under 10 ns, 50 ns, and 100 ns fixed-memory-latency settings. Five 50 ns replays were accepted with the same canonical digest. A one-bit proof mutation at trace records 1, 18, and 35 was rejected in each of two repeated runs per position.",
+    facts: [
+      { value: "5 / 5", label: "matching 50 ns replays" },
+      { value: "3", label: "fixed latency cases" },
+      { value: "6 / 6", label: "proof mutations rejected" },
+      { value: "ff05ec2371488ba1", label: "accepted replay digest" },
+    ],
+    boundary: "The matrix measures simulated ticks and validator outcomes for this fixed workload and configuration. It does not measure physical memory latency, actual CXL traffic, an operational fault rate, cryptographic strength, or end-to-end production resilience.",
+    route: { href: "/ssdd", label: "Inspect the controlled SSDD matrix" },
+  },
+  {
+    id: "ssdd-validation-plan",
+    index: "03",
     className: "VALIDATION PLAN",
     status: "RESEARCH WORK / IN PROGRESS",
     title: "SSDD deterministic validation pathway",
@@ -43,12 +59,12 @@ export const libraryRecords: LibraryRecord[] = [
       { value: "4", label: "planned validation families" },
       { value: "REPLAY", label: "baseline experiment focus" },
     ],
-    boundary: "Later experiments may vary memory timing or inject controlled ordering faults, but each result will remain tied to its stated simulator model and configuration. No simulator result becomes a physical HC-CXL claim by implication.",
+    boundary: "The initial matrix has varied memory timing and injected controlled proof corruption; later experiments may extend scenario coverage, but each result remains tied to its stated simulator model and configuration. No simulator result becomes a physical HC-CXL claim by implication.",
     route: { href: "/ssdd", label: "Inspect the SSDD research file" },
   },
   {
     id: "hc-cxl-reference",
-    index: "03",
+    index: "04",
     className: "RESEARCH REBUILD",
     status: "REFERENCE ASSUMPTIONS / VALIDATION PENDING",
     title: "HC-CXL v2.1R physical-governance reference",
@@ -64,7 +80,7 @@ export const libraryRecords: LibraryRecord[] = [
   },
   {
     id: "evidence-boundaries",
-    index: "04",
+    index: "05",
     className: "READINESS REGISTER",
     status: "PUBLIC POSITIONING / CURRENT",
     title: "Readiness and evidence boundaries",
@@ -97,7 +113,7 @@ export default function TechnicalLibrary() {
               <div className="library-signal">
                 <BookOpen size={20} />
                 <span>PUBLIC RECORD INDEX</span>
-                <b>4</b>
+                <b>5</b>
                 <small>source-backed entries</small>
               </div>
             </div>

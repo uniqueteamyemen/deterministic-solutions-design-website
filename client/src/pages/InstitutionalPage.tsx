@@ -1,6 +1,7 @@
 import { ArrowLeft, ArrowRight, ArrowUpRight, Check, ExternalLink, Layers3, Menu, ShieldCheck, X } from "lucide-react";
 import { useState } from "react";
 import SiteLayout from "@/components/SiteLayout";
+import InquiryForm from "@/components/InquiryForm";
 
 type PageKey = "hc-cxl" | "ssdd" | "evidence" | "about" | "contact";
 
@@ -67,18 +68,18 @@ export const pageMap: Record<PageKey, PageConfig> = {
       { index: "03", title: "A validation program—not a verdict.", copy: "The roadmap identifies deterministic replay, convergence, bounded decision windows, cross-language hash matching, and a 1,000-node simulation target as validation objectives. The work is deliberately framed as prototype testing rather than delivered production performance.", tags: ["Test scenarios", "Simulation", "Prototype"] },
     ],
     researchEvidence: {
-      eyebrow: "Simulation artifact / gem5 baseline",
-      status: "MODEL-SCOPED / TWO MATCHING REPLAY RUNS",
+      eyebrow: "Simulation artifact / controlled gem5 matrix",
+      status: "MODEL-SCOPED / REPLAY + FAULT REJECTION",
       title: <>A repeatable trace,<br /><em>not a hardware claim.</em></>,
-      copy: "A portable five-stage, seven-engine reference workload was executed twice in gem5 under the same X86 syscall-emulation configuration. Each pass produced the same canonical digest and an accepted validation result, establishing a reproducible baseline fixture for subsequent research experiments.",
+      copy: "A portable five-stage, seven-engine reference workload was run under three fixed memory-latency settings. At 50 ns, five accepted replays produced the same canonical digest; controlled proof corruption at the first, middle, and final record was rejected in each repeated case. The result extends the baseline fixture while remaining a reproducible simulator artifact.",
       measures: [
-        { value: "2 / 2", label: "matching simulator runs" },
-        { value: "35", label: "logical operations per run" },
+        { value: "5 / 5", label: "matching 50 ns replays" },
+        { value: "3", label: "fixed memory-latency values" },
+        { value: "6 / 6", label: "proof-corruption rejections" },
         { value: "ff05ec2371488ba1", label: "matching replay digest" },
-        { value: "308,777,000", label: "simulated ticks per run" },
       ],
-      caveat: "The artifact is limited to the selected workload, compiler, gem5 revision, inputs, and configuration. It is not hardware validation, CXL traffic validation, certification, or a production-readiness result.",
-      libraryId: "ssdd-gem5-baseline",
+      caveat: "The matrix is limited to the selected workload, compiler, gem5 revision, X86 syscall-emulation configuration, and stated latency values. It is not hardware validation, CXL traffic validation, certification, fault coverage for a production system, or a production-readiness result.",
+      libraryId: "ssdd-controlled-matrix",
     },
   },
   evidence: {
@@ -88,7 +89,7 @@ export const pageMap: Record<PageKey, PageConfig> = {
     intro: "Evidence is not a decorative section of the site. It is the operating discipline behind the work: records, demonstrations, source material, and explicit boundaries that let another person challenge what was built—and distinguish a product from a research result.",
     label: "Evidence register",
     sections: [
-      { index: "01", title: "Simulation records.", copy: "The SSDD gem5 baseline records two matching runs of a fixed logical trace. It is published as simulation evidence only, with workload, configuration, replay digest, and limitations kept together.", tags: ["gem5", "Replay", "Model-scoped"] },
+      { index: "01", title: "Simulation records.", copy: "The SSDD gem5 evidence includes a fixed-latency matrix, five matching 50 ns replays, and repeated controlled proof-corruption rejections at three trace positions. It is published as simulation evidence only, with workload, configuration, replay digest, and limitations kept together.", tags: ["gem5", "Replay", "Model-scoped"] },
       { index: "02", title: "Research source files.", copy: "Specifications, implementation guidance, physical-justification notes, and failure analyses define the intended layers and their current boundaries. They document research assumptions; they do not substitute for independent validation.", tags: ["Specifications", "Lineage", "Research"] },
       { index: "03", title: "Product documentation.", copy: "PayLock is the DS&D initiative positioned for commercial market use. Its product material explains the governed execution layer while preserving its non-custodial boundary.", tags: ["PayLock", "Product", "Governance"] },
       { index: "04", title: "Explicit boundaries.", copy: "SSDD remains prototype and validation-stage work. HC-CXL v2.1R remains a research rebuild. PayLock does not hold, process, or control funds. These limits travel with the claim.", tags: ["Scope", "Limits", "Readiness"] },
@@ -96,16 +97,16 @@ export const pageMap: Record<PageKey, PageConfig> = {
     researchEvidence: {
       eyebrow: "Research evidence register / SSDD",
       status: "SIMULATION ONLY / NOT HARDWARE CERTIFICATION",
-      title: <>The first replay record<br /><em>keeps its scope.</em></>,
-      copy: "The initial SSDD gem5 experiment is a reproducible baseline, not a proof of hardware behavior. It compares the canonical replay output of two fixed configuration runs and preserves the resulting digest alongside its model limits.",
+      title: <>The controlled replay record<br /><em>keeps its scope.</em></>,
+      copy: "The extended SSDD gem5 matrix is a reproducible simulator record, not a proof of hardware behavior. It preserves five matching 50 ns replays, three fixed latency cases, and repeated proof-corruption rejections alongside the model limits.",
       measures: [
         { value: "5 × 7", label: "logical stages × engines" },
-        { value: "2", label: "matching gem5 runs" },
-        { value: "35", label: "operations in each trace" },
-        { value: "ACCEPTED", label: "reference-workload validation" },
+        { value: "5 / 5", label: "matching 50 ns replays" },
+        { value: "6 / 6", label: "controlled faults rejected" },
+        { value: "3", label: "fixed latency cases" },
       ],
-      caveat: "The same output supports repeatability for this simulator fixture only. It must not be generalized to physical HC-CXL behavior, CXL hardware traffic, security certification, or production deployment.",
-      libraryId: "evidence-boundaries",
+      caveat: "The observed outcomes support repeatability and bounded rejection for this simulator fixture only. They must not be generalized to physical HC-CXL behavior, CXL hardware traffic, security certification, comprehensive fault coverage, or production deployment.",
+      libraryId: "ssdd-controlled-matrix",
     },
   },
   about: {
@@ -136,8 +137,8 @@ export const pageMap: Record<PageKey, PageConfig> = {
 
 const nextLinks: Record<PageKey, { href: string; label: string }[]> = {
   "hc-cxl": [{ href: "/ssdd", label: "Continue to SSDD" }, { href: "/technical-library#hc-cxl-reference", label: "Open technical library" }, { href: "/about", label: "Read about DS&D" }],
-  ssdd: [{ href: "/paylock", label: "See PayLock in production" }, { href: "/technical-library#ssdd-gem5-baseline", label: "Open technical library" }, { href: "/evidence", label: "Inspect evidence" }],
-  evidence: [{ href: "/technical-library#evidence-boundaries", label: "Open technical library" }, { href: "/paylock", label: "Inspect PayLock evidence" }, { href: "/contact", label: "Discuss an integration" }],
+  ssdd: [{ href: "/paylock", label: "See PayLock in production" }, { href: "/technical-library#ssdd-controlled-matrix", label: "Open technical library" }, { href: "/evidence", label: "Inspect evidence" }],
+  evidence: [{ href: "/technical-library#ssdd-controlled-matrix", label: "Open technical library" }, { href: "/paylock", label: "Inspect PayLock evidence" }, { href: "/contact", label: "Discuss an integration" }],
   about: [{ href: "/hc-cxl", label: "Explore HC-CXL" }, { href: "/ssdd", label: "Explore SSDD" }],
   contact: [{ href: "mailto:baker@deterministicsolutionsdesign.com", label: "Email the team" }, { href: "/paylock", label: "Review PayLock" }],
 };
@@ -236,6 +237,8 @@ export default function InstitutionalPage() {
             </div>
           </section>
         )}
+
+        {page.key === "contact" && <InquiryForm />}
 
         <section className="institutional-proof section">
           <div className="container institutional-proof-grid">

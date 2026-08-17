@@ -25,4 +25,25 @@ export const users = mysqlTable("users", {
 export type User = typeof users.$inferSelect;
 export type InsertUser = typeof users.$inferInsert;
 
-// TODO: Add your tables here
+export const inquiryTopics = ["architecture", "paylock", "research", "partnership", "other"] as const;
+export const inquiryStatuses = ["new", "read", "closed"] as const;
+
+/**
+ * Public contact requests. The record stores only the information that a
+ * visitor explicitly provides for follow-up; no session identity or tracking
+ * data is retained in this table.
+ */
+export const inquiries = mysqlTable("inquiries", {
+  id: int("id").autoincrement().primaryKey(),
+  fullName: varchar("fullName", { length: 120 }).notNull(),
+  email: varchar("email", { length: 320 }).notNull(),
+  organization: varchar("organization", { length: 160 }),
+  topic: mysqlEnum("topic", inquiryTopics).notNull(),
+  message: text("message").notNull(),
+  sourcePath: varchar("sourcePath", { length: 255 }).notNull().default("/contact"),
+  status: mysqlEnum("status", inquiryStatuses).notNull().default("new"),
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+});
+
+export type Inquiry = typeof inquiries.$inferSelect;
+export type InsertInquiry = typeof inquiries.$inferInsert;

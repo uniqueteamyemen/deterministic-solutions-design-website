@@ -51,3 +51,17 @@
 - [x] Add a source-backed technical library with direct record links for the SSDD gem5 baseline, validation plan, readiness boundaries, and HC-CXL reference model.
 - [x] Link the evidence page and research pages to the technical library with simulation and validation labels intact.
 - [x] Verify the technical-library flow on desktop and mobile before checkpointing.
+
+## Controlled validation and managed inquiries
+
+- [x] Define and execute a controlled gem5 latency matrix for the SSDD reference workload.
+- [x] Define and execute deterministic fault-injection cases, preserving accepted and rejected replay evidence.
+- [x] Publish simulation-scoped latency and fault-injection records with explicit model boundaries.
+- [x] Add a managed public inquiry form backed by the project database and a secure submission procedure.
+- [x] Validate inquiry submission states, the updated evidence pages, and save a checkpoint.
+
+## Extended gem5 verification
+
+- [x] Run an expanded fixed-latency replay set to confirm accepted-trace reproducibility across repeated model executions.
+- [x] Run additional deterministic proof-corruption positions to confirm bounded rejection behavior in the current reference validator.
+- [x] Document preliminary matrix results and the resulting public-claim boundary statement.

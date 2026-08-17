@@ -37,3 +37,9 @@ The initial gem5 plan must not claim physical HC-CXL validation. The first exper
 On 17 August 2026, the completed baseline ran a five-stage, seven-engine, 35-operation portable reference workload twice in gem5 25.1.0.1 with the same X86 syscall-emulation configuration. Both runs returned the same replay digest (`ff05ec2371488ba1`) and `validation=accepted`, each at simulated tick `308777000`. This is a model-scoped repeatability artifact only; the reproducibility record is stored in `research/gem5-ssdd-reference-results.md`.
 
 Public language: **simulation plan**, **reproducible experiment**, **research validation**, and **model-scoped results**. Avoid “silicon-qualified”, “hardware-certified”, “production-ready”, and any physical-performance claim that has not been empirically demonstrated.
+
+## Controlled matrix update — model-scoped gem5 only
+
+On 17 August 2026, the reference workload was run with fixed `SimpleMemory` latency values of 10 ns, 50 ns, and 100 ns. The six fixed-latency runs returned `validation=accepted` with the canonical replay digest `ff05ec2371488ba1`. Five repeated 50 ns executions likewise matched the same digest. A single-bit corruption of the generated proof at records 1, 18, and 35 was rejected in two repeated runs for each position.
+
+The recorded simulated-tick values were 1,346,204,000 at 10 ns, 1,636,604,000 at 50 ns, and 1,999,604,000 at 100 ns. These figures describe the selected gem5 model and workload only. They do **not** measure physical memory behavior, CXL traffic, operational fault rates, cryptographic strength, comprehensive fault coverage, or production resilience. The reproducibility record is stored in `research/gem5-ssdd-controlled-matrix-results.md`.

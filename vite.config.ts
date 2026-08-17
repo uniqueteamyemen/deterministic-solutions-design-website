@@ -5,6 +5,8 @@ import fs from "node:fs";
 import path from "node:path";
 import { defineConfig, type Plugin, type ViteDevServer } from "vite";
 import { vitePluginManusRuntime } from "vite-plugin-manus-runtime";
+import express from "express";
+import { createInquiryRouter } from "./server/inquiries";
 
 // =============================================================================
 // Manus Debug Collector - Vite Plugin
@@ -203,7 +205,19 @@ function vitePluginStorageProxy(): Plugin {
   };
 }
 
-const plugins = [react(), tailwindcss(), jsxLocPlugin(), vitePluginManusRuntime(), vitePluginManusDebugCollector(), vitePluginStorageProxy()];
+function vitePluginInquiryApi(): Plugin {
+  return {
+    name: "dsd-inquiry-api",
+    configureServer(server: ViteDevServer) {
+      const inquiryApp = express();
+      inquiryApp.use(express.json({ limit: "16kb" }));
+      inquiryApp.use("/", createInquiryRouter());
+      server.middlewares.use("/api/inquiries", inquiryApp);
+    },
+  };
+}
+
+const plugins = [react(), tailwindcss(), jsxLocPlugin(), vitePluginInquiryApi(), vitePluginManusRuntime(), vitePluginManusDebugCollector(), vitePluginStorageProxy()];
 
 export default defineConfig({
   plugins,

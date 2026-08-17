@@ -7,11 +7,12 @@ describe("institutional research evidence", () => {
 
     expect(evidence?.status).toContain("MODEL-SCOPED");
     expect(evidence?.measures).toEqual(expect.arrayContaining([
-      expect.objectContaining({ value: "2 / 2" }),
+      expect.objectContaining({ value: "5 / 5" }),
+      expect.objectContaining({ value: "6 / 6" }),
       expect.objectContaining({ value: "ff05ec2371488ba1" }),
     ]));
     expect(evidence?.caveat).toContain("not hardware validation");
-    expect(evidence?.libraryId).toBe("ssdd-gem5-baseline");
+    expect(evidence?.libraryId).toBe("ssdd-controlled-matrix");
   });
 
   it("keeps HC-CXL explicitly in research and validation framing", () => {
