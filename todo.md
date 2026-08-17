@@ -94,7 +94,7 @@
 - [x] Create and organize a clean SSDD repository with reproducible validation artifacts, clear licensing, and evidence-scoped documentation.
 - [x] Audit the SSDD repository for duplicate content, secrets, unpublished material, and unsupported claims before publication.
 - [x] Create the SSDD GitHub repository and publish the approved curated contents.
-- [ ] Prepare separate professional repository structures and publication inventories for PayLock and HC-CXL.
+- [x] Prepare separate professional repository structures and publication inventories for PayLock and HC-CXL.
 
 ## Existing repository alignment
 
@@ -157,3 +157,8 @@
 - [x] Document the approved persistent-compute operating model for future long-running SSDD validation campaigns without moving or interrupting the active SimCXL evidence run.
 - [x] Define reproducibility, evidence-retention, access-control, and cost-review gates before any future migration of simulation or FPGA workloads to persistent compute.
 - [x] Record the deferred multi-option decision across the current environment, user-connected compute, independent persistent compute, external cloud, and future partner hardware access.
+
+## Deferred repository readiness
+
+- [x] Document a deferred-ready PayLock repository structure and publication inventory without modifying its existing repository.
+- [x] Document a deferred-ready HC-CXL repository structure and publication inventory without modifying its existing repository.
