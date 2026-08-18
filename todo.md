@@ -264,3 +264,7 @@
 - [x] Add validated referral-source attribution to public inquiries, persist it safely, and provide an accessible, visually responsive source-selection experience.
 - [x] Review all nine accessible GitHub repositories read-only; summarize each repository's actual content, README quality, commercial role, relationship to the portfolio, and whether it merits bounded website inclusion.
 - [x] Expand the 90-day go-to-market plan into a first-phase execution playbook with immediate actions, responsible roles, decision gates, messaging assets, and measurable learning loops.
+- [x] Rewrite the Adapter repository README on an isolated review branch for credible public and investor-facing presentation, preserving explicit current-state limits and changing no implementation code.
+- [x] Merge the owner-approved Adapter README documentation branch into the repository main branch without including implementation changes.
+- [x] Build and test an isolated signed resource-ready Adapter connector that verifies a provider event, prevents duplicate delivery handling, keeps H0 server-side, and issues an opaque one-time access ticket without modifying PayLock Core.
+- [x] Re-review the eight repositories other than Adapter and provide a concise evidence-bounded commercial summary for each, including whether it belongs on the DS&D website.
