@@ -285,3 +285,5 @@
 - [x] Extend the joint release suite with provider-response delay, failed/aborted provider acknowledgement, and client-side connection interruption cases; preserve one-H1 and no-release-on-failure invariants.
 - [x] Push the expanded Yaqeen review branch and merge it into the repository main branch after all joint release checks pass.
 - [x] Prepare a final non-public release package with versioned release notes and a source-backed test-coverage report for the PayLock–Yaqeen path.
+- [x] Add the PayLock–Yaqeen joint release suite to Yaqeen CI, verify the remote workflow run, and preserve the existing production-key guard.
+- [x] Present the unpublished Yaqeen release notes and PayLock–Yaqeen coverage report for owner review before any public release.
