@@ -258,3 +258,5 @@
 - [x] Prepare a private owner-review package consolidating the visual evidence review, local Adapter experiment, reusable audit skill, website correction checkpoint, and deferred decisions.
 - [x] Curate and add public-safe, evidence-bounded visual excerpts that help visitors understand the verified engineering record without exposing secrets or overstating readiness.
 - [x] Verified that no active Shopify implementation exists; preserved the bounded test proposal as the only concrete retained record and kept the intentionally empty scope free of deficit framing.
+- [x] Review the latest PayLock, Evidence, and Technical Library previews on desktop and mobile; record only substantiated usability, trust, and claim-boundary findings.
+- [x] Produce an evidence-led DS&D and PayLock go-to-market plan that defines target wedges, offers, conversion paths, launch experiments, measurement, and Manus-supported hosting/analytics operations without overstating readiness.
