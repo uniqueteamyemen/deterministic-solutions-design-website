@@ -29,4 +29,22 @@ describe("technical library evidence records", () => {
     ]));
     expect(libraryRecords.find((record) => record.id === "hc-cxl-reference")?.boundary).toContain("not measured hardware behavior");
   });
+
+  it("adds public-safe PayLock excerpts without treating local or connectivity checks as a live integration", () => {
+    const adapterExperiment = libraryRecords.find((record) => record.id === "paylock-adapter-local-experiment");
+    const connectivityCheck = libraryRecords.find((record) => record.id === "paylock-github-signed-connectivity");
+
+    expect(adapterExperiment?.status).toBe("COMPLETED / LOCAL-ONLY");
+    expect(adapterExperiment?.facts).toEqual(expect.arrayContaining([
+      expect.objectContaining({ value: "6 / 6", label: "local acceptance checks passed" }),
+      expect.objectContaining({ value: "0", label: "H0 values in asserted external responses" }),
+    ]));
+    expect(adapterExperiment?.excerpt?.scope).toContain("technical delivery evidence only");
+    expect(adapterExperiment?.boundary).toContain("not evidence of a live provider integration");
+    expect(connectivityCheck?.facts).toEqual(expect.arrayContaining([
+      expect.objectContaining({ value: "202", label: "signed ping response" }),
+      expect.objectContaining({ value: "2 / 2", label: "ping and authorized redelivery accepted" }),
+    ]));
+    expect(connectivityCheck?.excerpt?.scope).toContain("does not demonstrate a release lifecycle");
+  });
 });

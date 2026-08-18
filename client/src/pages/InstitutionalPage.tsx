@@ -21,6 +21,16 @@ type PageConfig = {
     caveat: string;
     libraryId: string;
   };
+  productEvidence?: {
+    eyebrow: string;
+    status: string;
+    title: React.ReactNode;
+    copy: string;
+    measures: { value: string; label: string }[];
+    checks: { result: string; label: string }[];
+    caveat: string;
+    routes: { href: string; label: string }[];
+  };
 };
 
 export const pageMap: Record<PageKey, PageConfig> = {
@@ -96,6 +106,28 @@ export const pageMap: Record<PageKey, PageConfig> = {
       { index: "03", title: "Product documentation.", copy: "PayLock is the DS&D initiative positioned for commercial market use. Its product material explains the governed execution layer while preserving its non-custodial boundary.", tags: ["PayLock", "Product", "Governance"] },
       { index: "04", title: "Explicit boundaries.", copy: "SSDD remains prototype and validation-stage work. HC-CXL v2.1R remains a research rebuild. PayLock does not hold, process, or control funds. These limits travel with the claim.", tags: ["Scope", "Limits", "Readiness"] },
     ],
+    productEvidence: {
+      eyebrow: "PayLock / public-safe test excerpts",
+      status: "REVIEWED / LOCAL EXPERIMENT + SIGNED CONNECTIVITY",
+      title: <>Show the result.<br /><em>Name the limit.</em></>,
+      copy: "These excerpts make a narrow part of the PayLock engineering record readable without asking a visitor to follow a link first. They distinguish an isolated Adapter exercise from a signed GitHub receiver check and leave the unproven external delivery chain visible.",
+      measures: [
+        { value: "6 / 6", label: "local Adapter acceptance checks passed" },
+        { value: "202", label: "signed GitHub ping response" },
+        { value: "2 / 2", label: "ping and authorized redelivery accepted" },
+        { value: "0", label: "actual release events executed in this check" },
+      ],
+      checks: [
+        { result: "LOCAL", label: "The Adapter exercise tested a signed-event, opaque-ticket, and one-release path in isolation." },
+        { result: "SIGNED", label: "The GitHub receiver accepted a signed `ping` and one authorized redelivery with HTTP `202`." },
+        { result: "OPEN", label: "A live provider-ready mapping and externally verified one-time user delivery remain integration work, not a completed claim." },
+      ],
+      caveat: "These are not production certificates. The local result is not a deployed provider integration, and the GitHub result is connectivity-only. Neither establishes payment, refund, funds, provider-readiness, or end-user-delivery evidence.",
+      routes: [
+        { href: "/technical-library#paylock-adapter-local-experiment", label: "Read the local Adapter record" },
+        { href: "/technical-library#paylock-github-signed-connectivity", label: "Read the signed connectivity record" },
+      ],
+    },
     researchEvidence: {
       eyebrow: "Research evidence register / SSDD",
       status: "MODEL-SCOPED / NOT HARDWARE CERTIFICATION",
@@ -216,11 +248,30 @@ export default function InstitutionalPage() {
           </section>
         )}
 
+        {page.productEvidence && (
+          <section className="institutional-product-evidence section" aria-label="PayLock public evidence excerpts">
+            <div className="container institutional-product-evidence-grid">
+              <div>
+                <div className="section-index">02 <span>/</span> {page.productEvidence.eyebrow}</div>
+                <div className="evidence-status"><Check size={14} /> {page.productEvidence.status}</div>
+                <h2>{page.productEvidence.title}</h2>
+                <p>{page.productEvidence.copy}</p>
+              </div>
+              <div className="product-evidence-detail">
+                <div className="evidence-measures">{page.productEvidence.measures.map((measure) => <div className="evidence-measure" key={measure.label}><b>{measure.value}</b><span>{measure.label}</span></div>)}</div>
+                <div className="product-evidence-checks">{page.productEvidence.checks.map((check) => <div key={check.label}><strong>{check.result}</strong><span>{check.label}</span></div>)}</div>
+                <div className="evidence-caveat"><ShieldCheck size={18} /><p>{page.productEvidence.caveat}</p></div>
+                <div className="product-evidence-routes">{page.productEvidence.routes.map((route) => <a className="evidence-library-link" href={route.href} key={route.href}>{route.label} <ArrowUpRight size={15} /></a>)}</div>
+              </div>
+            </div>
+          </section>
+        )}
+
         {page.researchEvidence && (
           <section className="institutional-evidence section" aria-label="Research evidence and scope">
             <div className="container institutional-evidence-grid">
               <div>
-                <div className="section-index">{page.visual ? "03" : "02"} <span>/</span> {page.researchEvidence.eyebrow}</div>
+                <div className="section-index">{page.visual ? "03" : page.productEvidence ? "03" : "02"} <span>/</span> {page.researchEvidence.eyebrow}</div>
                 <div className="evidence-status"><Check size={14} /> {page.researchEvidence.status}</div>
                 <h2>{page.researchEvidence.title}</h2>
                 <p>{page.researchEvidence.copy}</p>

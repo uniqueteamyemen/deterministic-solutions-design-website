@@ -30,6 +30,24 @@ describe("institutional research evidence", () => {
     expect(pageMap.about.sections[2]?.copy).toContain("PayLock is DS&D's commercial offering");
   });
 
+  it("keeps inline PayLock evidence excerpts readable while preserving their limits", () => {
+    const evidence = pageMap.evidence.productEvidence;
+
+    expect(evidence?.measures).toEqual(expect.arrayContaining([
+      expect.objectContaining({ value: "6 / 6" }),
+      expect.objectContaining({ value: "202" }),
+      expect.objectContaining({ value: "2 / 2" }),
+    ]));
+    expect(evidence?.checks).toEqual(expect.arrayContaining([
+      expect.objectContaining({ result: "LOCAL" }),
+      expect.objectContaining({ result: "SIGNED" }),
+      expect.objectContaining({ result: "OPEN" }),
+    ]));
+    expect(evidence?.caveat).toContain("not production certificates");
+    expect(evidence?.caveat).toContain("Neither establishes payment");
+    expect(evidence?.routes).toHaveLength(2);
+  });
+
   it("states DS&D's international LLC identity without exposing private registration details", () => {
     expect(pageMap.about.intro).toContain("New Mexico, USA company");
     expect(pageMap.about.intro).toContain("working internationally");

@@ -253,4 +253,7 @@
 - [x] Specify and implement, only after the visual review, an isolated Adapter experiment that authenticates a delivery-ready provider event and gates a concrete one-time digital resource before Core H1 issuance.
 - [x] Package the evidence-review and integration-boundary method as a reusable skill after the image-first review is complete.
 - [x] Fix substantiated site issues: correct internal evidence and project links, protect production error details, add accessible skip/focus and lifecycle semantics, define the outline button, and add launch metadata while removing the incomplete analytics placeholder.
-- [ ] Await the owner's explicit Shopify choice: provision a fresh development store, connect an existing store through the Management UI, or keep Shopify out of the current scope.
+- [x] Record the owner's decision to keep Shopify out of the current scope; do not provision or connect a store unless the owner reopens the decision explicitly.
+- [x] Defer the transparent Shopify digital-delivery test; if reopened later, Shopify alone must handle any transaction or refund while PayLock receives only a signed delivery-ready event and H1 remains technical delivery evidence only.
+- [x] Prepare a private owner-review package consolidating the visual evidence review, local Adapter experiment, reusable audit skill, website correction checkpoint, and deferred decisions.
+- [x] Curate and add public-safe, evidence-bounded visual excerpts that help visitors understand the verified engineering record without exposing secrets or overstating readiness.

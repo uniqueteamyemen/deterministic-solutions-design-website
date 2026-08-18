@@ -11,6 +11,11 @@ type LibraryRecord = {
   facts: { value: string; label: string }[];
   boundary: string;
   route: { href: string; label: string };
+  excerpt?: {
+    label: string;
+    checks: { result: string; label: string }[];
+    scope: string;
+  };
 };
 
 export const libraryRecords: LibraryRecord[] = [
@@ -129,8 +134,59 @@ export const libraryRecords: LibraryRecord[] = [
     route: { href: "/hc-cxl", label: "Read the HC-CXL research rebuild" },
   },
   {
-    id: "evidence-boundaries",
+    id: "paylock-adapter-local-experiment",
     index: "08",
+    className: "LOCAL INTEGRATION EXPERIMENT",
+    status: "COMPLETED / LOCAL-ONLY",
+    title: "PayLock delivery-Adapter acceptance exercise",
+    copy: "An isolated prototype exercised the narrow provider-event-to-resource path with six named acceptance checks. The local run covered signed release handling, event rejection, duplicate suppression, opaque-ticket handling, single-use access under a race, and failure without release.",
+    facts: [
+      { value: "6 / 6", label: "local acceptance checks passed" },
+      { value: "1", label: "provider acknowledgement per tested delivery" },
+      { value: "1", label: "resource release per tested ticket" },
+      { value: "0", label: "H0 values in asserted external responses" },
+    ],
+    excerpt: {
+      label: "Result excerpt / isolated local test run",
+      checks: [
+        { result: "PASS", label: "Signed release accepted once; H0 withheld from the tested response surface" },
+        { result: "PASS", label: "Invalid signatures and non-release events rejected before the Core signal path" },
+        { result: "PASS", label: "Duplicate delivery, ticket replay, and concurrent access produced one eligible path" },
+        { result: "PASS", label: "A simulated Core unlock failure prevented resource release" },
+      ],
+      scope: "The six checks are a local prototype result. They do not establish a deployed Adapter, a live provider-ready event, end-user consumption, or a production integration. Any H1 reference here is technical delivery evidence only—not payment, refund, or financial evidence.",
+    },
+    boundary: "This record is a local test result for an isolated prototype, retained outside the protected product source. It is not evidence of a live provider integration, external provider attestation, production one-time access control, or general launch readiness.",
+    route: { href: "/paylock#review", label: "Read the PayLock reviewed status" },
+  },
+  {
+    id: "paylock-github-signed-connectivity",
+    index: "09",
+    className: "SIGNED CONNECTIVITY CHECK",
+    status: "COMPLETED / CONNECTIVITY-SCOPED",
+    title: "GitHub signed receiver verification",
+    copy: "The configured DS&D test receiver accepted one signed GitHub `ping` request and one owner-authorized redelivery. GitHub recorded HTTP `202` for both deliveries; the retained record excludes payloads, delivery identifiers, raw headers, and the configured secret.",
+    facts: [
+      { value: "202", label: "signed ping response" },
+      { value: "2 / 2", label: "ping and authorized redelivery accepted" },
+      { value: "0.09 s", label: "recorded initial completion time" },
+      { value: "RELEASE", label: "configured event subscription scope" },
+    ],
+    excerpt: {
+      label: "Result excerpt / redacted receiver record",
+      checks: [
+        { result: "202", label: "GitHub signed `ping` accepted by the configured test receiver" },
+        { result: "202", label: "One owner-authorized redelivery accepted by the same receiver" },
+        { result: "LIMIT", label: "No `release.published` event was created or inferred from the check" },
+      ],
+      scope: "This is a signed endpoint-reachability and signing-path check only. It does not demonstrate a release lifecycle, an Adapter mapping, provider readiness, a PayLock Core transition, H0/H1 issuance, or user access control.",
+    },
+    boundary: "The result confirms only the narrow receiver’s signed GitHub connectivity. It must not be represented as provider-delivery evidence or a completed PayLock integration.",
+    route: { href: "/paylock#review", label: "Read the integration boundary" },
+  },
+  {
+    id: "evidence-boundaries",
+    index: "10",
     className: "READINESS REGISTER",
     status: "PUBLIC POSITIONING / CURRENT",
     title: "Readiness and evidence boundaries",
@@ -163,7 +219,7 @@ export default function TechnicalLibrary() {
               <div className="library-signal">
                 <BookOpen size={20} />
                 <span>PUBLIC RECORD INDEX</span>
-                <b>8</b>
+                <b>10</b>
                 <small>source-backed entries</small>
               </div>
             </div>
@@ -182,6 +238,7 @@ export default function TechnicalLibrary() {
                     <div className="library-record-status"><Check size={14} /> {record.status}</div>
                   </div>
                   <div className="library-record-body"><p>{record.copy}</p><div className="library-facts">{record.facts.map((fact) => <div key={fact.label}><b>{fact.value}</b><span>{fact.label}</span></div>)}</div></div>
+                  {record.excerpt && <aside className="library-excerpt" aria-label={record.excerpt.label}><div className="library-excerpt-head"><span>{record.excerpt.label}</span><b>PUBLIC-SAFE SUMMARY</b></div><div className="library-excerpt-checks">{record.excerpt.checks.map((check) => <div key={check.label}><strong>{check.result}</strong><span>{check.label}</span></div>)}</div><p>{record.excerpt.scope}</p></aside>}
                   <div className="library-boundary"><ShieldCheck size={18} /><p>{record.boundary}</p></div>
                   <a className="library-route" href={record.route.href}>{record.route.label} <ArrowUpRight size={16} /></a>
                 </article>
