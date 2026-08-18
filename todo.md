@@ -268,3 +268,7 @@
 - [x] Merge the owner-approved Adapter README documentation branch into the repository main branch without including implementation changes.
 - [x] Build and test an isolated signed resource-ready Adapter connector that verifies a provider event, prevents duplicate delivery handling, keeps H0 server-side, and issues an opaque one-time access ticket without modifying PayLock Core.
 - [x] Re-review the eight repositories other than Adapter and provide a concise evidence-bounded commercial summary for each, including whether it belongs on the DS&D website.
+
+## Portfolio readiness assessment
+
+- [x] Produce an evidence-bounded readiness classification for the website, PayLock, Yemen Medicine Intelligence, SSDD, Adapter + Dictionary, and Market Intelligence; distinguish launch, public-demo, research-submission, and development readiness without altering protected sources or publishing externally.
