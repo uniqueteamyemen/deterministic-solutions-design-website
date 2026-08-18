@@ -279,3 +279,6 @@
 - [x] Correct the PayLock audit to classify the optional provider-supplied commercial-gating signal around H0 as an adaptation policy, not as PayLock payment processing or a reason to alter protected Core source.
 - [x] Conduct a source-only review for any active money/funds handling and for all H2 references; classify each finding as Core invariant, optional provider adaptation, legacy artifact, documentation, or test-only without modifying protected files.
 - [x] Extend the source-only review to Yaqeen as the PayLock reference platform for small and medium providers; trace its integration assumptions, H2 references, optional provider policies, and commercial-launch relevance without modifying protected files.
+- [x] Update Yaqeen README to describe its current PayLock reference-platform role accurately and remove any H2 reference.
+- [x] Reject the default `test-key` in Yaqeen live production mode while preserving explicit local-development behavior.
+- [x] Add and run a reproducible joint PayLock–Yaqeen release test covering the H0, provider acknowledgement, user unlock, H1, and replay-rejection path.
