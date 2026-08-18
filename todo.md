@@ -213,7 +213,7 @@
 - [x] Research free or no-cost test-mode providers with explicit sandbox status, signed webhooks, lifecycle simulation, and no required shipment, payment, or production-account activation; compare them against the PayLock test matrix. Paddle Sandbox is the preferred path, followed by Stripe Test Mode and Lemon Squeezy Test Mode.
 - [x] Inspect the owner’s accessible GitHub repositories in read-only mode to locate an existing sandbox-test application, webhook receiver, or documented configuration path before creating any new testing surface.
 - [x] Design an evidence-bounded PayLock and Yaqeen sandbox test matrix covering authentic provider events, webhook-origin checks, rejection before proof, successful proof, cancellation, retries, duplicates, and retained redacted traces.
-- [ ] Run only owner-authorized, non-production Envia and DoorDash Drive sandbox tests after prerequisites are verified; preserve raw evidence and failures without modifying protected source repositories.
+- [x] Superseded: the owner authorized Envia account closure and local-note cleanup; DoorDash Drive Sandbox remained geographically blocked. No further Envia or DoorDash test is active, while retained historical evidence remains preserved.
 - [x] Verify that the DS&D and PayLock marks are visible, accessible, and correctly applied across the website’s primary and mobile routes; correct any confirmed presentation defect.
 - [x] Update the private PayLock and Yaqeen readiness assessment, launch plan, and handoff with sandbox results and remaining launch gates.
 - [x] Superseded by the owner’s explicit directive: use an isolated experiments-and-logs branch inside the existing PayLock repository instead of creating a separate private evidence repository.
@@ -231,7 +231,7 @@
 - [x] Enforce the owner-corrected PayLock test boundary: accept only a provider-declared product-ready or fulfilment-complete signal; never collect, query, verify, infer, or govern payment status, payment data, or funds.
 - [x] Align the bounded evidence route with the approved lifecycle: request freeze and H0; provider-declared delivery readiness; one-time atomic client unlock; H1 only when Provider ACK and User Unlock are both present, with no execution on interruption or partial completion.
 - [x] Keep the Provider ACK and User Unlock gates as the currently documented minimum proof path, while making the Adapter/Dictionary policy extensible for additional owner-approved conditions rather than treating the two named gates as a closed list.
-- [ ] Prepare an evidence-bounded Shopify Dev Store fulfilment-webhook route after confirming an eligible development store and test event scope.
+- [x] Close the previously proposed Shopify Dev Store fulfilment-webhook route as intentionally out of scope; do not provision a store or represent this unused path as a readiness deficit.
 - [x] Prepare and unit-test an evidence-bounded Gemini digital-service completion receiver for official dynamic signed callbacks; retain only thin event metadata and never invoke PayLock Core.
 - [x] Validate the owner-supplied Google-issued test key through the official models endpoint; never generate, mock, commit, or present a locally invented key as a provider credential.
 - [x] Run the owner-approved GitHub release-webhook configuration and delivery exercise with short, recovery-safe browser interactions because the owner reports a weak connection rather than a disconnected browser; signed ping and exactly one redelivery each returned HTTP 202, while no release event was created.
@@ -245,7 +245,7 @@
 - [x] Extract approved DS&D and PayLock dark-theme logo assets from the owner-supplied brand board, publish the assets through managed storage, replace the remaining text-based mark treatment where appropriate, and verify desktop and mobile presentation.
 - [x] Restart the GitHub Releases-only webhook configuration from a clean browser form after securely rotating its signing secret, then validate exactly one signed test delivery with redacted evidence.
 - [x] Prepare an owner-facing, evidence-bounded PayLock test summary covering executed checks, exact outcomes, claim limits, open prerequisites, and the recommended next step.
-- [ ] Owner will close the Envia account and request data deletion independently; after the owner confirms completion, delete only the local Envia-only navigation note while retaining the already committed historical access observation in the isolated evidence branch.
+- [x] Owner authorized cleanup of the Envia-only navigation note; deleted only that local note while retaining the already committed historical access observation in the isolated evidence branch.
 - [x] Independently validate the attached UX, trust, production-safety, accessibility, metadata, and test-suite observations before modifying only substantiated issues.
 - [x] Validate the owner-supplied PayLock readiness assessment against primary source-audit and test records, then state whether evidence requires a launch delay or a narrowed launch scope.
 - [x] Audit all accessible GitHub repositories for retained Medusa, Vendure, or Stripe evidence of the complete provider event → Adapter → provider_ack → user_unlock → single H1 chain, and update the private launch matrix only where direct evidence supports it.
@@ -257,3 +257,4 @@
 - [x] Defer the transparent Shopify digital-delivery test; if reopened later, Shopify alone must handle any transaction or refund while PayLock receives only a signed delivery-ready event and H1 remains technical delivery evidence only.
 - [x] Prepare a private owner-review package consolidating the visual evidence review, local Adapter experiment, reusable audit skill, website correction checkpoint, and deferred decisions.
 - [x] Curate and add public-safe, evidence-bounded visual excerpts that help visitors understand the verified engineering record without exposing secrets or overstating readiness.
+- [x] Verified that no active Shopify implementation exists; preserved the bounded test proposal as the only concrete retained record and kept the intentionally empty scope free of deficit framing.
