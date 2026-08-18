@@ -22,8 +22,7 @@ export default function SiteLayout({ children }: { children: React.ReactNode }) 
     <div className="site-shell">
       <header className={`topbar ${scrolled || !isHome ? "topbar-scrolled" : ""}`}>
         <Link href="/" className="brand" aria-label="Deterministic Solutions and Design home">
-          <img src="/manus-storage/deterministic-mark_ee0c8467.png" alt="" className="brand-mark" />
-          <span>DS<span className="brand-slash">/</span><span className="brand-full">Deterministic Solutions &amp; Design</span></span>
+          <img src="/manus-storage/dssd-lockup-dark-approved_b93ab250.png" alt="DS&D — Deterministic Solutions and Design" className="brand-lockup" />
         </Link>
         <nav className="desktop-nav" aria-label="Primary navigation">
           <Link href="/#portfolio">Work</Link>

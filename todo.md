@@ -234,7 +234,7 @@
 - [ ] Prepare an evidence-bounded Shopify Dev Store fulfilment-webhook route after confirming an eligible development store and test event scope.
 - [x] Prepare and unit-test an evidence-bounded Gemini digital-service completion receiver for official dynamic signed callbacks; retain only thin event metadata and never invoke PayLock Core.
 - [x] Validate the owner-supplied Google-issued test key through the official models endpoint; never generate, mock, commit, or present a locally invented key as a provider credential.
-- [ ] Run the owner-approved GitHub release-webhook configuration and delivery exercise with short, recovery-safe browser interactions because the owner reports a weak connection rather than a disconnected browser.
+- [x] Run the owner-approved GitHub release-webhook configuration and delivery exercise with short, recovery-safe browser interactions because the owner reports a weak connection rather than a disconnected browser; signed ping and exactly one redelivery each returned HTTP 202, while no release event was created.
 - [x] Document the approved policy boundary: integrity, consent, one-time delivery control, and proof remain invariant; provider- and user-agreed security or operational options remain configurable through the integration contract and Adapter.
 - [x] Classify the observed README wording against the approved adaptive-provider model as material before proposing any protected-source change; protected source remains unchanged.
 - [x] Complete a source-backed 48-hour launch verification matrix mapping the owner-approved PayLock lifecycle to Core, Dictionary, Adapter, and Yaqeen; classify each row as implemented, configurable, integration-dependent, or absent before approving public launch wording.
@@ -242,3 +242,5 @@
 - [x] Execute a bounded Gemini non-production service-completion test with the owner-supplied Google-issued key held only in secure project settings, preserving a redacted result without customer data, financial data, or PayLock source changes; the request was accepted but callback completion is blocked or unconfirmed by the provider.
 - [x] Report the Gemini outcome as executed, unsupported, or blocked based only on official API behavior; do not substitute a simulated callback or placeholder for a provider capability.
 - [x] Revise the approved PayLock launch wording to express deterministic protocol invariants alongside adaptable integration tools in a confident, non-alarmist tone.
+- [x] Extract approved DS&D and PayLock dark-theme logo assets from the owner-supplied brand board, publish the assets through managed storage, replace the remaining text-based mark treatment where appropriate, and verify desktop and mobile presentation.
+- [x] Restart the GitHub Releases-only webhook configuration from a clean browser form after securely rotating its signing secret, then validate exactly one signed test delivery with redacted evidence.

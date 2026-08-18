@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { portfolio, primaryNavigation } from "./Home";
+import { approvedBrandAssets, portfolio, primaryNavigation } from "./Home";
 
 describe("DS&D homepage portfolio framing", () => {
   it("keeps PayLock first as the commercial product", () => {
@@ -18,5 +18,10 @@ describe("DS&D homepage portfolio framing", () => {
   it("exposes the complete institutional navigation with an emphasized PayLock route", () => {
     expect(primaryNavigation.map((item) => item.href)).toEqual(["#portfolio", "/evidence", "/technical-library", "/about", "/paylock"]);
     expect(primaryNavigation.at(-1)).toMatchObject({ label: "PayLock", primary: true });
+  });
+
+  it("uses the owner-approved DS&D and PayLock brand-board assets", () => {
+    expect(approvedBrandAssets.dssdLockup).toContain("dssd-lockup-dark-approved_");
+    expect(approvedBrandAssets.paylockWordmark).toContain("paylock-wordmark-dark-approved_");
   });
 });
