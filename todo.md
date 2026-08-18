@@ -272,3 +272,7 @@
 ## Portfolio readiness assessment
 
 - [x] Produce an evidence-bounded readiness classification for the website, PayLock, Yemen Medicine Intelligence, SSDD, Adapter + Dictionary, and Market Intelligence; distinguish launch, public-demo, research-submission, and development readiness without altering protected sources or publishing externally.
+
+## PayLock payment-reference correction audit
+
+- [x] Audit the protected PayLock source and public DS&D site separately for payment or funds references; reconcile prior removal statements with exact surviving paths and report any source change that needs explicit owner authorization.
