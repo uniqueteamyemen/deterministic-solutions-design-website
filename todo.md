@@ -276,3 +276,4 @@
 ## PayLock payment-reference correction audit
 
 - [x] Audit the protected PayLock source and public DS&D site separately for payment or funds references; reconcile prior removal statements with exact surviving paths and report any source change that needs explicit owner authorization.
+- [x] Correct the PayLock audit to classify the optional provider-supplied commercial-gating signal around H0 as an adaptation policy, not as PayLock payment processing or a reason to alter protected Core source.
