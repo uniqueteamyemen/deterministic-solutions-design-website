@@ -193,13 +193,13 @@
 - [x] Strengthen global navigation, page transitions, service explanations, and related-work links so the experience operates as a complete institutional site rather than an isolated landing page.
 - [x] Connect evidence-backed SSDD, HC-CXL, PayLock, and Technical Library routes through clear contextual links while preserving their distinct readiness and execution-domain boundaries.
 - [x] Add or update focused automated tests for all material public-site changes, then verify responsive rendering, TypeScript, and the production build.
-- [ ] Prepare a final checkpoint and owner-review summary without publishing the website.
+- [x] Prepare a final checkpoint and owner-review summary without publishing the website.
 - [x] Review route-level code splitting and reduce the production bundle warning without weakening the existing page experience.
-- [ ] Prepare a private 72-hour PayLock and Yaqeen launch-readiness plan after the DS&D site verification is complete.
-- [ ] Complete a read-only readiness assessment of PayLock and Yaqeen for product, demonstration, documentation, and marketing needs.
-- [ ] Prepare launch materials and a final confirmation checklist without publishing, sending external messages, or enabling payments.
-- [ ] Create and maintain a private PayLock and Yaqeen launch-verification handoff file for continuity across future conversations.
-- [ ] Continue autonomous site implementation under the owner's standing authorization; preserve final owner review before publication and keep protected PayLock/Yaqeen/HC-CXL repositories read-only.
+- [x] Prepare a private 72-hour PayLock and Yaqeen launch-readiness plan after the DS&D site verification is complete.
+- [x] Complete a read-only readiness assessment of PayLock and Yaqeen for product, demonstration, documentation, and marketing needs.
+- [x] Prepare launch materials and a final confirmation checklist without publishing, sending external messages, or enabling payments.
+- [x] Create and maintain a private PayLock and Yaqeen launch-verification handoff file for continuity across future conversations.
+- [x] Continue autonomous site implementation under the owner's standing authorization; preserve final owner review before publication and keep protected PayLock/Yaqeen/HC-CXL repositories read-only.
 - [x] Verify the GitHub connector through a read-only retrieval, show a small fetched-data example, and summarize the available capabilities without modifying repositories.
 
 داخلياً: التفويض الشامل للموقع مؤكد؛ لا يشمل نشر الموقع أو الأفعال الخارجية أو تعديل المستودعات المحمية.
