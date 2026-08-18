@@ -287,3 +287,7 @@
 - [x] Prepare a final non-public release package with versioned release notes and a source-backed test-coverage report for the PayLock–Yaqeen path.
 - [x] Add the PayLock–Yaqeen joint release suite to Yaqeen CI, verify the remote workflow run, and preserve the existing production-key guard.
 - [x] Present the unpublished Yaqeen release notes and PayLock–Yaqeen coverage report for owner review before any public release.
+- [x] Audit the current Yaqeen source and deployment contract for the operator or provider credential that protects the reference platform; do not assume a key per end user, and treat an unimplemented multi-client key-management plane as optional policy rather than an invented launch requirement.
+- [x] Present the two approved operating paths—PayLock with a provider-owned delivery platform, or PayLock with Yaqeen as the provider’s reference platform—and identify only the credential decision that applies to the selected path; implement and test nothing new without owner approval.
+- [x] Update Yaqeen documentation and operational release notes to declare the permanent direct Yaqeen ↔ PayLock Core integration, reserve Adapter for external platforms only, and define the production API key as an instance-scoped server secret rather than an end-user credential.
+- [x] Add focused regression coverage showing Yaqeen rejects a production request without a valid server API key while never exposing that key to browser-facing code, then run the joint release suite and CI.
