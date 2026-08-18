@@ -188,14 +188,20 @@
 - [x] Create a review-only four-tier portfolio layout that distinguishes ready products, products in preparation, engineering-validation programmes, and research programmes.
 - [x] Draft precise English portfolio explanations and boundaries for PayLock, the Medicine Platform, SSDD, and HC-CXL before any public-page modification.
 - [x] Define American English as the launch language and propose a staged localization path, with Arabic considered first only after explicit approval and no Hindi or Chinese launch version without market evidence.
-- [ ] Integrate the owner-approved DS&D and PayLock visual marks into the site’s existing Signal / State identity, using production-ready web assets and preserving accessibility.
-- [ ] Refine the homepage so PayLock is the first commercial message, then present DS&D’s portfolio by readiness without redesigning the established landing-page identity.
-- [ ] Strengthen global navigation, page transitions, service explanations, and related-work links so the experience operates as a complete institutional site rather than an isolated landing page.
-- [ ] Connect evidence-backed SSDD, HC-CXL, PayLock, and Technical Library routes through clear contextual links while preserving their distinct readiness and execution-domain boundaries.
-- [ ] Add or update focused automated tests for all material public-site changes, then verify responsive rendering, TypeScript, and the production build.
+- [x] Integrate the owner-approved DS&D and PayLock visual marks into the site’s existing Signal / State identity, using production-ready web assets and preserving accessibility.
+- [x] Refine the homepage so PayLock is the first commercial message, then present DS&D’s portfolio by readiness without redesigning the established landing-page identity.
+- [x] Strengthen global navigation, page transitions, service explanations, and related-work links so the experience operates as a complete institutional site rather than an isolated landing page.
+- [x] Connect evidence-backed SSDD, HC-CXL, PayLock, and Technical Library routes through clear contextual links while preserving their distinct readiness and execution-domain boundaries.
+- [x] Add or update focused automated tests for all material public-site changes, then verify responsive rendering, TypeScript, and the production build.
 - [ ] Prepare a final checkpoint and owner-review summary without publishing the website.
-- [ ] Review route-level code splitting and reduce the production bundle warning without weakening the existing page experience.
+- [x] Review route-level code splitting and reduce the production bundle warning without weakening the existing page experience.
 - [ ] Prepare a private 72-hour PayLock and Yaqeen launch-readiness plan after the DS&D site verification is complete.
 - [ ] Complete a read-only readiness assessment of PayLock and Yaqeen for product, demonstration, documentation, and marketing needs.
 - [ ] Prepare launch materials and a final confirmation checklist without publishing, sending external messages, or enabling payments.
 - [ ] Create and maintain a private PayLock and Yaqeen launch-verification handoff file for continuity across future conversations.
+- [ ] Continue autonomous site implementation under the owner's standing authorization; preserve final owner review before publication and keep protected PayLock/Yaqeen/HC-CXL repositories read-only.
+- [x] Verify the GitHub connector through a read-only retrieval, show a small fetched-data example, and summarize the available capabilities without modifying repositories.
+
+داخلياً: التفويض الشامل للموقع مؤكد؛ لا يشمل نشر الموقع أو الأفعال الخارجية أو تعديل المستودعات المحمية.
+
+الخطوة التالية: استئناف تنفيذ ملفات الواجهة واختباراتها من نقطة الاستقرار c908cb7a.

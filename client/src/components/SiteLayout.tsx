@@ -13,67 +13,35 @@ export default function SiteLayout({ children }: { children: React.ReactNode }) 
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // Close menu on route change
-  useEffect(() => {
-    setMenuOpen(false);
-  }, [location]);
+  useEffect(() => setMenuOpen(false), [location]);
 
   const isHome = location === "/";
+  const closeMenu = () => setMenuOpen(false);
 
   return (
     <div className="site-shell">
       <header className={`topbar ${scrolled || !isHome ? "topbar-scrolled" : ""}`}>
-        <Link href="/" className="brand" aria-label="Deterministic Solutions & Design home">
+        <Link href="/" className="brand" aria-label="Deterministic Solutions and Design home">
           <img src="/manus-storage/deterministic-mark_ee0c8467.png" alt="" className="brand-mark" />
-          <span>DS<span className="brand-slash">/</span><span className="brand-full">Deterministic Solutions & Design</span></span>
+          <span>DS<span className="brand-slash">/</span><span className="brand-full">Deterministic Solutions &amp; Design</span></span>
         </Link>
-        
         <nav className="desktop-nav" aria-label="Primary navigation">
-          <Link href="/#continuum">Continuum</Link>
-          <Link href="/#projects">Projects</Link>
-          <Link href="/#evidence">Evidence</Link>
-          <Link href="/paylock">PayLock</Link>
+          <Link href="/#portfolio">Work</Link>
+          <Link href="/evidence">Evidence</Link>
+          <Link href="/technical-library">Library</Link>
+          <Link href="/about">About</Link>
+          <Link className="nav-paylock" href="/paylock">PayLock</Link>
         </nav>
-        
-        <a className="nav-cta" href="mailto:baker@deterministicsolutionsdesign.com">
-          Contact us <ArrowUpRight size={14} />
-        </a>
-        
-        <button 
-          className="menu-toggle" 
-          onClick={() => setMenuOpen(!menuOpen)} 
-          aria-label={menuOpen ? "Close navigation" : "Open navigation"}
-        >
-          {menuOpen ? <X size={20} /> : <Menu size={20} />}
-        </button>
-        
-        {menuOpen && (
-          <div className="mobile-menu">
-            <Link href="/#continuum">Continuum</Link>
-            <Link href="/#projects">Projects</Link>
-            <Link href="/#evidence">Evidence</Link>
-            <Link href="/paylock">PayLock</Link>
-            <a href="mailto:baker@deterministicsolutionsdesign.com">
-              Contact us <ArrowUpRight size={14} />
-            </a>
-          </div>
-        )}
+        <Link className="nav-cta" href="/contact">Contact <ArrowUpRight size={14} /></Link>
+        <button className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)} aria-label={menuOpen ? "Close navigation" : "Open navigation"}>{menuOpen ? <X size={20} /> : <Menu size={20} />}</button>
+        {menuOpen && <div className="mobile-menu"><Link href="/#portfolio" onClick={closeMenu}>Work</Link><Link href="/evidence" onClick={closeMenu}>Evidence</Link><Link href="/technical-library" onClick={closeMenu}>Technical library</Link><Link href="/about" onClick={closeMenu}>About DS&amp;D</Link><Link className="nav-paylock" href="/paylock" onClick={closeMenu}>Explore PayLock</Link><Link href="/contact" onClick={closeMenu}>Contact <ArrowUpRight size={14} /></Link></div>}
       </header>
-
       {children}
-
       <footer className="footer container">
-        <div className="footer-brand">
-          <img src="/manus-storage/deterministic-mark_ee0c8467.png" alt="" className="brand-mark" />
-          <span>Deterministic Solutions & Design LLC</span>
-        </div>
-        {!isHome && (
-          <Link href="/">Return to DS&D <ArrowUpRight size={12} /></Link>
-        )}
-        {isHome && (
-          <div>deterministicsolutionsdesign.com</div>
-        )}
-        <div>© 2026 DS&D. All rights reserved.</div>
+        <div className="footer-brand"><img src="/manus-storage/deterministic-mark_ee0c8467.png" alt="" className="brand-mark" /><span>Deterministic Solutions and Design LLC · New Mexico, USA</span></div>
+        {!isHome && <Link href="/">Return to DS&amp;D <ArrowUpRight size={12} /></Link>}
+        {isHome && <div>deterministicsolutionsdesign.com</div>}
+        <div>© 2026 DS&amp;D. All rights reserved.</div>
       </footer>
     </div>
   );

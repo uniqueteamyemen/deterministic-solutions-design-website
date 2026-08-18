@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { pageMap } from "./InstitutionalPage";
+import { nextLinks, pageMap } from "./InstitutionalPage";
 
 describe("institutional research evidence", () => {
   it("frames SSDD as a model-scoped pre-hardware record", () => {
@@ -28,5 +28,15 @@ describe("institutional research evidence", () => {
 
   it("names PayLock as the sole commercial offering in the institutional narrative", () => {
     expect(pageMap.about.sections[2]?.copy).toContain("PayLock is DS&D's commercial offering");
+  });
+
+  it("states DS&D's international LLC identity without exposing private registration details", () => {
+    expect(pageMap.about.intro).toContain("New Mexico, USA company");
+    expect(pageMap.about.intro).toContain("working internationally");
+    expect(pageMap.about.intro).not.toContain("1209 Mountain");
+  });
+
+  it("makes PayLock the first onward route from every institutional page", () => {
+    expect(Object.values(nextLinks).every((links) => links[0]?.href === "/paylock")).toBe(true);
   });
 });

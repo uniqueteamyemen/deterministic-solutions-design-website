@@ -1,5 +1,4 @@
-import { ArrowLeft, ArrowRight, ArrowUpRight, Check, ExternalLink, Layers3, Menu, ShieldCheck, X } from "lucide-react";
-import { useState } from "react";
+import { ArrowLeft, ArrowRight, ArrowUpRight, Check, ExternalLink, ShieldCheck } from "lucide-react";
 import SiteLayout from "@/components/SiteLayout";
 import InquiryForm from "@/components/InquiryForm";
 
@@ -118,10 +117,10 @@ export const pageMap: Record<PageKey, PageConfig> = {
     key: "about",
     eyebrow: "About / Deterministic Solutions & Design",
     title: <>Build with integrity.<br /><em>Leave a trace.</em></>,
-    intro: "Deterministic Solutions & Design is an engineering and research practice moving from foundational ideas to governed digital systems and practical products.",
+    intro: "Deterministic Solutions and Design LLC is a New Mexico, USA company working internationally on advanced software, computing technology, governed digital systems, and practical products.",
     label: "Institutional file",
     sections: [
-      { index: "01", title: "Research without isolation.", copy: "Ideas are useful when they can cross a boundary. Our continuum connects research, systems, and products so that architectural thinking can become a software surface and eventually an operating result.", tags: ["Research", "Systems", "Products"] },
+      { index: "01", title: "Research without isolation.", copy: "Ideas are useful when they can cross a boundary. Our continuum connects research, systems, and products so that architectural thinking can become a software surface and eventually an operating result for teams in the United States, Europe, and other international markets.", tags: ["Research", "Systems", "Products"] },
       { index: "02", title: "Systems without opacity.", copy: "We focus on operations where trust depends on being able to understand the state of a process. That means making the path, boundary, and proof visible to the people responsible for it.", tags: ["Determinism", "Observability", "Assurance"] },
       { index: "03", title: "One commercial offering, clear boundaries.", copy: "PayLock is DS&D's commercial offering. SSDD and HC-CXL are research and validation-stage initiatives that inform the practice's proof-first direction, without being represented as production dependencies of PayLock.", tags: ["PayLock", "Research stack", "Boundaries"] },
     ],
@@ -130,7 +129,7 @@ export const pageMap: Record<PageKey, PageConfig> = {
     key: "contact",
     eyebrow: "Contact / Integration / Partnership",
     title: <>Bring us the<br /><em>hard parts.</em></>,
-    intro: "For system architecture, product evaluation, research collaboration, or operational governance, start a conversation with the team behind Deterministic Solutions & Design.",
+    intro: "For system architecture, PayLock evaluation, research collaboration, or operational governance, start a conversation with the international team behind Deterministic Solutions and Design LLC.",
     label: "Conversation channel",
     sections: [
       { index: "01", title: "For infrastructure teams.", copy: "Discuss systems that need clearer boundaries, more observable transitions, or an operating layer that can make delivery defensible.", tags: ["Architecture", "Operations", "Governance"] },
@@ -140,18 +139,17 @@ export const pageMap: Record<PageKey, PageConfig> = {
   },
 };
 
-const nextLinks: Record<PageKey, { href: string; label: string }[]> = {
-  "hc-cxl": [{ href: "/ssdd", label: "Continue to SSDD" }, { href: "/technical-library#hc-cxl-reference", label: "Open technical library" }, { href: "/about", label: "Read about DS&D" }],
+export const nextLinks: Record<PageKey, { href: string; label: string }[]> = {
+  "hc-cxl": [{ href: "/paylock", label: "Explore PayLock, DS&D’s commercial product" }, { href: "/ssdd", label: "Continue to SSDD" }, { href: "/technical-library#hc-cxl-reference", label: "Open technical library" }],
   ssdd: [{ href: "/paylock", label: "See PayLock in production" }, { href: "/technical-library#ssdd-prehardware", label: "Open technical library" }, { href: "/evidence", label: "Inspect evidence" }],
-  evidence: [{ href: "/technical-library#ssdd-prehardware", label: "Open technical library" }, { href: "/paylock", label: "Inspect PayLock evidence" }, { href: "/contact", label: "Discuss an integration" }],
-  about: [{ href: "/hc-cxl", label: "Explore HC-CXL" }, { href: "/ssdd", label: "Explore SSDD" }],
-  contact: [{ href: "mailto:baker@deterministicsolutionsdesign.com", label: "Email the team" }, { href: "/paylock", label: "Review PayLock" }],
+  evidence: [{ href: "/paylock", label: "Inspect PayLock evidence" }, { href: "/technical-library#ssdd-prehardware", label: "Open technical library" }, { href: "/contact", label: "Discuss an integration" }],
+  about: [{ href: "/paylock", label: "Explore PayLock" }, { href: "/evidence", label: "Inspect the evidence register" }, { href: "/hc-cxl", label: "Explore HC-CXL research" }],
+  contact: [{ href: "/paylock", label: "Review PayLock" }, { href: "mailto:baker@deterministicsolutionsdesign.com", label: "Email the team" }],
 };
 
 export default function InstitutionalPage() {
   const path = window.location.pathname.replace(/^\//, "") as PageKey;
   const page = pageMap[path] ?? pageMap.about;
-  const [menuOpen, setMenuOpen] = useState(false);
   const links = nextLinks[page.key];
   const signalReadout = page.researchEvidence?.status ?? (page.key === "evidence" ? "EVIDENCE_READY" : "STATE_OBSERVABLE");
 

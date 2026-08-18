@@ -1,30 +1,32 @@
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
-import NotFound from "@/pages/NotFound";
+import { lazy, Suspense } from "react";
 import { Route, Switch } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
-import PayLock from "./pages/PayLock";
-import InstitutionalPage from "./pages/InstitutionalPage";
-import TechnicalLibrary from "./pages/TechnicalLibrary";
 
+const PayLock = lazy(() => import("./pages/PayLock"));
+const InstitutionalPage = lazy(() => import("./pages/InstitutionalPage"));
+const TechnicalLibrary = lazy(() => import("./pages/TechnicalLibrary"));
+const NotFound = lazy(() => import("./pages/NotFound"));
 
 function Router() {
   return (
-    <Switch>
-      <Route path={"/"} component={Home} />
-      <Route path={"/paylock"} component={PayLock} />
-      <Route path={"/hc-cxl"} component={InstitutionalPage} />
-      <Route path={"/ssdd"} component={InstitutionalPage} />
-      <Route path={"/evidence"} component={InstitutionalPage} />
-      <Route path={"/technical-library"} component={TechnicalLibrary} />
-      <Route path={"/about"} component={InstitutionalPage} />
-      <Route path={"/contact"} component={InstitutionalPage} />
-      <Route path={"/404"} component={NotFound} />
-      {/* Final fallback route */}
-      <Route component={NotFound} />
-    </Switch>
+    <Suspense fallback={<main className="route-loading" aria-live="polite">Loading DS&amp;D system file…</main>}>
+      <Switch>
+        <Route path={"/"} component={Home} />
+        <Route path={"/paylock"} component={PayLock} />
+        <Route path={"/hc-cxl"} component={InstitutionalPage} />
+        <Route path={"/ssdd"} component={InstitutionalPage} />
+        <Route path={"/evidence"} component={InstitutionalPage} />
+        <Route path={"/technical-library"} component={TechnicalLibrary} />
+        <Route path={"/about"} component={InstitutionalPage} />
+        <Route path={"/contact"} component={InstitutionalPage} />
+        <Route path={"/404"} component={NotFound} />
+        <Route component={NotFound} />
+      </Switch>
+    </Suspense>
   );
 }
 
