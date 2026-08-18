@@ -282,3 +282,6 @@
 - [x] Update Yaqeen README to describe its current PayLock reference-platform role accurately and remove any H2 reference.
 - [x] Reject the default `test-key` in Yaqeen live production mode while preserving explicit local-development behavior.
 - [x] Add and run a reproducible joint PayLock–Yaqeen release test covering the H0, provider acknowledgement, user unlock, H1, and replay-rejection path.
+- [x] Extend the joint release suite with provider-response delay, failed/aborted provider acknowledgement, and client-side connection interruption cases; preserve one-H1 and no-release-on-failure invariants.
+- [x] Push the expanded Yaqeen review branch and merge it into the repository main branch after all joint release checks pass.
+- [x] Prepare a final non-public release package with versioned release notes and a source-backed test-coverage report for the PayLock–Yaqeen path.
