@@ -20,6 +20,7 @@ export default function SiteLayout({ children }: { children: React.ReactNode }) 
 
   return (
     <div className="site-shell">
+      <a className="skip-link" href="#main-content">Skip to main content</a>
       <header className={`topbar ${scrolled || !isHome ? "topbar-scrolled" : ""}`}>
         <Link href="/" className="brand" aria-label="Deterministic Solutions and Design home">
           <img src="/manus-storage/dssd-lockup-dark-approved_b93ab250.png" alt="DS&D — Deterministic Solutions and Design" className="brand-lockup" />
@@ -35,7 +36,7 @@ export default function SiteLayout({ children }: { children: React.ReactNode }) 
         <button className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)} aria-label={menuOpen ? "Close navigation" : "Open navigation"}>{menuOpen ? <X size={20} /> : <Menu size={20} />}</button>
         {menuOpen && <div className="mobile-menu"><Link href="/#portfolio" onClick={closeMenu}>Work</Link><Link href="/evidence" onClick={closeMenu}>Evidence</Link><Link href="/technical-library" onClick={closeMenu}>Technical library</Link><Link href="/about" onClick={closeMenu}>About DS&amp;D</Link><Link className="nav-paylock" href="/paylock" onClick={closeMenu}>Explore PayLock</Link><Link href="/contact" onClick={closeMenu}>Contact <ArrowUpRight size={14} /></Link></div>}
       </header>
-      {children}
+      <div id="main-content" tabIndex={-1}>{children}</div>
       <footer className="footer container">
         <div className="footer-brand"><img src="/manus-storage/deterministic-mark_ee0c8467.png" alt="" className="brand-mark" /><span>Deterministic Solutions and Design LLC · New Mexico, USA</span></div>
         {!isHome && <Link href="/">Return to DS&amp;D <ArrowUpRight size={12} /></Link>}

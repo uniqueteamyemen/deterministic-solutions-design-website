@@ -245,10 +245,12 @@
 - [x] Extract approved DS&D and PayLock dark-theme logo assets from the owner-supplied brand board, publish the assets through managed storage, replace the remaining text-based mark treatment where appropriate, and verify desktop and mobile presentation.
 - [x] Restart the GitHub Releases-only webhook configuration from a clean browser form after securely rotating its signing secret, then validate exactly one signed test delivery with redacted evidence.
 - [x] Prepare an owner-facing, evidence-bounded PayLock test summary covering executed checks, exact outcomes, claim limits, open prerequisites, and the recommended next step.
-- [ ] Close the Envia account through the owner-authorized browser flow, delete locally retained Envia-only records, and preserve no Envia-specific evidence in the PayLock repository.
-- [ ] Independently validate the attached UX, trust, production-safety, accessibility, metadata, and test-suite observations before modifying only substantiated issues.
+- [ ] Owner will close the Envia account and request data deletion independently; after the owner confirms completion, delete only the local Envia-only navigation note while retaining the already committed historical access observation in the isolated evidence branch.
+- [x] Independently validate the attached UX, trust, production-safety, accessibility, metadata, and test-suite observations before modifying only substantiated issues.
 - [x] Validate the owner-supplied PayLock readiness assessment against primary source-audit and test records, then state whether evidence requires a launch delay or a narrowed launch scope.
 - [x] Audit all accessible GitHub repositories for retained Medusa, Vendure, or Stripe evidence of the complete provider event → Adapter → provider_ack → user_unlock → single H1 chain, and update the private launch matrix only where direct evidence supports it.
 - [x] Visually review every retained Medusa, Vendure, and Stripe evidence image before drawing any further integration conclusion, recording the exact proof and limitation of each image.
 - [x] Specify and implement, only after the visual review, an isolated Adapter experiment that authenticates a delivery-ready provider event and gates a concrete one-time digital resource before Core H1 issuance.
 - [x] Package the evidence-review and integration-boundary method as a reusable skill after the image-first review is complete.
+- [x] Fix substantiated site issues: correct internal evidence and project links, protect production error details, add accessible skip/focus and lifecycle semantics, define the outline button, and add launch metadata while removing the incomplete analytics placeholder.
+- [ ] Await the owner's explicit Shopify choice: provision a fresh development store, connect an existing store through the Management UI, or keep Shopify out of the current scope.

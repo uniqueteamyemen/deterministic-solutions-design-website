@@ -12,6 +12,11 @@ body { margin: 0; background: var(--graphite); color: var(--bone); font-family: 
 .route-loading { min-height:100vh; display:grid; place-items:center; background:var(--graphite); color:var(--lime); font:10px var(--mono); letter-spacing:.12em; text-transform:uppercase; }
 a { color: inherit; text-decoration: none; }
 button { font: inherit; }
+:where(a, button, input, textarea, select):focus-visible { outline:2px solid var(--lime); outline-offset:4px; }
+.skip-link { position:fixed; z-index:100; top:10px; left:16px; padding:10px 13px; background:var(--lime); color:var(--graphite); font:10px var(--mono); letter-spacing:.08em; text-transform:uppercase; transform:translateY(-180%); transition:transform .16s ease-out; }
+.skip-link:focus-visible { transform:translateY(0); }
+.button-outline { border:1px solid rgba(238,234,221,.42); color:var(--bone); background:transparent; }
+.button-outline:hover { color:var(--lime); border-color:var(--lime); transform:translateY(-2px); }
 .container { width: 100%; max-width: 1280px; margin: 0 auto; padding-left: clamp(24px, 5vw, 72px); padding-right: clamp(24px, 5vw, 72px); }
 .site-shell { overflow: hidden; background: radial-gradient(circle at 77% 7%, rgba(184,245,106,.035), transparent 26rem), var(--graphite); }
 .topbar { position: fixed; z-index: 20; top: 0; width: 100%; display: flex; align-items: center; gap: 32px; padding: 20px clamp(24px, 5vw, 72px); transition: .18s ease-out; }
