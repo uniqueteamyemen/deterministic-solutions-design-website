@@ -4,7 +4,8 @@ import { portfolio, primaryNavigation } from "./Home";
 describe("DS&D homepage portfolio framing", () => {
   it("keeps PayLock first as the commercial product", () => {
     expect(portfolio[0]).toMatchObject({ name: "PayLock", readiness: "Commercial product", href: "/paylock" });
-    expect(portfolio[0]?.copy).toContain("without holding funds or processing payments");
+    expect(portfolio[0]?.copy).toContain("guards H1 issuance");
+    expect(portfolio[0]?.copy).toContain("providers retain their own commercial and operating policies");
   });
 
   it("retains distinct validation and research boundaries", () => {

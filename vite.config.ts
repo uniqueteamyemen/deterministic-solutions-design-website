@@ -6,6 +6,7 @@ import path from "node:path";
 import { defineConfig, type Plugin, type ViteDevServer } from "vite";
 import { vitePluginManusRuntime } from "vite-plugin-manus-runtime";
 import express from "express";
+import { createGeminiDeliveryRouter } from "./server/geminiDelivery";
 import { createGitHubDeliveryRouter } from "./server/githubDelivery";
 import { createInquiryRouter } from "./server/inquiries";
 
@@ -230,12 +231,25 @@ function vitePluginGitHubDeliveryWebhook(): Plugin {
   };
 }
 
+function vitePluginGeminiDeliveryWebhook(): Plugin {
+  return {
+    name: "dsd-gemini-delivery-webhook",
+    configureServer(server: ViteDevServer) {
+      const webhookApp = express();
+      webhookApp.use(express.raw({ type: "application/json", limit: "64kb" }));
+      webhookApp.use("/", createGeminiDeliveryRouter());
+      server.middlewares.use("/api/test-webhooks/gemini", webhookApp);
+    },
+  };
+}
+
 const plugins = [
   react(),
   tailwindcss(),
   jsxLocPlugin(),
   vitePluginInquiryApi(),
   vitePluginGitHubDeliveryWebhook(),
+  vitePluginGeminiDeliveryWebhook(),
   vitePluginManusRuntime(),
   vitePluginManusDebugCollector(),
   vitePluginStorageProxy(),

@@ -2,6 +2,7 @@ import express from "express";
 import { createServer } from "http";
 import path from "path";
 import { fileURLToPath } from "url";
+import { createGeminiDeliveryRouter } from "./geminiDelivery";
 import { createGitHubDeliveryRouter } from "./githubDelivery";
 import { createInquiryRouter } from "./inquiries";
 
@@ -16,6 +17,11 @@ async function startServer() {
     "/api/test-webhooks/github",
     express.raw({ type: "application/json", limit: "64kb" }),
     createGitHubDeliveryRouter(),
+  );
+  app.use(
+    "/api/test-webhooks/gemini",
+    express.raw({ type: "application/json", limit: "64kb" }),
+    createGeminiDeliveryRouter(),
   );
   app.use("/api/inquiries", express.json({ limit: "16kb" }), createInquiryRouter());
 

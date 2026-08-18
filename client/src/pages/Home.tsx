@@ -16,7 +16,7 @@ export const primaryNavigation = [
 ];
 
 export const portfolio = [
-  { readiness: "Commercial product", name: "PayLock", title: "Execution governance for digital services and commerce.", copy: "A proof-and-governance layer that preserves a governed record of intent, execution signals, and outcome—without holding funds or processing payments.", tags: ["Commercial", "Non-custodial", "API-ready"], href: "/paylock", action: "Explore PayLock", tier: "commercial" },
+  { readiness: "Commercial product", name: "PayLock", title: "A deterministic proof path for digital-service delivery.", copy: "A protocol layer that binds a defined request, records the named evidence signals, and guards H1 issuance—while providers retain their own commercial and operating policies.", tags: ["Commercial", "Protocol", "API-ready"], href: "/paylock", action: "Explore PayLock", tier: "commercial" },
   { readiness: "Engineering validation", name: "SSDD", title: "Deterministic execution research with retained evidence.", copy: "A prototype and validation-stage architecture for observable, replayable execution. Its public records remain model-scoped and pre-hardware.", tags: ["Validation", "Replay", "Pre-hardware"], href: "/ssdd", action: "Inspect SSDD", tier: "validation" },
   { readiness: "Research programme", name: "HC-CXL", title: "A governed reference for future computing research.", copy: "A research rebuild that records an execution envelope and its assumptions, without claiming silicon qualification, CXL compliance, or production readiness.", tags: ["Research", "Reference model", "Bounded"], href: "/hc-cxl", action: "Explore HC-CXL", tier: "research" },
 ];
@@ -29,9 +29,9 @@ const evidence = [
 ];
 
 const states = [
-  { no: "01", label: "Intent", code: "H0.INTENT_FROZEN", copy: "Execution boundaries and agreed terms are frozen before a provider acts." },
-  { no: "02", label: "Execution", code: "PROVIDER_ACK", copy: "Provider events and transit metrics are tested against the frozen intent." },
-  { no: "03", label: "Proof", code: "H1.PROOF_GENERATED", copy: "A cryptographic execution record makes the resulting state inspectable." },
+  { no: "01", label: "Bound request", code: "H0.INTENT_FROZEN", copy: "The defined request is bound with a system-issued serial before the provider acts." },
+  { no: "02", label: "Readiness", code: "PROVIDER_ACK", copy: "A provider-specific integration maps an authenticated readiness event to the canonical signal." },
+  { no: "03", label: "Guarded proof", code: "H1.PROOF_ISSUED", copy: "Core issues H1 only when the currently named provider_ack and user_unlock gates are present." },
 ];
 
 export default function Home() {
