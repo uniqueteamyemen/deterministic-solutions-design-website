@@ -1,12 +1,21 @@
 import { Check, Send } from "lucide-react";
 import { useState, type FormEvent } from "react";
-import { inquirySchema, inquiryTopicLabels, inquiryTopics, type InquiryInput } from "@shared/inquiry";
+import {
+  inquiryReferralSourceDescriptions,
+  inquiryReferralSourceLabels,
+  inquiryReferralSources,
+  inquirySchema,
+  inquiryTopicLabels,
+  inquiryTopics,
+  type InquiryInput,
+} from "@shared/inquiry";
 
 const initialForm: InquiryInput = {
   fullName: "",
   email: "",
   organization: "",
   topic: "architecture",
+  referralSource: "direct",
   message: "",
   website: "",
 };
@@ -85,6 +94,22 @@ export default function InquiryForm() {
             <span>Context and intended outcome</span>
             <textarea value={form.message} onChange={(event) => update("message", event.target.value)} minLength={20} maxLength={4000} required />
           </label>
+          <fieldset className="referral-fieldset">
+            <legend>How did you find DS&amp;D?</legend>
+            <p className="referral-help">This optional campaign signal is stored only with this inquiry. It is not used to create a mailing list or a visitor profile.</p>
+            <div className="referral-options">
+              {inquiryReferralSources.map((source) => {
+                const isSelected = form.referralSource === source;
+                return (
+                  <label className={`referral-option${isSelected ? " is-selected" : ""}`} key={source}>
+                    <input type="radio" name="referralSource" value={source} checked={isSelected} onChange={(event) => update("referralSource", event.target.value)} />
+                    <span className="referral-option-copy"><b>{inquiryReferralSourceLabels[source]}</b><small>{inquiryReferralSourceDescriptions[source]}</small></span>
+                    <span className="referral-signal" aria-hidden="true"><i /><i /><i /></span>
+                  </label>
+                );
+              })}
+            </div>
+          </fieldset>
           <label className="inquiry-honeypot" aria-hidden="true">
             <span>Website</span>
             <input tabIndex={-1} autoComplete="off" value={form.website} onChange={(event) => update("website", event.target.value)} />

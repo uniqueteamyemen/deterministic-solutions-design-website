@@ -260,3 +260,7 @@
 - [x] Verified that no active Shopify implementation exists; preserved the bounded test proposal as the only concrete retained record and kept the intentionally empty scope free of deficit framing.
 - [x] Review the latest PayLock, Evidence, and Technical Library previews on desktop and mobile; record only substantiated usability, trust, and claim-boundary findings.
 - [x] Produce an evidence-led DS&D and PayLock go-to-market plan that defines target wedges, offers, conversion paths, launch experiments, measurement, and Manus-supported hosting/analytics operations without overstating readiness.
+- [x] Adopt the current PayLock commercial line consistently in launch-facing site copy without changing the evidence boundaries or payment exclusion.
+- [x] Add validated referral-source attribution to public inquiries, persist it safely, and provide an accessible, visually responsive source-selection experience.
+- [x] Review all nine accessible GitHub repositories read-only; summarize each repository's actual content, README quality, commercial role, relationship to the portfolio, and whether it merits bounded website inclusion.
+- [x] Expand the 90-day go-to-market plan into a first-phase execution playbook with immediate actions, responsible roles, decision gates, messaging assets, and measurable learning loops.

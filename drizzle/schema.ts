@@ -27,6 +27,7 @@ export type InsertUser = typeof users.$inferInsert;
 
 export const inquiryTopics = ["architecture", "paylock", "research", "partnership", "other"] as const;
 export const inquiryStatuses = ["new", "read", "closed"] as const;
+export const inquiryReferralSources = ["direct", "search", "linkedin", "github", "referral", "event", "publication", "other"] as const;
 
 /**
  * Public contact requests. The record stores only the information that a
@@ -41,6 +42,7 @@ export const inquiries = mysqlTable("inquiries", {
   topic: mysqlEnum("topic", inquiryTopics).notNull(),
   message: text("message").notNull(),
   sourcePath: varchar("sourcePath", { length: 255 }).notNull().default("/contact"),
+  referralSource: mysqlEnum("referralSource", inquiryReferralSources).notNull().default("direct"),
   status: mysqlEnum("status", inquiryStatuses).notNull().default("new"),
   createdAt: timestamp("createdAt").defaultNow().notNull(),
 });

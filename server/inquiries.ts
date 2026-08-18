@@ -50,8 +50,8 @@ export function createInquiryRouter(): Router {
 
     try {
       await getPool().execute(
-        `INSERT INTO inquiries (fullName, email, organization, topic, message, sourcePath)
-         VALUES (?, ?, ?, ?, ?, ?)`,
+        `INSERT INTO inquiries (fullName, email, organization, topic, message, sourcePath, referralSource)
+         VALUES (?, ?, ?, ?, ?, ?, ?)`,
         [
           parsed.data.fullName,
           parsed.data.email,
@@ -59,6 +59,7 @@ export function createInquiryRouter(): Router {
           parsed.data.topic,
           parsed.data.message,
           "/contact",
+          parsed.data.referralSource,
         ],
       );
       response.status(201).json({ accepted: true });
