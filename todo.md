@@ -205,3 +205,32 @@
 داخلياً: التفويض الشامل للموقع مؤكد؛ لا يشمل نشر الموقع أو الأفعال الخارجية أو تعديل المستودعات المحمية.
 
 الخطوة التالية: استئناف تنفيذ ملفات الواجهة واختباراتها من نقطة الاستقرار c908cb7a.
+
+- [x] Audit the Envia and DoorDash Drive sandbox documentation, account access, credentials, webhook requirements, and permitted test scope before sending any sandbox request.
+- [x] Record DoorDash Drive Sandbox as geographically blocked from the owner’s current browser location; preserve its documented test protocol for execution later from an account environment where the portal is permitted.
+- [x] Prioritize reachable Envia Sandbox and Yaqeen non-production validation until the DoorDash external-access gate is resolved.
+- [x] Research and compare geographically reachable provider sandboxes with officially documented lifecycle events, webhook delivery, authenticity controls, replay behavior, and non-production testing support; select only an evidence-bounded candidate for PayLock validation. Paddle Sandbox is the documented candidate; execution remains unperformed.
+- [x] Research free or no-cost test-mode providers with explicit sandbox status, signed webhooks, lifecycle simulation, and no required shipment, payment, or production-account activation; compare them against the PayLock test matrix. Paddle Sandbox is the preferred path, followed by Stripe Test Mode and Lemon Squeezy Test Mode.
+- [x] Inspect the owner’s accessible GitHub repositories in read-only mode to locate an existing sandbox-test application, webhook receiver, or documented configuration path before creating any new testing surface.
+- [x] Design an evidence-bounded PayLock and Yaqeen sandbox test matrix covering authentic provider events, webhook-origin checks, rejection before proof, successful proof, cancellation, retries, duplicates, and retained redacted traces.
+- [ ] Run only owner-authorized, non-production Envia and DoorDash Drive sandbox tests after prerequisites are verified; preserve raw evidence and failures without modifying protected source repositories.
+- [x] Verify that the DS&D and PayLock marks are visible, accessible, and correctly applied across the website’s primary and mobile routes; correct any confirmed presentation defect.
+- [x] Update the private PayLock and Yaqeen readiness assessment, launch plan, and handoff with sandbox results and remaining launch gates.
+- [x] Superseded by the owner’s explicit directive: use an isolated experiments-and-logs branch inside the existing PayLock repository instead of creating a separate private evidence repository.
+- [x] Create an isolated experiments-and-logs branch inside the existing PayLock repository, with no changes to its default branch or product-source files.
+- [x] Commit only redacted sandbox test definitions, logs, manifests, SHA-256 inventories, and review reports to the isolated PayLock evidence branch; never commit secrets, tokens, or private production data.
+- [x] Audit the public DS&D site for any remaining identity placeholders and replace only confirmed defects with the owner-approved DS&D and PayLock visual marks; no confirmed placeholder remains after desktop and mobile verification.
+- [x] Use the owner-supplied 18 August 2026 DS&D and PayLock brand board as the visual reference for any confirmed identity correction; retain accessible dark-theme variants and do not invent replacement marks.
+- [x] Preserve all currently observed sandbox-readiness outcomes, including blocked and not-executed cases, in the isolated PayLock evidence branch with a reproducible manifest and no secrets.
+- [x] Evaluate the GitHub signed-webhook route as a no-cost, external-event validation source for PayLock, limited to non-commercial repository events and a redacted evidence record.
+- [x] Evaluate Network International Developer Hub Sandbox and exclude it from PayLock technical validation: its payment-oriented events are outside PayLock's fulfilment-only boundary.
+- [x] Keep Sandbox Dubai in the commercial and regulatory exploration track only; do not present it as an API sandbox or use it as a launch prerequisite.
+- [x] Verify Shopify Dev Store webhook capabilities and account prerequisites as a merchant-platform event source for a later PayLock Adapter test.
+- [x] Verify Gemini service-event capabilities, callbacks, and authentication boundaries as a later asynchronous digital-service proof scenario for PayLock.
+- [x] Prepare and unit-test a GitHub signed-webhook receiver that validates origin, event type, and delivery uniqueness without initiating or processing any payment.
+- [x] Enforce the owner-corrected PayLock test boundary: accept only a provider-declared product-ready or fulfilment-complete signal; never collect, query, verify, infer, or govern payment status, payment data, or funds.
+- [x] Align the bounded evidence route with the approved lifecycle: request freeze and H0; provider-declared delivery readiness; one-time atomic client unlock; H1 only when Provider ACK and User Unlock are both present, with no execution on interruption or partial completion.
+- [x] Keep the Provider ACK and User Unlock gates as the currently documented minimum proof path, while making the Adapter/Dictionary policy extensible for additional owner-approved conditions rather than treating the two named gates as a closed list.
+- [ ] Prepare an evidence-bounded Shopify Dev Store fulfilment-webhook route after confirming an eligible development store and test event scope.
+- [ ] Prepare an evidence-bounded Gemini digital-service completion route only if an official signed callback or independently verifiable asynchronous completion signal is available.
+- [ ] Keep the Gemini external execution explicitly pending a real Google-issued test API key; do not generate, mock, commit, or present a locally invented key as a provider credential.

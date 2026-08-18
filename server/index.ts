@@ -2,6 +2,7 @@ import express from "express";
 import { createServer } from "http";
 import path from "path";
 import { fileURLToPath } from "url";
+import { createGitHubDeliveryRouter } from "./githubDelivery";
 import { createInquiryRouter } from "./inquiries";
 
 const __filename = fileURLToPath(import.meta.url);
@@ -11,6 +12,11 @@ async function startServer() {
   const app = express();
   const server = createServer(app);
 
+  app.use(
+    "/api/test-webhooks/github",
+    express.raw({ type: "application/json", limit: "64kb" }),
+    createGitHubDeliveryRouter(),
+  );
   app.use("/api/inquiries", express.json({ limit: "16kb" }), createInquiryRouter());
 
   // Serve static files from dist/public in production

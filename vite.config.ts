@@ -6,6 +6,7 @@ import path from "node:path";
 import { defineConfig, type Plugin, type ViteDevServer } from "vite";
 import { vitePluginManusRuntime } from "vite-plugin-manus-runtime";
 import express from "express";
+import { createGitHubDeliveryRouter } from "./server/githubDelivery";
 import { createInquiryRouter } from "./server/inquiries";
 
 // =============================================================================
@@ -217,7 +218,28 @@ function vitePluginInquiryApi(): Plugin {
   };
 }
 
-const plugins = [react(), tailwindcss(), jsxLocPlugin(), vitePluginInquiryApi(), vitePluginManusRuntime(), vitePluginManusDebugCollector(), vitePluginStorageProxy()];
+function vitePluginGitHubDeliveryWebhook(): Plugin {
+  return {
+    name: "dsd-github-delivery-webhook",
+    configureServer(server: ViteDevServer) {
+      const webhookApp = express();
+      webhookApp.use(express.raw({ type: "application/json", limit: "64kb" }));
+      webhookApp.use("/", createGitHubDeliveryRouter());
+      server.middlewares.use("/api/test-webhooks/github", webhookApp);
+    },
+  };
+}
+
+const plugins = [
+  react(),
+  tailwindcss(),
+  jsxLocPlugin(),
+  vitePluginInquiryApi(),
+  vitePluginGitHubDeliveryWebhook(),
+  vitePluginManusRuntime(),
+  vitePluginManusDebugCollector(),
+  vitePluginStorageProxy(),
+];
 
 export default defineConfig({
   plugins,
