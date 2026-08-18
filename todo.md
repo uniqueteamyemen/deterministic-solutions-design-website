@@ -277,3 +277,5 @@
 
 - [x] Audit the protected PayLock source and public DS&D site separately for payment or funds references; reconcile prior removal statements with exact surviving paths and report any source change that needs explicit owner authorization.
 - [x] Correct the PayLock audit to classify the optional provider-supplied commercial-gating signal around H0 as an adaptation policy, not as PayLock payment processing or a reason to alter protected Core source.
+- [x] Conduct a source-only review for any active money/funds handling and for all H2 references; classify each finding as Core invariant, optional provider adaptation, legacy artifact, documentation, or test-only without modifying protected files.
+- [x] Extend the source-only review to Yaqeen as the PayLock reference platform for small and medium providers; trace its integration assumptions, H2 references, optional provider policies, and commercial-launch relevance without modifying protected files.
