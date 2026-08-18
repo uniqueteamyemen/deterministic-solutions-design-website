@@ -169,7 +169,7 @@
 - [x] Define PayLock as an independent commercial proof-and-governance layer, with paid AI/API services as a first application rather than its fixed identity, without positioning SSDD as a prerequisite in public product messaging.
 - [x] Read and inventory the PayLock Core, Yaqeen, Dictionary, and Adapter repositories, plus any accessible local source materials, without modifying them.
 - [x] Produce a source-grounded architecture and API-proof map that distinguishes implemented capabilities, evidence, assumptions, and commercial gaps.
-- [ ] Present a staged PayLock commercial readiness and launch roadmap for owner approval before changing repositories, product claims, or public site copy.
+- [x] Present a staged PayLock commercial readiness and launch roadmap for owner approval before changing repositories, product claims, or public site copy.
 - [x] Enforce the owner-approved read scope: PayLock Core, Yaqeen, Dictionary, and Adapter only; exclude all other repositories and materials unless separately authorized.
 - [x] Document and verify the two owner-approved deployment cases: a merchant-owned execution platform connected through an Adapter, or optional Yaqeen as a visible reference platform when the merchant lacks one.
 - [x] Verify the two deployment cases against the designated PayLock Core, Yaqeen, Dictionary, and Adapter source materials, recording evidence for Core independence from Yaqeen and the exact Adapter and Dictionary roles.
