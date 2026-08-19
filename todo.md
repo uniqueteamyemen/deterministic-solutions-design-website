@@ -335,3 +335,4 @@
 - [x] Extract, preserve, and provide the exact retained output of the successful isolated Railway live-verification harness; keep `/healthz` explicitly separate from delivery-chain proof.
 - [x] Diagnose and correct the managed-preview Vite HMR WebSocket connection failure without changing public site behavior, then verify the preview console is clean.
 - [x] Replace the ineffective HMR-disable fallback with an explicit managed-preview HTML transform that removes the unusable Vite HMR client; restart and verify a fresh cache-busted preview connection without a WebSocket error.
+- [x] Re-verify the user-reported Vite WebSocket error against a new public preview document and latest browser log; distinguish a cached 17:03 session from any active post-fix injection, and correct only a confirmed active defect. Added no-store handling for HTML preview responses so an earlier document cannot be reused.

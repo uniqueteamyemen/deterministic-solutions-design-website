@@ -173,6 +173,20 @@ function vitePluginManagedPreviewWithoutHmrClient(): Plugin {
   };
 }
 
+function vitePluginManagedPreviewNoStore(): Plugin {
+  return {
+    name: "managed-preview-no-store",
+    configureServer(server: ViteDevServer) {
+      server.middlewares.use((req, res, next) => {
+        if (req.headers.accept?.includes("text/html")) {
+          res.setHeader("Cache-Control", "no-store, max-age=0");
+        }
+        next();
+      });
+    },
+  };
+}
+
 function vitePluginStorageProxy(): Plugin {
   return {
     name: "manus-storage-proxy",
@@ -273,6 +287,7 @@ const plugins = [
   vitePluginManusDebugCollector(),
   vitePluginStorageProxy(),
   vitePluginManagedPreviewWithoutHmrClient(),
+  vitePluginManagedPreviewNoStore(),
 ];
 
 export default defineConfig({
