@@ -187,6 +187,75 @@ function vitePluginManagedPreviewNoStore(): Plugin {
   };
 }
 
+/**
+ * Free development-only automation for environments where upgraded WebSocket
+ * connections are unavailable. Vite observes source changes; the browser polls
+ * the current revision over ordinary HTTPS and performs one safe reload.
+ */
+function vitePluginDevelopmentRefreshAgent(): Plugin {
+  let revision = 0;
+  const instance = `${Date.now()}-${Math.random().toString(36).slice(2)}`;
+
+  const responsePayload = () => JSON.stringify({ revision, instance });
+  const respond = (response: import("node:http").ServerResponse) => {
+    if (response.writableEnded) return;
+    response.writeHead(200, {
+      "Content-Type": "application/json; charset=utf-8",
+      "Cache-Control": "no-store, max-age=0",
+    });
+    response.end(responsePayload());
+  };
+
+  return {
+    name: "development-refresh-agent",
+    apply: "serve",
+    watchChange(id) {
+      const sourceFile = /\.(?:[cm]?[jt]sx?|css|html|json)$/u.test(id);
+      if (!sourceFile || id.includes("/node_modules/")) return;
+      revision += 1;
+    },
+    configureServer(server: ViteDevServer) {
+      // The managed proxy may inject Vite's client after application HTML
+      // transforms. If requested, provide a harmless compatibility module that
+      // never opens a WebSocket; the refresh agent below handles updates.
+      server.middlewares.use("/@vite/client", (req, res, next) => {
+        if (req.method !== "GET" && req.method !== "HEAD") return next();
+        res.writeHead(200, {
+          "Content-Type": "application/javascript; charset=utf-8",
+          "Cache-Control": "no-store, max-age=0",
+        });
+        if (req.method === "HEAD") return res.end();
+        return res.end(`
+export const createHotContext = () => ({
+  accept() {}, dispose() {}, prune() {}, decline() {}, invalidate() {},
+  on() {}, off() {}, send() {}, data: {}
+});
+export const injectQuery = (url) => url;
+export const updateStyle = (id, content) => {
+  const selector = 'style[data-vite-dev-id="' + CSS.escape(id) + '"]';
+  let style = document.querySelector(selector);
+  if (!style) {
+    style = document.createElement('style');
+    style.setAttribute('data-vite-dev-id', id);
+    document.head.appendChild(style);
+  }
+  style.textContent = content;
+};
+export const removeStyle = (id) => {
+  document.querySelector('style[data-vite-dev-id="' + CSS.escape(id) + '"]')?.remove();
+};
+`);
+      });
+
+      server.middlewares.use("/__manus__/dev-refresh", (req, res, next) => {
+        if (req.method !== "GET") return next();
+
+        respond(res);
+      });
+    },
+  };
+}
+
 function vitePluginStorageProxy(): Plugin {
   return {
     name: "manus-storage-proxy",
@@ -288,6 +357,7 @@ const plugins = [
   vitePluginStorageProxy(),
   vitePluginManagedPreviewWithoutHmrClient(),
   vitePluginManagedPreviewNoStore(),
+  vitePluginDevelopmentRefreshAgent(),
 ];
 
 export default defineConfig({
