@@ -274,17 +274,10 @@ export default defineConfig({
     port: 3000,
     strictPort: false, // Will find next available port if 3000 is busy
     host: true,
-    // The managed preview terminates TLS on its public origin and forwards to
-    // Vite on port 3000. Pin the browser-side HMR transport to that public WSS
-    // endpoint so Vite does not fall back to an unreachable localhost socket.
-    hmr: {
-      protocol: "wss",
-      clientPort: 443,
-      // The public TLS proxy can take longer than a local loopback hop when a
-      // preview session is restored. Keep the managed-origin WSS attempt alive
-      // long enough to avoid a premature close-before-open retry.
-      timeout: 60_000,
-    },
+    // The managed preview proxy currently closes every Vite WebSocket before
+    // its handshake completes. Disable development-only HMR rather than leave
+    // visitors with repeated console errors; page refresh remains available.
+    hmr: false,
     allowedHosts: [
       ".manuspre.computer",
       ".manus.computer",

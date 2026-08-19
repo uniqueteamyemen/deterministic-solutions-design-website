@@ -332,3 +332,5 @@
 - [x] Verify the approved GitHub → Railway Yaqeen release is running, confirm health/Redis/private Core readiness, execute the existing live PayLock–Yaqeen release path and approved edge cases, and verify the existing Checkly status without changing code, Core, or secrets.
 - [x] Create and run an external live-verification harness with isolated data inside the deployed Yaqeen environment for H0 → provider_ack → user_unlock → one H1 → verification → replay rejection, preserving the existing local release test and approved source unchanged.
 - [x] Diagnose the live Yaqeen-to-Core HTTP 502 from Core logs and Railway private-link variables; repair only verified runtime configuration defects—Core Redis reference refresh and Yaqeen private-Core port correction—then rerun the same isolated harness successfully.
+- [x] Extract, preserve, and provide the exact retained output of the successful isolated Railway live-verification harness; keep `/healthz` explicitly separate from delivery-chain proof.
+- [x] Diagnose and correct the managed-preview Vite HMR WebSocket connection failure without changing public site behavior, then verify the preview console is clean.
