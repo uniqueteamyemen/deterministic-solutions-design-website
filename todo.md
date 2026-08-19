@@ -311,16 +311,17 @@
 - [ ] Design and implement an optional, provider-configured Webhook layer with signed envelopes, replay protection, bounded retries, failure preservation, and explicit event semantics; keep it disabled by default and non-authoritative for H1.
 - [ ] Add provider-facing disclosure that optional Webhooks do not create a payment, refund, custody, or financial-verification responsibility for PayLock or Yaqeen.
 - [ ] Add clear provider and user notifications that a delivery session is constrained and produces an encrypted, timestamped technical event record; keep its meaning limited to technical delivery evidence and preserve failures without exposing H0.
-- [ ] Complete production Redis provisioning and inject the approved durable connection into the first DS&D-operated provider-isolated Yaqeen stack.
-- [ ] Apply the complete non-test Yaqeen production-secret contract and private Core-network configuration in the deployment environment.
-- [ ] Replace the crashed Railway deployment with the prepared release configuration, verify the non-sensitive health endpoint, and retain an operator recovery runbook without publishing the DS&D website.
-- [ ] Use the owner-authorized Railway and GitHub access to provision Redis, apply Yaqeen production configuration, and redeploy the prepared release without touching PayLock Core.
+- [x] Complete production Redis provisioning and inject the approved durable connection into the first DS&D-operated provider-isolated Yaqeen stack.
+- [x] Apply the complete non-test Yaqeen production-secret contract and private Core-network configuration in the deployment environment.
+- [x] Replace the crashed Railway deployment with the prepared release configuration, verify the non-sensitive health endpoint, and retain an operator recovery runbook without publishing the DS&D website.
+- [x] Use the owner-authorized Railway and GitHub access to provision Redis, apply Yaqeen production configuration, and redeploy the prepared release without touching PayLock Core.
 - [x] Execute and retain a pre-launch hardening suite covering configuration rejection, Redis durability, private-boundary enforcement, opaque-ticket concurrency, delivery-failure preservation, Webhook replay/retry behavior, and the direct PayLock lifecycle before any public launch claim.
 - [ ] Configure the owner-confirmed separate Railway Yaqeen and PayLock Core projects as a private-network pair, keeping their GitHub-linked releases synchronized and their secrets server-only.
 - [ ] Rename and configure the Railway Yaqeen project as the unified Yaqeen + PayLock delivery service while preserving the separate PayLock project for external-platform use and its own GitHub-linked release path.
 - [ ] Treat GitHub as the sole release source for Yaqeen; verify the connected Railway, Docker Hub, and Checkly paths consume the approved GitHub revision rather than unmanaged local changes.
-- [ ] Deploy an unmodified GitHub-sourced PayLock Core service inside the Yaqeen + PayLock Railway project because Railway private networking is project-scoped; retain the separate PAYLOCK project for external-platform operation.
+- [x] Deploy an unmodified GitHub-sourced PayLock Core service inside the Yaqeen + PayLock Railway project because Railway private networking is project-scoped; retain the separate PAYLOCK project for external-platform operation.
 - [ ] Inventory `uniqueteamyemen` Docker Hub repositories and the owner-provided Checkly status page, then align only verified images and health monitoring with the approved GitHub release lineage.
-- [ ] Store unified-stack credentials only as Railway secret variables, expose them solely to the Yaqeen and Core runtime processes, and remove temporary local generation material after secret storage is verified.
+- [x] Store unified-stack credentials only as Railway secret variables, expose them solely to the Yaqeen and Core runtime processes, and remove temporary local generation material after secret storage is verified.
 - [x] Complete one focused Railway launch-readiness attempt without repeated exploratory changes; either verify Core/Yaqeen/Redis health or record the exact platform block and stop.
 - [x] Run the focused Yaqeen pre-launch hardening gate from GitHub Actions alongside the established joint release suite.
+- [x] Correct the production Yaqeen Railway environment contract identified in deployment logs, then perform one documented health verification without altering PayLock Core.
