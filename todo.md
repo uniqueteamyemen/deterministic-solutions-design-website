@@ -327,3 +327,8 @@
 - [x] Correct the production Yaqeen Railway environment contract identified in deployment logs, then perform one documented health verification without altering PayLock Core.
 
 - [x] Build and push a Docker image for the exact verified Yaqeen release commit to Docker Hub without changing source code or Railway configuration, then verify and record the exact image tag and commit SHA.
+
+- [x] Superseded by the owner-approved production path: retain GitHub → Railway; Docker Hub remains an independent verified artifact and is not used as Railway's deployment source.
+- [x] Verify the approved GitHub → Railway Yaqeen release is running, confirm health/Redis/private Core readiness, execute the existing live PayLock–Yaqeen release path and approved edge cases, and verify the existing Checkly status without changing code, Core, or secrets.
+- [x] Create and run an external live-verification harness with isolated data inside the deployed Yaqeen environment for H0 → provider_ack → user_unlock → one H1 → verification → replay rejection, preserving the existing local release test and approved source unchanged.
+- [x] Diagnose the live Yaqeen-to-Core HTTP 502 from Core logs and Railway private-link variables; repair only verified runtime configuration defects—Core Redis reference refresh and Yaqeen private-Core port correction—then rerun the same isolated harness successfully.
