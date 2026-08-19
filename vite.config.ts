@@ -154,6 +154,25 @@ function vitePluginManusDebugCollector(): Plugin {
   };
 }
 
+/**
+ * The managed preview proxy serves HTTP but currently rejects Vite's upgraded
+ * WebSocket handshake. Vite injects `/@vite/client` even when its socket server
+ * is disabled, so remove that development-only client after all other HTML
+ * transforms. The application modules still load normally; refresh replaces
+ * unavailable HMR during preview. Production HTML never contains this script.
+ */
+function vitePluginManagedPreviewWithoutHmrClient(): Plugin {
+  return {
+    name: "managed-preview-without-hmr-client",
+    transformIndexHtml: {
+      order: "post",
+      handler(html) {
+        return html.replace(/\s*<script type="module" src="\/@vite\/client"><\/script>\s*/u, "\n");
+      },
+    },
+  };
+}
+
 function vitePluginStorageProxy(): Plugin {
   return {
     name: "manus-storage-proxy",
@@ -253,6 +272,7 @@ const plugins = [
   vitePluginManusRuntime(),
   vitePluginManusDebugCollector(),
   vitePluginStorageProxy(),
+  vitePluginManagedPreviewWithoutHmrClient(),
 ];
 
 export default defineConfig({
@@ -274,10 +294,11 @@ export default defineConfig({
     port: 3000,
     strictPort: false, // Will find next available port if 3000 is busy
     host: true,
-    // The managed preview proxy currently closes every Vite WebSocket before
-    // its handshake completes. Disable development-only HMR rather than leave
-    // visitors with repeated console errors; page refresh remains available.
-    hmr: false,
+    // The managed preview proxy closes Vite's WebSocket before its handshake
+    // completes. `hmr: false` still injects the Vite client, so explicitly
+    // disable the development-only WebSocket transport instead. Manual refresh
+    // remains available; this does not affect the production build.
+    ws: false,
     allowedHosts: [
       ".manuspre.computer",
       ".manus.computer",
