@@ -342,3 +342,4 @@
 - [ ] Set the DS&D website repository description and focused topics on GitHub.
 - [ ] Add a GitHub Actions workflow that installs dependencies, runs the website test suite, and builds the production bundle on pushes and pull requests.
 - [ ] Protect the `main` branch with the completed CI check while retaining the owner’s ability to administer the repository.
+- [ ] Make the public GitHub Actions suite deterministic without committing production credentials, while retaining live credential validation for credentialed environments.

@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 
 describe("Gemini test credential", () => {
-  it(
+  it.skipIf(!process.env.GEMINI_API_KEY)(
     "validates the configured Google-issued key through the official models endpoint without sending content",
     async () => {
       const apiKey = process.env.GEMINI_API_KEY;
