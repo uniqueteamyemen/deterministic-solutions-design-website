@@ -339,7 +339,8 @@
 - [x] Isolate and replace the active `/@vite/client` delivery path evidenced by the 17:11 public-preview error with a CSS-compatible, WebSocket-free development module; verify the refresh endpoint and current browser logs show no new WebSocket failure.
 - [x] Build a free local development automation agent that observes source changes, reports preview/test health, and sends a browser-safe refresh signal without WebSocket-based HMR. It uses bounded HTTPS polling, has no external dependencies, and is documented in `DEVELOPMENT.md`.
 - [x] Create a new private GitHub repository for the DS&D website, push the current source and development-operation documentation, and verify the remote contents without publishing the site. Repository: `uniqueteamyemen/deterministic-solutions-design-website` at commit `10b6cc5`.
-- [ ] Set the DS&D website repository description and focused topics on GitHub.
-- [ ] Add a GitHub Actions workflow that installs dependencies, runs the website test suite, and builds the production bundle on pushes and pull requests.
+- [x] Set the DS&D website repository description and focused topics on GitHub.
+- [x] Add a GitHub Actions workflow that installs dependencies, runs the website test suite, and builds the production bundle on pushes and pull requests.
 - [ ] Protect the `main` branch with the completed CI check while retaining the owner’s ability to administer the repository.
-- [ ] Make the public GitHub Actions suite deterministic without committing production credentials, while retaining live credential validation for credentialed environments.
+- [x] Make the public GitHub Actions suite deterministic without committing production credentials, while retaining live credential validation for credentialed environments.
+- [x] Confirm the current GitHub plan blocks branch protection for this private repository; retain private visibility and record the explicit platform requirement rather than weakening repository privacy.
