@@ -10,6 +10,9 @@ type PageConfig = {
   title: React.ReactNode;
   intro: string;
   label: string;
+  fieldKicker?: string;
+  fieldTitle?: React.ReactNode;
+  fieldCopy?: string;
   sections: { index: string; title: string; copy: string; tags: string[] }[];
   visual?: { src: string; alt: string; caption: string };
   researchEvidence?: {
@@ -40,6 +43,9 @@ export const pageMap: Record<PageKey, PageConfig> = {
     title: <>Govern the execution<br /><em>envelope.</em></>,
     intro: "HC-CXL v2.1R is a research rebuild that turns a documented design lineage into a testable reference layer for amplitude, timing, stability, and throughput governance. Its constants are reference assumptions pending empirical validation—not claims of silicon qualification.",
     label: "Research rebuild",
+    fieldKicker: "Reference assumptions, explicitly framed",
+    fieldTitle: <>Inspect the<br /><em>reference envelope.</em></>,
+    fieldCopy: "The value of a research record lies in its stated assumptions, its test path, and the limits that travel with both.",
     sections: [
       { index: "01", title: "A frozen lineage, rebuilt visibly.", copy: "The v2.1 failure analysis records governance, lineage, reproducibility, and publication-pipeline failures. v2.1R therefore begins from a frozen v2.0 baseline and makes the rebuild boundary explicit rather than concealing it.", tags: ["Governance lineage", "Rebuild", "Reproducibility"] },
       { index: "02", title: "A bounded reference envelope.", copy: "The physical-justification record specifies a 0.05 amplitude envelope, a 73 ps decision bound, a 50 ns metastability gap, and a five-stage, seven-engine operational matrix. These are documented reference assumptions and recomputation rules, pending empirical validation in the defined domain.", tags: ["Timing", "Stability", "Throughput"] },
@@ -71,6 +77,9 @@ export const pageMap: Record<PageKey, PageConfig> = {
     title: <>Make execution<br /><em>replayable.</em></>,
     intro: "SSDD is a prototype- and validation-stage architecture for deterministic, observable execution. Its technical record defines constrained arithmetic, canonical ordering, a sidecar-and-furnace topology, and a ledgered replay path for controlled research scenarios.",
     label: "Validation file",
+    fieldKicker: "Deterministic state, made inspectable",
+    fieldTitle: <>Trace the<br /><em>replayable path.</em></>,
+    fieldCopy: "This file follows the execution record from constrained inputs to a reproducible result, with the research boundary visible at every stage.",
     sections: [
       { index: "01", title: "A canonical state path.", copy: "The implementation record describes Q32.32 fixed-point arithmetic, cycle-based logical time, canonical serialization, deterministic seed derivation, and sidecar ordering by structural dimension, enterprise type, and sequence. The aim is an execution path that can be inspected and replayed.", tags: ["Q32.32", "Canonical order", "Replay"] },
       { index: "02", title: "Sidecar, furnaces, ledger.", copy: "The architecture maps compute nodes through a Sovereign Sidecar, aggregation furnaces, a fusion furnace, and a cryptographic ledger. These are documented prototype concepts for bounded processing and evidence-bearing state, not an announced production runtime.", tags: ["Sovereign Sidecar", "Furnaces", "Ledger"] },
@@ -100,6 +109,9 @@ export const pageMap: Record<PageKey, PageConfig> = {
     title: <>The work is real<br /><em>when it can be inspected.</em></>,
     intro: "Evidence is not a decorative section of the site. It is the operating discipline behind the work: records, demonstrations, source material, and explicit boundaries that let another person challenge what was built—and distinguish a product from a research result.",
     label: "Evidence register",
+    fieldKicker: "Inspection before interpretation",
+    fieldTitle: <>Read the<br /><em>evidence boundary.</em></>,
+    fieldCopy: "Each record distinguishes an observed result from the surrounding assumptions, so the visitor can judge its relevance without inheriting an inflated claim.",
     sections: [
       { index: "01", title: "Simulation and reference records.", copy: "The SSDD evidence now separates a fixed-latency gem5 fixture from a retained pre-hardware reference record. The latter contains 128 randomized-order cases, independent 100-epoch full-chain replay, four modeled fault-containment cases, and four ledger-forensic checks. Both preserve their stated model boundaries.", tags: ["gem5", "Replay", "Model-scoped"] },
       { index: "02", title: "Research source files.", copy: "Specifications, implementation guidance, physical-justification notes, and failure analyses define the intended layers and their current boundaries. They document research assumptions; they do not substitute for independent validation.", tags: ["Specifications", "Lineage", "Research"] },
@@ -151,6 +163,9 @@ export const pageMap: Record<PageKey, PageConfig> = {
     title: <>Build with integrity.<br /><em>Leave a trace.</em></>,
     intro: "Deterministic Solutions and Design LLC is a New Mexico, USA company working internationally on advanced software, computing technology, governed digital systems, and practical products.",
     label: "Institutional file",
+    fieldKicker: "A practice with explicit boundaries",
+    fieldTitle: <>Understand the<br /><em>work in context.</em></>,
+    fieldCopy: "The office connects research, systems, and products without flattening their different readiness states or evidence requirements.",
     sections: [
       { index: "01", title: "Research without isolation.", copy: "Ideas are useful when they can cross a boundary. Our continuum connects research, systems, and products so that architectural thinking can become a software surface and eventually an operating result for teams in the United States, Europe, and other international markets.", tags: ["Research", "Systems", "Products"] },
       { index: "02", title: "Systems without opacity.", copy: "We focus on operations where trust depends on being able to understand the state of a process. That means making the path, boundary, and proof visible to the people responsible for it.", tags: ["Determinism", "Observability", "Assurance"] },
@@ -163,6 +178,9 @@ export const pageMap: Record<PageKey, PageConfig> = {
     title: <>Bring us the<br /><em>hard parts.</em></>,
     intro: "For system architecture, PayLock evaluation, research collaboration, or operational governance, start a conversation with the international team behind Deterministic Solutions and Design LLC.",
     label: "Conversation channel",
+    fieldKicker: "A focused conversation, not a generic pitch",
+    fieldTitle: <>Start with<br /><em>the constraint.</em></>,
+    fieldCopy: "The most useful first conversation names the operating boundary, the decision that matters, and the evidence the team needs to retain.",
     sections: [
       { index: "01", title: "For infrastructure teams.", copy: "Discuss systems that need clearer boundaries, more observable transitions, or an operating layer that can make delivery defensible.", tags: ["Architecture", "Operations", "Governance"] },
       { index: "02", title: "For product teams.", copy: "Explore how PayLock can sit above existing commerce, API, or SaaS infrastructure to create a governed record of execution.", tags: ["PayLock", "APIs", "Commerce"] },
@@ -217,7 +235,7 @@ export default function InstitutionalPage() {
         <section className="institutional-field section" id="field">
           <div className="container">
             <div className="section-index">01 <span>/</span> {page.label}</div>
-            <div className="institutional-field-head"><div><div className="section-kicker">A governed path from idea to operation</div><h2>Make the layer<br /><em>visible.</em></h2></div><p>Each page in the DS&D system uses the same principle: name the boundary, expose the state, and leave a readable path for the next person.</p></div>
+            <div className="institutional-field-head"><div><div className="section-kicker">{page.fieldKicker ?? "A governed path from idea to operation"}</div><h2>{page.fieldTitle ?? <>Make the layer<br /><em>visible.</em></>}</h2></div><p>{page.fieldCopy ?? "Each page in the DS&D system uses the same principle: name the boundary, expose the state, and leave a readable path for the next person."}</p></div>
             <div className="institutional-sections">
               {page.sections.map((section) => (
                 <article key={section.index} className="institutional-card">

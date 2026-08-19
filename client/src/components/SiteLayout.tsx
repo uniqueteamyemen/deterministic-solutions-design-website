@@ -33,8 +33,8 @@ export default function SiteLayout({ children }: { children: React.ReactNode }) 
           <Link className="nav-paylock" href="/paylock">PayLock</Link>
         </nav>
         <Link className="nav-cta" href="/contact">Contact <ArrowUpRight size={14} /></Link>
-        <button className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)} aria-label={menuOpen ? "Close navigation" : "Open navigation"}>{menuOpen ? <X size={20} /> : <Menu size={20} />}</button>
-        {menuOpen && <div className="mobile-menu"><Link href="/#portfolio" onClick={closeMenu}>Work</Link><Link href="/evidence" onClick={closeMenu}>Evidence</Link><Link href="/technical-library" onClick={closeMenu}>Technical library</Link><Link href="/about" onClick={closeMenu}>About DS&amp;D</Link><Link className="nav-paylock" href="/paylock" onClick={closeMenu}>Explore PayLock</Link><Link href="/contact" onClick={closeMenu}>Contact <ArrowUpRight size={14} /></Link></div>}
+        <button className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)} aria-label={menuOpen ? "Close navigation" : "Open navigation"} aria-expanded={menuOpen} aria-controls="mobile-primary-navigation">{menuOpen ? <X size={20} /> : <Menu size={20} />}</button>
+        {menuOpen && <nav className="mobile-menu" id="mobile-primary-navigation" aria-label="Primary navigation"><Link href="/#portfolio" onClick={closeMenu}>Work</Link><Link href="/evidence" onClick={closeMenu}>Evidence</Link><Link href="/technical-library" onClick={closeMenu}>Technical library</Link><Link href="/about" onClick={closeMenu}>About DS&amp;D</Link><Link className="nav-paylock" href="/paylock" onClick={closeMenu}>Explore PayLock</Link><Link href="/contact" onClick={closeMenu}>Contact <ArrowUpRight size={14} /></Link></nav>}
       </header>
       <div id="main-content" tabIndex={-1}>{children}</div>
       <footer className="footer container">

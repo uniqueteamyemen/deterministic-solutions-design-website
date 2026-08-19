@@ -344,3 +344,8 @@
 - [x] Superseded by the owner’s decision not to upgrade GitHub: defer `main` branch protection, retain the repository as private, and keep the completed CI workflow active for every push and pull request.
 - [x] Make the public GitHub Actions suite deterministic without committing production credentials, while retaining live credential validation for credentialed environments.
 - [x] Confirm the current GitHub plan blocks branch protection for this private repository; retain private visibility and record the explicit platform requirement rather than weakening repository privacy.
+- [x] Verify the actual destination and interaction behavior of the `Talk to PayLock` link on the PayLock page.
+- [x] Verify that the DS&D site currently exposes neither search nor the medicine platform; reserve a separate, clearly bounded Work/portfolio entry with an explicit status label and destination for the medicine platform if the owner approves its inclusion.
+- [x] Audit every public route at desktop and phone widths for text overflow, clipped controls, spacing failures, and weak visual hierarchy.
+- [x] Refine shared site chrome, internal-page composition, typography, and responsive containment while preserving the graphite, bone, and signal-lime Signal/State identity.
+- [x] Verify the visual refinements across all public routes, update applicable regression coverage, and confirm the production build without changing product, protocol, or service behavior.

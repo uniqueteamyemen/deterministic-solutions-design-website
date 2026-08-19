@@ -57,4 +57,14 @@ describe("institutional research evidence", () => {
   it("makes PayLock the first onward route from every institutional page", () => {
     expect(Object.values(nextLinks).every((links) => links[0]?.href === "/paylock")).toBe(true);
   });
+
+  it("gives every institutional route a distinct field-reading context", () => {
+    const pages = Object.values(pageMap);
+    const fieldKickers = pages.map((page) => page.fieldKicker);
+
+    expect(fieldKickers.every(Boolean)).toBe(true);
+    expect(new Set(fieldKickers).size).toBe(pages.length);
+    expect(pageMap.evidence.fieldCopy).toContain("observed result");
+    expect(pageMap.contact.fieldTitle).toBeDefined();
+  });
 });
