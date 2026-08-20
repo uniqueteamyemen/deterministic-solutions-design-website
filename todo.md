@@ -349,3 +349,7 @@
 - [x] Audit every public route at desktop and phone widths for text overflow, clipped controls, spacing failures, and weak visual hierarchy.
 - [x] Refine shared site chrome, internal-page composition, typography, and responsive containment while preserving the graphite, bone, and signal-lime Signal/State identity.
 - [x] Verify the visual refinements across all public routes, update applicable regression coverage, and confirm the production build without changing product, protocol, or service behavior.
+- [x] Perform a read-only source-backed mapping of the owner-provided state, idempotency, webhook, controlled delivery, and audit-trail terms to PayLock/Yaqeen coverage and explicit boundaries.
+- [x] Provide a read-only explanation of behavioral-panic UX patterns and PayLock/Yaqeen failure or link-tampering defenses without changing any product source or configuration.
+- [x] Verify read-only whether a failed unlock attempt preserves the original delivery ticket for its first successful use, and explain the result against the owner's atomic-lock requirement.
+- [x] Verify read-only whether product disclosure requires a live network request to Yaqeen/PayLock and whether any local unlock path exists.
