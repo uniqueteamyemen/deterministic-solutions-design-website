@@ -197,8 +197,38 @@ export const libraryRecords: LibraryRecord[] = [
       { value: "HC-CXL", label: "research rebuild" },
       { value: "gem5", label: "simulation evidence only" },
     ],
-    boundary: "This library provides public summaries of source-backed research records. The original technical source package remains controlled research material and is not represented here as a public download or an independently verified publication.",
+    boundary: "This library provides public summaries of source-backed research records. Where a Zenodo deposit is linked, it is a documented repository record; it is not represented here as peer-reviewed publication, independent verification, or validation beyond its stated scope.",
     route: { href: "/evidence", label: "Return to the evidence register" },
+  },
+  {
+    id: "hc-cxl-zenodo-lineage",
+    index: "11",
+    className: "ZENODO TECHNICAL RECORD",
+    status: "DOCUMENTED / OPEN RECORD",
+    title: "HC-CXL documented Zenodo lineage",
+    copy: "Zenodo retains a documented HC-CXL lineage: three technical notes for versions 1.0, 1.1, and 1.2; the v2.1R software repository; and a Smarty-community report explicitly recorded as a supplement to the v2.1R software DOI.",
+    facts: [
+      { value: "5", label: "linked documented records" },
+      { value: "v2.1R", label: "current repository edition" },
+      { value: "OPEN", label: "Zenodo record access" },
+    ],
+    boundary: "A DOI and an open repository record make the named artifacts citable and retrievable. They do not by themselves establish peer review, independent replication, hardware validation, CXL conformance, certification, or product readiness.",
+    route: { href: "https://doi.org/10.5281/zenodo.17969945", label: "Open the HC-CXL v2.1R Zenodo record" },
+  },
+  {
+    id: "ssdd-zenodo-record",
+    index: "12",
+    className: "ZENODO RESEARCH RECORD",
+    status: "DOCUMENTED / OPEN RECORD",
+    title: "SSDD documented Zenodo record",
+    copy: "Zenodo record v1 for SSDD documents a foundational theoretical framework and stated simulation results. It provides a documented public research record alongside—rather than in place of—the bounded simulation and validation evidence recorded elsewhere in this library.",
+    facts: [
+      { value: "v1", label: "documented edition" },
+      { value: "18 MAR 2026", label: "Zenodo publication date" },
+      { value: "OPEN", label: "Zenodo record access" },
+    ],
+    boundary: "This is an open documented research record. Its availability does not transform the stated simulation results into independently verified, hardware, security, certification, or production-readiness evidence.",
+    route: { href: "https://doi.org/10.5281/zenodo.19098717", label: "Open the SSDD Zenodo record" },
   },
 ];
 
@@ -219,7 +249,7 @@ export default function TechnicalLibrary() {
               <div className="library-signal">
                 <BookOpen size={20} />
                 <span>PUBLIC RECORD INDEX</span>
-                <b>10</b>
+                <b>{libraryRecords.length}</b>
                 <small>source-backed entries</small>
               </div>
             </div>

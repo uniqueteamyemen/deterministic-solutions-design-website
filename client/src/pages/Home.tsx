@@ -26,9 +26,9 @@ export const portfolio = [
   { readiness: "Research programme", name: "HC-CXL", title: "A governed reference for future computing research.", copy: "A research rebuild that records an execution envelope and its assumptions, without claiming silicon qualification, CXL compliance, or production readiness.", tags: ["Research", "Reference model", "Bounded"], href: "/hc-cxl", action: "Explore HC-CXL", tier: "research" },
 ];
 
-const evidence = [
+export const evidence = [
   { label: "Runtime records", copy: "Observable deployments, logs, traces, and state transitions from real systems.", action: "Inspect evidence" },
-  { label: "Published research", copy: "Specifications, whitepapers, and formal work that can be read and challenged.", action: "Read research records" },
+  { label: "Documented research", copy: "Zenodo technical notes, repository records, specifications, and formal work that can be read and challenged.", action: "Read research records" },
   { label: "Source & tooling", copy: "Repositories, SDKs, test harnesses, or implementation artifacts where available.", action: "Open technical library" },
   { label: "Explicit boundaries", copy: "A visible record of what a system does, what it does not do, and where proof ends.", action: "Read the boundary" },
 ];

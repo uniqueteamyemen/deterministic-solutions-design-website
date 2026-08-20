@@ -47,4 +47,18 @@ describe("technical library evidence records", () => {
     ]));
     expect(connectivityCheck?.excerpt?.scope).toContain("does not demonstrate a release lifecycle");
   });
+
+  it("links documented Zenodo records without representing them as peer-reviewed or independent validation", () => {
+    const hcCxlZenodo = libraryRecords.find((record) => record.id === "hc-cxl-zenodo-lineage");
+    const ssddZenodo = libraryRecords.find((record) => record.id === "ssdd-zenodo-record");
+
+    expect(hcCxlZenodo?.route.href).toBe("https://doi.org/10.5281/zenodo.17969945");
+    expect(hcCxlZenodo?.facts).toEqual(expect.arrayContaining([
+      expect.objectContaining({ value: "5", label: "linked documented records" }),
+    ]));
+    expect(hcCxlZenodo?.boundary).toContain("do not by themselves establish peer review");
+    expect(ssddZenodo?.route.href).toBe("https://doi.org/10.5281/zenodo.19098717");
+    expect(ssddZenodo?.copy).toContain("documented public research record");
+    expect(ssddZenodo?.boundary).toContain("independently verified");
+  });
 });

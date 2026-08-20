@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { approvedBrandAssets, portfolio, primaryNavigation } from "./Home";
+import { approvedBrandAssets, evidence, portfolio, primaryNavigation } from "./Home";
 
 describe("DS&D homepage portfolio framing", () => {
   it("keeps PayLock first as the commercial product", () => {
@@ -23,5 +23,13 @@ describe("DS&D homepage portfolio framing", () => {
   it("uses the owner-approved DS&D and PayLock brand-board assets", () => {
     expect(approvedBrandAssets.dssdLockup).toContain("dssd-lockup-dark-approved_");
     expect(approvedBrandAssets.paylockWordmark).toContain("paylock-wordmark-dark-approved_");
+  });
+
+  it("describes Zenodo materials as documented research rather than peer-reviewed publication", () => {
+    expect(evidence.find((item) => item.label === "Documented research")).toMatchObject({
+      copy: expect.stringContaining("Zenodo technical notes"),
+      action: "Read research records",
+    });
+    expect(evidence.map((item) => item.label)).not.toContain("Published research");
   });
 });
