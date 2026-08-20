@@ -377,7 +377,7 @@
 - [x] Identify the exact recorded KVM-unavailability condition in the SimCXL evidence and its effect on measurement interpretation.
 - [x] Define a measurement pathway for SSDD that keeps Atomic, KVM-enabled simulation, and physical CXL evidence scientifically separate.
 - [x] Do not mark any SSDD latency, jitter, throughput, or baseline-comparison test complete from Atomic CPU execution without the required KVM-enabled measurement stage.
-- [ ] Start the remaining SSDD validation campaign with functional checks that are valid in the available environment.
+- [x] Start the remaining SSDD validation campaign with functional checks that are valid in the available environment.
 - [ ] Select and admit an independent x86 KVM-capable execution environment before running SSDD timing or comparison measurements.
 - [ ] Run the long SSDD measurement campaign only after the KVM admission gate succeeds, retaining manifests and raw outputs.
 - [ ] Compare current independent KVM-capable x86 hosting options, their admission guarantees, and estimated campaign cost before selecting a provider.
