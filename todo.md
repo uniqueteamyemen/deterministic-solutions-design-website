@@ -380,6 +380,10 @@
 - [x] Start the remaining SSDD validation campaign with functional checks that are valid in the available environment.
 - [ ] Select and admit an independent x86 KVM-capable execution environment before running SSDD timing or comparison measurements.
 - [ ] Run the long SSDD measurement campaign only after the KVM admission gate succeeds, retaining manifests and raw outputs.
+- [ ] Use remote rented access only for SSDD validation; do not purchase a lab, server, FPGA board, or CXL endpoint.
+- [ ] Keep the full SSDD campaign within an 85-hour execution ceiling and a planning budget of US$300–800, subject to a verified Real CXL remote-access quotation.
+- [ ] Start with a low-cost KVM pilot, then evaluate remote FPGA access and remote physical CXL Type-3 access in parallel.
+- [x] Produce a detailed SSDD Rental Plan with provider links, an 85-hour execution schedule, a US$300–800 budget allocation, and stop gates for KVM, FPGA, and real CXL access.
 - [x] Compare current independent KVM-capable x86 hosting options, their admission guarantees, and estimated campaign cost before selecting a provider.
 - [x] Verify whether any available Manus execution environment exposes actual KVM prerequisites (`/dev/kvm` and CPU virtualization flags) for gem5 measurement work.
 - [x] Design one SSDD validation environment covering KVM-based workload measurement, FPGA implementation validation, and real CXL Type-3 verification without conflating their evidence.
@@ -389,4 +393,5 @@
 - [x] Identify the required host, FPGA board/toolchain, CXL Type-3 endpoint, instrumentation, and access model for the unified validation environment.
 - [x] Estimate phased acquisition or rental cost and identify which validation stages can begin before real CXL hardware is available.
 - [x] Prepare one owner-facing SSDD plan that states the implementation sequence, costs, assumptions, and quote-dependent items for KVM, FPGA, and real CXL.
+- [ ] Search Saudi Arabia, Dubai, Africa, and South America for current free or research-access paths to KVM, FPGA, and physical CXL hardware, and classify each by verifiable availability.
 - [x] Prepare one owner-facing SSDD plan that states the implementation sequence, costs, assumptions, and quote-dependent items for KVM, FPGA, and real CXL.
