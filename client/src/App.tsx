@@ -20,6 +20,7 @@ function Router() {
         <Route path={"/hc-cxl"} component={InstitutionalPage} />
         <Route path={"/ssdd"} component={InstitutionalPage} />
         <Route path={"/evidence"} component={InstitutionalPage} />
+        <Route path={"/library"} component={TechnicalLibrary} />
         <Route path={"/technical-library"} component={TechnicalLibrary} />
         <Route path={"/about"} component={InstitutionalPage} />
         <Route path={"/contact"} component={InstitutionalPage} />

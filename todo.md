@@ -359,3 +359,10 @@
 - [x] Verify the owner-provided Zenodo deposits and Smarty community record, including version lineage and supplement relation.
 - [x] Replace any unsupported “published research” wording with accurate, source-backed language for documented Zenodo research records across public pages and the technical library.
 - [x] Add the verified Zenodo records to the technical library where appropriate, with clear scope and repository links.
+- [ ] Verify the official Chiplet Summit 2027 call-for-presentations requirements, submission deadline, and scope without submitting a proposal.
+- [ ] Assess SSDD’s evidence-backed fit for a technical Chiplet Summit presentation and identify only supportable claims, limitations, and audience relevance.
+- [x] Prepare an owner-reviewable SSDD presentation abstract and achievement-focused biography basis; do not submit or represent acceptance without explicit owner approval.
+- [ ] Defer all Chiplet Summit discussion and proposal work until the owner explicitly requests it; keep platform review as the active priority.
+- [x] Audit and rebalance the full site typography so oversized display headlines and low-visibility utility text are corrected across desktop and mobile without changing the Signal/State identity or logo position.
+- [x] Verify typography readability and layout containment on all public routes at desktop and mobile breakpoints, then run the full test suite and production build.
+- [x] Repair the technical library public route discovered as a 404 during visual review, then verify its navigation targets and rendering.
