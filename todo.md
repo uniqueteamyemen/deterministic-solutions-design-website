@@ -374,3 +374,6 @@
 - [x] Push the latest completed responsive-review updates to the private GitHub repository and verify the remote head.
 - [x] Produce an owner-reviewable SSDD test inventory that separates executed evidence from tests explicitly deferred for later.
 - [x] Ensure the SSDD test report uses execution records only and never presents Zenodo documentation as test evidence.
+- [x] Identify the exact recorded KVM-unavailability condition in the SimCXL evidence and its effect on measurement interpretation.
+- [x] Define a measurement pathway for SSDD that keeps Atomic, KVM-enabled simulation, and physical CXL evidence scientifically separate.
+- [x] Do not mark any SSDD latency, jitter, throughput, or baseline-comparison test complete from Atomic CPU execution without the required KVM-enabled measurement stage.
