@@ -394,4 +394,5 @@
 - [x] Estimate phased acquisition or rental cost and identify which validation stages can begin before real CXL hardware is available.
 - [x] Prepare one owner-facing SSDD plan that states the implementation sequence, costs, assumptions, and quote-dependent items for KVM, FPGA, and real CXL.
 - [ ] Search Saudi Arabia, Dubai, Africa, and South America for current free or research-access paths to KVM, FPGA, and physical CXL hardware, and classify each by verifiable availability.
+- [ ] Evaluate remote KVM, FPGA, and CXL access offers that may be available through a future research or commercial partnership, without making any commitment on the owner's behalf.
 - [x] Prepare one owner-facing SSDD plan that states the implementation sequence, costs, assumptions, and quote-dependent items for KVM, FPGA, and real CXL.
