@@ -367,3 +367,4 @@
 - [x] Verify typography readability and layout containment on all public routes at desktop and mobile breakpoints, then run the full test suite and production build.
 - [x] Repair the technical library public route discovered as a 404 during visual review, then verify its navigation targets and rendering.
 - [x] Inspect and resolve the wide-screen hero-background tonal split if it is an unintended visual artifact rather than a deliberate, legible compositional layer.
+- [ ] Compare local DS&D website commits with the GitHub repository and push the approved outstanding website updates after verification.
