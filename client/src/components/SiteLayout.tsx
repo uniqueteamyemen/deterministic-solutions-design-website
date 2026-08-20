@@ -24,6 +24,7 @@ export default function SiteLayout({ children }: { children: React.ReactNode }) 
       <header className={`topbar ${scrolled || !isHome ? "topbar-scrolled" : ""}`}>
         <Link href="/" className="brand" aria-label="Deterministic Solutions and Design home">
           <img src="/manus-storage/dssd-lockup-dark-approved_b93ab250.png" alt="DS&D — Deterministic Solutions and Design" className="brand-lockup" />
+          <span className="brand-name">Deterministic Solutions and Design LLC</span>
         </Link>
         <nav className="desktop-nav" aria-label="Primary navigation">
           <Link href="/#portfolio">Work</Link>

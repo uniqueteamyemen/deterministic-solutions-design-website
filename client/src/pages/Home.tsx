@@ -58,6 +58,7 @@ export default function Home() {
       <header className={`topbar ${scrolled ? "topbar-scrolled" : ""}`}>
         <a className="brand" href="#top" aria-label="Deterministic Solutions and Design home">
           <img src={approvedBrandAssets.dssdLockup} alt="DS&D — Deterministic Solutions and Design" className="brand-lockup" />
+          <span className="brand-name">Deterministic Solutions and Design LLC</span>
         </a>
         <nav className="desktop-nav" aria-label="Primary navigation">{primaryNavigation.map((item) => <a className={item.primary ? "nav-paylock" : undefined} href={item.href} key={item.href}>{item.label}</a>)}</nav>
         <a className="nav-cta" href="/contact">Contact <ArrowUpRight size={14} /></a>

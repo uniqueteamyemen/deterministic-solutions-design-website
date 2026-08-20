@@ -39,7 +39,7 @@ export default function PayLock() {
     <main className="site-shell paylock-page" id="main-content" tabIndex={-1}>
       <a className="skip-link" href="#lifecycle">Skip to main content</a>
       <header className="topbar product-topbar topbar-scrolled">
-        <a className="brand" href="/" aria-label="Return to Deterministic Solutions & Design"><img src="/manus-storage/dssd-lockup-dark-approved_b93ab250.png" alt="DS&D — Deterministic Solutions and Design" className="brand-lockup" /></a>
+        <a className="brand" href="/" aria-label="Return to Deterministic Solutions & Design"><img src="/manus-storage/dssd-lockup-dark-approved_b93ab250.png" alt="DS&D — Deterministic Solutions and Design" className="brand-lockup" /><span className="brand-name">Deterministic Solutions and Design LLC</span></a>
         <nav className="desktop-nav" aria-label="PayLock navigation"><a href="#lifecycle">Lifecycle</a><a href="#architecture">Architecture</a><a href="#review">Review</a><a href="#evidence">Sources</a></nav>
         <a className="nav-cta" href="mailto:baker@deterministicsolutionsdesign.com">Talk to PayLock <ArrowUpRight size={14} /></a>
         <button className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)} aria-label={menuOpen ? "Close navigation" : "Open navigation"} aria-expanded={menuOpen} aria-controls="paylock-mobile-navigation">{menuOpen ? <X size={20} /> : <Menu size={20} />}</button>

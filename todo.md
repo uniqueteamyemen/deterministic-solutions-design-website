@@ -355,3 +355,4 @@
 - [x] Verify read-only whether product disclosure requires a live network request to Yaqeen/PayLock and whether any local unlock path exists.
 - [x] Record the owner-mandated invariant that no lock opening or digital-asset disclosure is permitted without a live network connection to system servers; treat offline/local fallback as prohibited.
 - [x] Verify directly from source whether a user can receive service delivery only through a live Yaqeen/Core network interaction, and state the exact boundary at the provider.
+- [x] Add the full company name directly below the DS&D logo in the site header, preserving desktop and mobile responsiveness.
