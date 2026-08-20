@@ -366,3 +366,4 @@
 - [x] Audit and rebalance the full site typography so oversized display headlines and low-visibility utility text are corrected across desktop and mobile without changing the Signal/State identity or logo position.
 - [x] Verify typography readability and layout containment on all public routes at desktop and mobile breakpoints, then run the full test suite and production build.
 - [x] Repair the technical library public route discovered as a 404 during visual review, then verify its navigation targets and rendering.
+- [x] Inspect and resolve the wide-screen hero-background tonal split if it is an unintended visual artifact rather than a deliberate, legible compositional layer.
