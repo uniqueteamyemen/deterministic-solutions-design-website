@@ -377,3 +377,14 @@
 - [x] Identify the exact recorded KVM-unavailability condition in the SimCXL evidence and its effect on measurement interpretation.
 - [x] Define a measurement pathway for SSDD that keeps Atomic, KVM-enabled simulation, and physical CXL evidence scientifically separate.
 - [x] Do not mark any SSDD latency, jitter, throughput, or baseline-comparison test complete from Atomic CPU execution without the required KVM-enabled measurement stage.
+- [ ] Start the remaining SSDD validation campaign with functional checks that are valid in the available environment.
+- [ ] Select and admit an independent x86 KVM-capable execution environment before running SSDD timing or comparison measurements.
+- [ ] Run the long SSDD measurement campaign only after the KVM admission gate succeeds, retaining manifests and raw outputs.
+- [ ] Compare current independent KVM-capable x86 hosting options, their admission guarantees, and estimated campaign cost before selecting a provider.
+- [ ] Verify whether any available Manus execution environment exposes actual KVM prerequisites (`/dev/kvm` and CPU virtualization flags) for gem5 measurement work.
+- [ ] Design one SSDD validation environment covering KVM-based workload measurement, FPGA implementation validation, and real CXL Type-3 verification without conflating their evidence.
+- [ ] Identify the required host, FPGA board/toolchain, CXL Type-3 endpoint, instrumentation, and access model for the unified validation environment.
+- [ ] Estimate phased acquisition or rental cost and identify which validation stages can begin before real CXL hardware is available.
+- [x] Design one SSDD validation environment covering KVM-based workload measurement, FPGA implementation validation, and real CXL Type-3 verification without conflating their evidence.
+- [x] Identify the required host, FPGA board/toolchain, CXL Type-3 endpoint, instrumentation, and access model for the unified validation environment.
+- [x] Estimate phased acquisition or rental cost and identify which validation stages can begin before real CXL hardware is available.
