@@ -353,3 +353,5 @@
 - [x] Provide a read-only explanation of behavioral-panic UX patterns and PayLock/Yaqeen failure or link-tampering defenses without changing any product source or configuration.
 - [x] Verify read-only whether a failed unlock attempt preserves the original delivery ticket for its first successful use, and explain the result against the owner's atomic-lock requirement.
 - [x] Verify read-only whether product disclosure requires a live network request to Yaqeen/PayLock and whether any local unlock path exists.
+- [x] Record the owner-mandated invariant that no lock opening or digital-asset disclosure is permitted without a live network connection to system servers; treat offline/local fallback as prohibited.
+- [x] Verify directly from source whether a user can receive service delivery only through a live Yaqeen/Core network interaction, and state the exact boundary at the provider.
