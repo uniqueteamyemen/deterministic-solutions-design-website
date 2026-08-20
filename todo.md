@@ -368,3 +368,6 @@
 - [x] Repair the technical library public route discovered as a 404 during visual review, then verify its navigation targets and rendering.
 - [x] Inspect and resolve the wide-screen hero-background tonal split if it is an unintended visual artifact rather than a deliberate, legible compositional layer.
 - [x] Compare local DS&D website commits with the GitHub repository and push the approved outstanding website updates after verification.
+- [x] Perform a final responsive audit of the hero, typography, navigation, cards, and overflow at 375×812, 768×1024, 1280×720, and 1876×870 across all public routes.
+- [x] Correct any remaining device-specific readability, spacing, containment, or wide-screen hero-background issues found in the final audit, then rerun tests and the production build.
+- [x] Apply a status discipline to audit notes and reports: label findings as open, in progress, resolved, or verified; do not restate resolved findings as current problems.
