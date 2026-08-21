@@ -410,3 +410,12 @@
 - [x] Assess the current SSDD evidence and independently executable tests to define a defensible research question, presentation format, claim boundaries, and submission readiness without conflating simulation, FPGA, or physical-CXL validation.
 
 - [x] Evaluate the proposed Model 3+ SSDD framing against current evidence, KVM measurement gates, and the no-purchase constraint before approving any claims or execution sequence. Decision: approve the strategic direction only; use the evidence-bounded behavioral framing until a KVM-admitted, Timing-CPU paired measurement campaign is executed.
+
+## SSDD Model 3+ local evidence packages
+
+- [x] Execute package A: the predeclared local adversarial functional matrix, retaining positive controls, negative dispositions, raw logs, and independent replay where applicable. Accepted in `model3plus-local-20260822T020000Z` within the native-reference boundary.
+- [x] Execute package B: the local ledger and proof-integrity matrix, retaining each defined tamper case, verifier output, and last-valid-state evidence. Accepted for the declared reference ledger and native compiled proof-control workload only.
+- [x] Execute package C: an independent cross-implementation replay comparison with retained manifests, implementation hashes, and artifact hashes. Python and retained Rust reference chains matched across 100 epochs.
+- [x] Execute package D: a cross-domain sanity table that distinguishes reference, gem5, SimCXL, RTL, FPGA, and physical-CXL claims without transferring evidence between domains. The table is retained in `docs/validation/model3plus-local-campaign-plan.md`.
+- [x] Execute package E: an immutable artifact register for the Model 3+ local campaign, with input, tool, configuration, output, and SHA-256 provenance. The accepted rerun retained 26 raw artifacts and passed both artifact-hash and inventory self-hash checks.
+- [x] Review the completed A–E results against the Model 3+ claim boundary, publish no unsupported performance conclusion, and retain a final owner-reviewable local-campaign report. Retained at `docs/validation/model3plus-local-campaign-results.md`; performance and hardware claims remain explicitly open.
