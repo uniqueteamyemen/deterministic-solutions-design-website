@@ -396,3 +396,17 @@
 - [ ] Search Saudi Arabia, Dubai, Africa, and South America for current free or research-access paths to KVM, FPGA, and physical CXL hardware, and classify each by verifiable availability.
 - [ ] Evaluate remote KVM, FPGA, and CXL access offers that may be available through a future research or commercial partnership, without making any commitment on the owner's behalf.
 - [x] Prepare one owner-facing SSDD plan that states the implementation sequence, costs, assumptions, and quote-dependent items for KVM, FPGA, and real CXL.
+
+- [x] Verify official contact channels and current application requirements for the nine owner-approved SSDD access targets: SNIA, RDIA→KAUST, Chameleon/KVM@TACC, MemVerge, Khalifa University labs, H-BRS↔UNSL, LabsLand, and KACST via RDIA.
+- [x] Identify up to two publicly listed, professionally relevant research, laboratory, or programme contacts for each approved target, using only official institutional information or public professional profiles.
+- [x] Prepare tailored DS&D access or non-binding partnership outreach drafts for each approved target, without overstating current hardware availability or making commitments.
+- [x] Prepare and retain an auditable outreach package and send register, including verified recipient channels, message purpose, sender-address verification, and the one-follow-up limit.
+- [x] Superseded by owner-led sending: do not send SSDD outreach through the agent-connected Gmail channel; retain the company-sender verification finding and prepare the material for the owner to send from baker@deterministicsolutionsdesign.com.
+- [x] Prepare a final owner-sendable SSDD outreach package containing verified official recipients, suitable public professional contacts, tailored messages, source links, and concise manual sending instructions.
+- [x] Keep all external email unsent by the agent; the owner will send each approved message manually from baker@deterministicsolutionsdesign.com after review.
+- [x] Deliver the complete single-file SSDD outreach package with all nine target messages and recipient details; no further research-only delay is acceptable once the source-backed record is sufficient.
+- [x] Superseded after owner clarification: do not change the KACST outreach entry; explain factually why KACST was not apparent in the delivered package.
+
+- [x] Assess the current SSDD evidence and independently executable tests to define a defensible research question, presentation format, claim boundaries, and submission readiness without conflating simulation, FPGA, or physical-CXL validation.
+
+- [x] Evaluate the proposed Model 3+ SSDD framing against current evidence, KVM measurement gates, and the no-purchase constraint before approving any claims or execution sequence. Decision: approve the strategic direction only; use the evidence-bounded behavioral framing until a KVM-admitted, Timing-CPU paired measurement campaign is executed.
