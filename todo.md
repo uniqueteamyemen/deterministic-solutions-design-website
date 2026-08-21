@@ -393,8 +393,8 @@
 - [x] Identify the required host, FPGA board/toolchain, CXL Type-3 endpoint, instrumentation, and access model for the unified validation environment.
 - [x] Estimate phased acquisition or rental cost and identify which validation stages can begin before real CXL hardware is available.
 - [x] Prepare one owner-facing SSDD plan that states the implementation sequence, costs, assumptions, and quote-dependent items for KVM, FPGA, and real CXL.
-- [ ] Search Saudi Arabia, Dubai, Africa, and South America for current free or research-access paths to KVM, FPGA, and physical CXL hardware, and classify each by verifiable availability.
-- [ ] Evaluate remote KVM, FPGA, and CXL access offers that may be available through a future research or commercial partnership, without making any commitment on the owner's behalf.
+- [x] Search Saudi Arabia, Dubai, Africa, and South America for current free or research-access paths to KVM, FPGA, and physical CXL hardware, and classify each by verifiable availability. Refreshed 22 August 2026 in `/home/ubuntu/ssdd-regional-access-refresh-20260822.md`; the record distinguishes verified channels from unverified hardware availability.
+- [x] Evaluate remote KVM, FPGA, and CXL access offers that may be available through a future research or commercial partnership, without making any commitment on the owner's behalf. No currently documented offer passes the KVM or physical-CXL gate; the assessment preserves owner-led outreach and non-binding posture.
 - [x] Prepare one owner-facing SSDD plan that states the implementation sequence, costs, assumptions, and quote-dependent items for KVM, FPGA, and real CXL.
 
 - [x] Verify official contact channels and current application requirements for the nine owner-approved SSDD access targets: SNIA, RDIA→KAUST, Chameleon/KVM@TACC, MemVerge, Khalifa University labs, H-BRS↔UNSL, LabsLand, and KACST via RDIA.
