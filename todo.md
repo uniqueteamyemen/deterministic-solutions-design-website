@@ -450,3 +450,11 @@
 - [x] Define a line-item hourly budget with provider cost, tax contingency, storage, transfer, setup time, test time, teardown time, and a stop-loss threshold for the SSDD bare-metal campaign. The US$0.40/hour planning arithmetic is US$34.00 for 85 hours, with an owner-approved US$80 maximum required before provisioning.
 - [x] Produce an hour-by-hour SSDD execution schedule covering host admission, operating-system hardening, gem5 build validation, KVM boot, Timing-CPU ROI hand-off, matched measurements, adversarial tests, evidence packaging, and teardown. The schedule and stop-loss decisions are retained in `ssdd-bare-metal-execution-plan-20260822.md`.
 - [x] Produce the provider-neutral Bare Metal gem5 runbook, including host prerequisites, dependency installation, reproducible build inputs, guest-image preparation, KVM admission tests, Timing-CPU checkpoint/restore procedure, and failure gates. The guide distinguishes the mandatory SimCXL Type-3 smoke from the separate MESI build required by the optional gem5 stdlib KVM diagnostic.
+
+## SSDD scaling characterization amendment
+
+- [x] Add a standalone Scaling Characterization experiment to the 85-hour Bare Metal campaign: matched baseline and SSDD levels of 8, 16, 32, 64, and 128 (or a documented workload-equivalent ladder), three independent repeats per level, and retained latency, p95/p99, jitter, throughput, CPU and memory overhead, queue/backpressure, and state/integrity outcome fields. The H45–H53 time box, manifest/pilot contract, per-counter limits, KVM-plus-Timing-CPU gate, no-extrapolation rule, and unchanged US$80 ceiling are now recorded in the owner plan and SSDD repository record.
+
+## Cherry Servers owner-assisted provisioning
+
+- [ ] Review the Cherry Servers bare-metal creation form and present only the required account, host-selection, SSH-key, billing, and approval inputs to the owner; stop before resource creation or payment.
