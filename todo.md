@@ -457,4 +457,5 @@
 
 ## Cherry Servers owner-assisted provisioning
 
-- [ ] Review the Cherry Servers bare-metal creation form and present only the required account, host-selection, SSH-key, billing, and approval inputs to the owner; stop before resource creation or payment.
+- [x] Review the Cherry Servers bare-metal creation form and present only the required account, host-selection, SSH-key, billing, and approval inputs to the owner; stop before resource creation or payment. The portal requested service purpose, reason for choosing the provider, referral source, contact phone, and LinkedIn URL; the deployment page then returned a provider-side network error/blank state before host selection. No personal data was entered, no host was selected, no resource was created, and no payment screen was reached.
+- [x] Inspect the Cherry Servers portal’s visible billing cadence and deployment categories to determine whether the owner is viewing monthly dedicated-server offers or an hourly Bare Metal route; report the result before selecting a host or entering payment. The portal’s `Dedicated Servers → 8–16 Cores` page visibly states `Billing: Monthly`; the selected Chicago AMD Ryzen 7700X offer is €159/month base and €265/month with the shown 2×2 TB NVMe configuration. It is not an hourly route and exceeds the US$80 approved-planning ceiling, so it was not selected or submitted.
