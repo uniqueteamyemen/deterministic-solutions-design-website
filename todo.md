@@ -378,11 +378,11 @@
 - [x] Define a measurement pathway for SSDD that keeps Atomic, KVM-enabled simulation, and physical CXL evidence scientifically separate.
 - [x] Do not mark any SSDD latency, jitter, throughput, or baseline-comparison test complete from Atomic CPU execution without the required KVM-enabled measurement stage.
 - [x] Start the remaining SSDD validation campaign with functional checks that are valid in the available environment.
-- [ ] Select and admit an independent x86 KVM-capable execution environment before running SSDD timing or comparison measurements.
-- [ ] Run the long SSDD measurement campaign only after the KVM admission gate succeeds, retaining manifests and raw outputs.
-- [ ] Use remote rented access only for SSDD validation; do not purchase a lab, server, FPGA board, or CXL endpoint.
-- [ ] Keep the full SSDD campaign within an 85-hour execution ceiling and a planning budget of US$300–800, subject to a verified Real CXL remote-access quotation.
-- [ ] Start with a low-cost KVM pilot, then evaluate remote FPGA access and remote physical CXL Type-3 access in parallel.
+- [ ] Execute the expanded SimCXL interleave and DRAM-control matrix locally, retaining behavioral outputs only and declaring the Atomic-CPU / no-KVM boundary.
+- [ ] Select and admit an independent x86 KVM-capable execution environment before running any SSDD timing, commercial baseline-versus-SSDD, or adversarial response-time measurement; verify `/dev/kvm` and `vmx`/`svm` before using it.
+- [ ] Run the commercial baseline-versus-SSDD and adversarial falsification matrices only after the KVM admission gate and explicit owner approval of the specific access arrangement succeed, retaining matched manifests and raw outputs.
+- [ ] Evaluate persistent-compute migration only after the KVM measurement campaign, using a documented resource and cost review; do not create a persistent service or scheduled job before the owner explicitly authorizes it.
+- [ ] Keep all remaining execution within the 85-hour ceiling and the US$800 maximum budget, using rental or research/partnership access only; do not purchase a lab, server, FPGA board, or CXL endpoint.
 - [x] Produce a detailed SSDD Rental Plan with provider links, an 85-hour execution schedule, a US$300–800 budget allocation, and stop gates for KVM, FPGA, and real CXL access.
 - [x] Compare current independent KVM-capable x86 hosting options, their admission guarantees, and estimated campaign cost before selecting a provider.
 - [x] Verify whether any available Manus execution environment exposes actual KVM prerequisites (`/dev/kvm` and CPU virtualization flags) for gem5 measurement work.
@@ -419,3 +419,34 @@
 - [x] Execute package D: a cross-domain sanity table that distinguishes reference, gem5, SimCXL, RTL, FPGA, and physical-CXL claims without transferring evidence between domains. The table is retained in `docs/validation/model3plus-local-campaign-plan.md`.
 - [x] Execute package E: an immutable artifact register for the Model 3+ local campaign, with input, tool, configuration, output, and SHA-256 provenance. The accepted rerun retained 26 raw artifacts and passed both artifact-hash and inventory self-hash checks.
 - [x] Review the completed A–E results against the Model 3+ claim boundary, publish no unsupported performance conclusion, and retain a final owner-reviewable local-campaign report. Retained at `docs/validation/model3plus-local-campaign-results.md`; performance and hardware claims remain explicitly open.
+
+## SSDD controlled validation campaign — owner specification 2026-08-22
+
+- [ ] Create a distinct campaign directory, frozen configuration manifest, evidence registry, SHA-256 inventory, blocked/failure registry, and Git-tracked documentation without overwriting prior SSDD evidence.
+- [ ] Verify the selected x86 environment for `/dev/kvm`, `vmx`/`svm`, usable KVM access, gem5 availability, and the KVM-to-Timing-CPU ROI hand-off; record an auditable smoke result.
+- [ ] Execute the expanded SimCXL Type-3 behavioral follow-up matrix across supported DRAM, CXL-aware, interleave, controlled-memory, and interference configurations, retaining raw outputs and declaring any Atomic-CPU results non-performance evidence.
+- [ ] Execute matched baseline-versus-SSDD quantitative measurements only after the KVM and Timing-CPU gate passes, with repeated distributions, raw `stats.txt`, guest logs, manifests, and matched input/workload configurations.
+- [ ] Execute the established adversarial falsification matrix, preserving accepted, rejected-as-designed, failed, timed-out, blocked, and invalid/inconclusive results without overwriting negative evidence.
+- [ ] Execute governance ablation and overhead-decomposition experiments only where the existing implementation permits reliable isolation; classify any non-isolable component as `NOT SEPARABLE`.
+- [ ] Execute the persistent-compute long-run reproducibility campaign only after a specific persistent environment and automated-execution approach are approved, preserving each run independently.
+- [ ] Produce the unified evidence/metrics matrix, cross-domain comparison, supported-versus-unsupported claim register, concise interpretation, and publish the reviewed campaign record to `uniqueteamyemen/ssdd-research`.
+
+## SSDD KVM infrastructure acquisition and smoke execution
+
+- [ ] Inventory all currently accessible infrastructure paths, connected services, connectors, and autonomous provisioning routes that could yield an x86_64 KVM-capable environment without purchasing physical hardware.
+- [ ] Evaluate public and low-cost provider options for short-lived x86_64 KVM access, preferring already available resources first and retaining exact eligibility, cost, and capability evidence for each candidate.
+- [ ] Secure the first viable KVM-capable environment autonomously where permissions allow, then document provider identity, host details, CPU model, storage, RAM, and every infrastructure change made.
+- [ ] Run a KVM smoke path proving `/dev/kvm`, `vmx` or `svm`, guest boot, gem5 launch, Timing-CPU transition, and measurement-ROI reachability before any full SSDD performance run.
+- [ ] Resume the SSDD performance path from the controlled campaign lineage only after the smoke gate passes, or preserve a precise blocked-state record if no accessible environment can satisfy the gate after exhausting available routes.
+
+## SSDD cloud-rental KVM path
+
+- [ ] Compare short-lived cloud or bare-metal rental candidates that can expose `/dev/kvm` and `vmx`/`svm`, separating advertised virtualization from verified nested-KVM capability and recording current cost terms.
+- [ ] Prepare a provider-specific provisioning and teardown procedure that caps spend, records machine specifications, and runs the KVM-to-Timing-CPU smoke gate before any full campaign.
+- [ ] Obtain explicit owner confirmation of the chosen provider, maximum spend, and resource creation before accepting terms, charging an account, or creating a paid cloud resource.
+
+## SSDD bare-metal execution budget and gem5 configuration
+
+- [x] Define a line-item hourly budget with provider cost, tax contingency, storage, transfer, setup time, test time, teardown time, and a stop-loss threshold for the SSDD bare-metal campaign. The US$0.40/hour planning arithmetic is US$34.00 for 85 hours, with an owner-approved US$80 maximum required before provisioning.
+- [x] Produce an hour-by-hour SSDD execution schedule covering host admission, operating-system hardening, gem5 build validation, KVM boot, Timing-CPU ROI hand-off, matched measurements, adversarial tests, evidence packaging, and teardown. The schedule and stop-loss decisions are retained in `ssdd-bare-metal-execution-plan-20260822.md`.
+- [x] Produce the provider-neutral Bare Metal gem5 runbook, including host prerequisites, dependency installation, reproducible build inputs, guest-image preparation, KVM admission tests, Timing-CPU checkpoint/restore procedure, and failure gates. The guide distinguishes the mandatory SimCXL Type-3 smoke from the separate MESI build required by the optional gem5 stdlib KVM diagnostic.
