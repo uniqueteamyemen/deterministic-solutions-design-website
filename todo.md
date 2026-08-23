@@ -601,3 +601,4 @@
 - [x] Finalize a production-ready PayLock Reference Mark asset and concise use rules that represent a named event, shared reference, and readable proof path—not a lock, payment rail, or custody service.
 - [x] Build public DS&D and PayLock explanatory catalog pages with evidence-aware language, clear navigation, responsive visual systems, and no claims beyond current product/research readiness.
 - [x] Add and verify one repeatable quality command that runs the website tests, TypeScript check, and production build in the same sequence used by continuous integration.
+- [x] Align the homepage navigation with the public catalog system by adding direct DS&D Catalog and PayLock routes across desktop and mobile while preserving the existing section anchors.

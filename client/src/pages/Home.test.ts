@@ -15,7 +15,8 @@ describe("DS&D Reference Mark homepage", () => {
 
   it("keeps evidence language explicit and public navigation reachable", () => {
     expect(evidencePrinciples.map((item) => item.title)).toEqual(["What we know", "What remains open", "What can happen now"]);
-    expect(primaryNavigation.map((item) => item.href)).toEqual(["#method", "#examples", "#work", "#evidence", "#contact"]);
+    expect(primaryNavigation.map((item) => item.href)).toEqual(["#method", "/catalog", "#examples", "#work", "#evidence", "/paylock", "#contact"]);
+    expect(primaryNavigation.find((item) => item.href === "/paylock")?.product).toBe(true);
   });
 
   it("frames avoidable difficulty as apparently compulsory rather than consciously chosen", () => {

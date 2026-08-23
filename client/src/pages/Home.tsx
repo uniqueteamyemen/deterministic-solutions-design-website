@@ -4,9 +4,11 @@ import ReferenceMark from "@/components/ReferenceMark";
 
 export const primaryNavigation = [
   { href: "#method", label: "Method" },
+  { href: "/catalog", label: "Catalog" },
   { href: "#examples", label: "Examples" },
   { href: "#work", label: "Work" },
   { href: "#evidence", label: "Evidence" },
+  { href: "/paylock", label: "PayLock", product: true },
   { href: "#contact", label: "Contact", primary: true },
 ];
 
@@ -125,10 +127,10 @@ export default function Home() {
           <span>Deterministic Solutions &amp; Design<small>Systems design / research office</small></span>
         </a>
         <nav className="desktop-nav reference-nav" aria-label="Primary navigation">
-          {primaryNavigation.map((item) => <a className={item.primary ? "nav-paylock" : undefined} href={item.href} key={item.href}>{item.label}</a>)}
+          {primaryNavigation.map((item) => <a className={item.product ? "nav-paylock" : item.primary ? "nav-contact" : undefined} href={item.href} key={item.href}>{item.label}</a>)}
         </nav>
-        <button className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)} aria-label={menuOpen ? "Close navigation" : "Open navigation"}>{menuOpen ? <X size={20} /> : <Menu size={20} />}</button>
-        {menuOpen && <div className="mobile-menu reference-mobile-menu">{primaryNavigation.map((item) => <a className={item.primary ? "nav-paylock" : undefined} href={item.href} onClick={closeMenu} key={item.href}>{item.label}</a>)}</div>}
+        <button className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)} aria-label={menuOpen ? "Close navigation" : "Open navigation"} aria-expanded={menuOpen} aria-controls="home-mobile-navigation">{menuOpen ? <X size={20} /> : <Menu size={20} />}</button>
+        {menuOpen && <nav className="mobile-menu reference-mobile-menu" id="home-mobile-navigation" aria-label="Primary navigation">{primaryNavigation.map((item) => <a className={item.product ? "nav-paylock" : item.primary ? "nav-contact" : undefined} href={item.href} onClick={closeMenu} key={item.href}>{item.label}</a>)}</nav>}
       </header>
 
       <section className="reference-hero" id="top">
