@@ -29,3 +29,7 @@ The homepage, PayLock, and Contact were also checked at **375×812**. Their head
 ## 2026-08-23 — Core message correction
 
 The owner clarified that people do not deliberately choose unnecessary difficulty; they experience it as compulsory or fixed. The homepage now says: **“What appears compulsory may not be.”** Its supporting text makes the limit explicit: DS&D does not promise to remove every constraint. It makes the consequential detail and shared rule visible so affected people can see when a safer alternative is possible. The corrected composition was checked at **1280×720** and **375×812** with no text clipping or loss of hierarchy.
+
+## 2026-08-23 — Practical-example campaign section
+
+The homepage now includes four clearly labelled illustrative workplace patterns: delayed approval, cross-team handoff, risk escalation, and the false choice between two bad options. Each follows the same sequence: **appears compulsory → detail to inspect → shared alternative**. The section explicitly says that its examples do not promise every constraint can disappear. It was reviewed in the full homepage at **1280×720** and **375×812**; the four examples retain their sequence, contrast, and readable single-column mobile order.
