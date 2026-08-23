@@ -197,6 +197,13 @@ export const nextLinks: Record<PageKey, { href: string; label: string }[]> = {
   contact: [{ href: "/paylock", label: "Review PayLock" }, { href: "mailto:baker@deterministicsolutionsdesign.com", label: "Email the team" }],
 };
 
+export const operatingLogic = [
+  { no: "01", label: "NOTICE", value: "A consequential detail is visible." },
+  { no: "02", label: "NAME", value: "The harm and boundary are explicit." },
+  { no: "03", label: "REFERENCE", value: "Relevant parties share a reliable rule." },
+  { no: "04", label: "ACT", value: "The next shared action is proportionate." },
+];
+
 export default function InstitutionalPage() {
   const path = window.location.pathname.replace(/^\//, "") as PageKey;
   const page = pageMap[path] ?? pageMap.about;
@@ -314,8 +321,8 @@ export default function InstitutionalPage() {
 
         <section className="institutional-proof section">
           <div className="container institutional-proof-grid">
-            <div><div className="section-index">02 <span>/</span> Operating logic</div><div className="section-kicker">From statement to inspection</div><h2>Understand.<br /><em>Control. Verify. Prove.</em></h2><p>That sequence is the common language across the continuum. It is how research becomes a system, and how a system earns the right to become a product.</p></div>
-            <div className="logic-stack"><div><span>01 / UNDERSTAND</span><b>Intent is clear.</b></div><div><span>02 / CONTROL</span><b>Execution is constrained.</b></div><div><span>03 / VERIFY</span><b>Every step is traceable.</b></div><div><span>04 / PROVE</span><b>Outcomes are inspectable.</b></div></div>
+            <div><div className="section-index">02 <span>/</span> Operating logic</div><div className="section-kicker">From observation to reliable action</div><h2>Notice the detail.<br /><em>Make the action shareable.</em></h2><p>That sequence is DS&amp;D’s common language: reveal the consequential detail, state the boundary, establish a reliable reference, then choose the simplest safe action.</p></div>
+            <div className="logic-stack">{operatingLogic.map((step) => <div key={step.no}><span>{step.no} / {step.label}</span><b>{step.value}</b></div>)}</div>
           </div>
         </section>
 

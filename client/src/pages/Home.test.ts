@@ -1,35 +1,20 @@
 import { describe, expect, it } from "vitest";
-import { approvedBrandAssets, evidence, portfolio, primaryNavigation } from "./Home";
+import { detailSteps, evidencePrinciples, portfolio, primaryNavigation } from "./Home";
 
-describe("DS&D homepage portfolio framing", () => {
-  it("keeps PayLock first as the commercial product", () => {
-    expect(portfolio[0]).toMatchObject({ name: "PayLock", readiness: "Commercial product", href: "/paylock" });
-    expect(portfolio[0]?.copy).toContain("guards H1 issuance");
-    expect(portfolio[0]?.copy).toContain("providers retain their own commercial and operating policies");
+describe("DS&D Reference Mark homepage", () => {
+  it("keeps the method in a deliberate notice-to-action order", () => {
+    expect(detailSteps.map((step) => step.label)).toEqual(["Notice", "Name", "Reference", "Act"]);
   });
 
-  it("retains distinct validation and research boundaries", () => {
-    expect(portfolio[1]).toMatchObject({ name: "SSDD", readiness: "Engineering validation" });
-    expect(portfolio[1]?.copy).toContain("model-scoped and pre-hardware");
-    expect(portfolio[2]).toMatchObject({ name: "HC-CXL", readiness: "Research programme" });
-    expect(portfolio[2]?.copy).toContain("without claiming silicon qualification");
+  it("keeps PayLock separate from payment processing and preserves research boundaries", () => {
+    expect(portfolio[0]).toMatchObject({ name: "PayLock", readiness: "Product direction", href: "/paylock" });
+    expect(portfolio[0]?.copy).toContain("does not create a new payment system");
+    expect(portfolio[1]?.copy).toContain("does not claim to eliminate jitter or accelerate latency");
+    expect(portfolio[2]?.copy).toContain("not presented as hardware qualification");
   });
 
-  it("exposes the complete institutional navigation with an emphasized PayLock route", () => {
-    expect(primaryNavigation.map((item) => item.href)).toEqual(["#portfolio", "/evidence", "/technical-library", "/about", "/paylock"]);
-    expect(primaryNavigation.at(-1)).toMatchObject({ label: "PayLock", primary: true });
-  });
-
-  it("uses the owner-approved DS&D and PayLock brand-board assets", () => {
-    expect(approvedBrandAssets.dssdLockup).toContain("dssd-lockup-dark-approved_");
-    expect(approvedBrandAssets.paylockWordmark).toContain("paylock-wordmark-dark-approved_");
-  });
-
-  it("describes Zenodo materials as documented research rather than peer-reviewed publication", () => {
-    expect(evidence.find((item) => item.label === "Documented research")).toMatchObject({
-      copy: expect.stringContaining("Zenodo technical notes"),
-      action: "Read research records",
-    });
-    expect(evidence.map((item) => item.label)).not.toContain("Published research");
+  it("keeps evidence language explicit and public navigation reachable", () => {
+    expect(evidencePrinciples.map((item) => item.title)).toEqual(["What we know", "What remains open", "What can happen now"]);
+    expect(primaryNavigation.map((item) => item.href)).toEqual(["#method", "#work", "#evidence", "#contact"]);
   });
 });

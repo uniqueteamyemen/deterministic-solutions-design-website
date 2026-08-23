@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { nextLinks, pageMap } from "./InstitutionalPage";
+import { nextLinks, operatingLogic, pageMap } from "./InstitutionalPage";
 
 describe("institutional research evidence", () => {
   it("frames SSDD as a model-scoped pre-hardware record", () => {
@@ -66,5 +66,11 @@ describe("institutional research evidence", () => {
     expect(new Set(fieldKickers).size).toBe(pages.length);
     expect(pageMap.evidence.fieldCopy).toContain("observed result");
     expect(pageMap.contact.fieldTitle).toBeDefined();
+  });
+
+  it("keeps the shared office method focused on visible details and proportionate action", () => {
+    expect(operatingLogic.map((step) => step.label)).toEqual(["NOTICE", "NAME", "REFERENCE", "ACT"]);
+    expect(operatingLogic[2]?.value).toContain("reliable rule");
+    expect(operatingLogic[3]?.value).toContain("proportionate");
   });
 });
