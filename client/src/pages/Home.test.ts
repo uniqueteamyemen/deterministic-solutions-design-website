@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { detailSteps, evidencePrinciples, portfolio, primaryNavigation } from "./Home";
+import { detailSteps, evidencePrinciples, homepageMessage, portfolio, primaryNavigation } from "./Home";
 
 describe("DS&D Reference Mark homepage", () => {
   it("keeps the method in a deliberate notice-to-action order", () => {
@@ -16,5 +16,13 @@ describe("DS&D Reference Mark homepage", () => {
   it("keeps evidence language explicit and public navigation reachable", () => {
     expect(evidencePrinciples.map((item) => item.title)).toEqual(["What we know", "What remains open", "What can happen now"]);
     expect(primaryNavigation.map((item) => item.href)).toEqual(["#method", "#work", "#evidence", "#contact"]);
+  });
+
+  it("frames avoidable difficulty as apparently compulsory rather than consciously chosen", () => {
+    expect(homepageMessage.lead).toBe("What appears compulsory");
+    expect(homepageMessage.accent).toBe("may not be.");
+    expect(homepageMessage.copy).toContain("as if it were a fixed condition");
+    expect(homepageMessage.emphasis).toContain("do not promise to remove every constraint");
+    expect(detailSteps[0]?.copy).toContain("appear compulsory");
   });
 });

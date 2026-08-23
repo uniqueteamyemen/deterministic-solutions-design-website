@@ -25,3 +25,7 @@ The PayLock page now uses the same porcelain/graphite/oxide materials and the sa
 All eight public routes were checked at **1280×720**. The homepage, PayLock, SSDD, HC-CXL, Evidence, About, Contact, and Technical Library now share the Reference Mark material system. The library’s residual lime counter was replaced with river blue so the retired signal-lime language no longer appears in the reviewed public interface.
 
 The homepage, PayLock, and Contact were also checked at **375×812**. Their headers condense, the homepage reference diagram and method remain readable, PayLock preserves the bounded lifecycle, and the inquiry form remains accessible. The homepage and SSDD were checked at **1876×870**; both retain controlled reading widths and balanced empty space rather than becoming stretched dashboard layouts.
+
+## 2026-08-23 — Core message correction
+
+The owner clarified that people do not deliberately choose unnecessary difficulty; they experience it as compulsory or fixed. The homepage now says: **“What appears compulsory may not be.”** Its supporting text makes the limit explicit: DS&D does not promise to remove every constraint. It makes the consequential detail and shared rule visible so affected people can see when a safer alternative is possible. The corrected composition was checked at **1280×720** and **375×812** with no text clipping or loss of hierarchy.

@@ -592,3 +592,4 @@
 - [ ] Open the authenticated BMC HTML5 iKVM screen and stop immediately once the Ubuntu display is visible; do not send keystrokes, inspect files, or alter server state.
 - [x] Replace the older dark/neon shared-shell and institutional-route treatment with the approved Reference Mark materials and typography, while retaining every existing route, link, form, and evidence boundary.
 - [x] Refine the Reference Mark composition using the supplied visual comparison: make the multi-process-to-one-reference diagram more legible and introduce a more deliberate method-grid rhythm, without copying the source layout or weakening DS&D’s evidence boundaries.
+- [x] Correct the DS&D public message so avoidable difficulty is framed as apparently compulsory—not a consciously chosen option—until visible consequential details and a shared rule reveal a safer alternative.

@@ -10,11 +10,18 @@ export const primaryNavigation = [
 ];
 
 export const detailSteps = [
-  { no: "01", label: "Notice", copy: "Find the detail people have learned to ignore." },
+  { no: "01", label: "Notice", copy: "Find the detail that makes a burden appear compulsory." },
   { no: "02", label: "Name", copy: "State the harm and the boundary plainly." },
   { no: "03", label: "Reference", copy: "Define what the relevant parties can rely on together." },
   { no: "04", label: "Act", copy: "Choose the smallest safe intervention." },
 ];
+
+export const homepageMessage = {
+  lead: "What appears compulsory",
+  accent: "may not be.",
+  copy: "People often meet difficulty as if it were a fixed condition. DS&D makes the consequential detail and the shared rule behind it visible, so the relevant people can see when a safer alternative is possible.",
+  emphasis: "We do not promise to remove every constraint. We show where an apparently fixed burden can be reconsidered.",
+};
 
 export const portfolio = [
   {
@@ -96,8 +103,8 @@ export default function Home() {
         <div className="container reference-hero-grid">
           <div className="reference-hero-copy">
             <div className="eyebrow reference-eyebrow">Systems design / research office</div>
-            <h1>Do not accept unnecessary difficulty as <em>normal.</em></h1>
-            <p>Some problems persist because the detail that changes the decision is treated as fixed. <strong>We make it visible, then help define the next shared action.</strong></p>
+            <h1>{homepageMessage.lead}<br /><em>{homepageMessage.accent}</em></h1>
+            <p>{homepageMessage.copy} <strong>{homepageMessage.emphasis}</strong></p>
             <div className="reference-actions"><a className="reference-button reference-button-primary" href="#method">See the method <ArrowRight size={16} /></a><a className="reference-button reference-button-text" href="#evidence">Read the evidence policy <ArrowRight size={15} /></a></div>
             <div className="reference-trace"><span>Observed detail</span><i /><b>Actionable reference</b></div>
           </div>
@@ -126,7 +133,7 @@ export default function Home() {
 
       <section className="reference-conviction"><div className="container"><span>DS&amp;D conviction</span><blockquote>The devil is in the details.<br /><b>So are the solutions.</b></blockquote></div></section>
 
-      <section className="reference-contact" id="contact"><div className="container"><span className="section-index">05 / Contact</span><div><h2>Show us what has become <em>normal.</em></h2><p>DS&amp;D is a New Mexico, USA LLC working across systems design, product governance, and evidence-bounded research.</p><a className="reference-button reference-button-primary" href="/contact">Start a conversation <ArrowRight size={16} /></a></div></div></section>
+      <section className="reference-contact" id="contact"><div className="container"><span className="section-index">05 / Contact</span><div><h2>Show us what seems <em>unavoidable.</em></h2><p>DS&amp;D is a New Mexico, USA LLC working across systems design, product governance, and evidence-bounded research.</p><a className="reference-button reference-button-primary" href="/contact">Start a conversation <ArrowRight size={16} /></a></div></div></section>
       <footer className="reference-footer container"><div className="reference-footer-brand"><ReferenceMark compact /><span>Deterministic Solutions &amp; Design LLC</span></div><span>Detail / Reference / Action</span><span>© 2026 DS&amp;D</span></footer>
     </main>
   );
