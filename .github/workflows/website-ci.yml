@@ -37,10 +37,7 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
-      - name: Run tests
+      - name: Run quality gate
         env:
           GITHUB_WEBHOOK_SECRET: ci-test-only-not-a-real-secret
-        run: pnpm test
-
-      - name: Build production bundle
-        run: pnpm build
+        run: pnpm quality

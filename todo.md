@@ -600,3 +600,4 @@
 - [x] Run a professional-quality DS&D website sprint: audit public routes and page consistency, strengthen accessibility and resilient UI states, add targeted quality coverage, validate across target breakpoints, and record reviewable improvements without publishing or changing product/research services.
 - [x] Finalize a production-ready PayLock Reference Mark asset and concise use rules that represent a named event, shared reference, and readable proof path—not a lock, payment rail, or custody service.
 - [x] Build public DS&D and PayLock explanatory catalog pages with evidence-aware language, clear navigation, responsive visual systems, and no claims beyond current product/research readiness.
+- [x] Add and verify one repeatable quality command that runs the website tests, TypeScript check, and production build in the same sequence used by continuous integration.
