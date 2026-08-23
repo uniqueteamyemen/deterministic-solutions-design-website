@@ -7,6 +7,8 @@ import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
 
 const PayLock = lazy(() => import("./pages/PayLock"));
+const Catalog = lazy(() => import("./pages/Catalog"));
+const PayLockCatalog = lazy(() => import("./pages/PayLockCatalog"));
 const InstitutionalPage = lazy(() => import("./pages/InstitutionalPage"));
 const TechnicalLibrary = lazy(() => import("./pages/TechnicalLibrary"));
 const NotFound = lazy(() => import("./pages/NotFound"));
@@ -17,6 +19,8 @@ function Router() {
       <Switch>
         <Route path={"/"} component={Home} />
         <Route path={"/paylock"} component={PayLock} />
+        <Route path={"/catalog"} component={Catalog} />
+        <Route path={"/paylock/catalog"} component={PayLockCatalog} />
         <Route path={"/hc-cxl"} component={InstitutionalPage} />
         <Route path={"/ssdd"} component={InstitutionalPage} />
         <Route path={"/evidence"} component={InstitutionalPage} />

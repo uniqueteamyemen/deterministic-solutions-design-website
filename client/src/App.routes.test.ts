@@ -9,4 +9,9 @@ describe("public route manifest", () => {
     expect(appSource).toContain('<Route path={"/library"} component={TechnicalLibrary} />');
     expect(appSource).toContain('<Route path={"/technical-library"} component={TechnicalLibrary} />');
   });
+
+  it("registers the public DS&D and PayLock explanatory catalogs", () => {
+    expect(appSource).toContain('<Route path={"/catalog"} component={Catalog} />');
+    expect(appSource).toContain('<Route path={"/paylock/catalog"} component={PayLockCatalog} />');
+  });
 });

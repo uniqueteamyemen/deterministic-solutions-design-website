@@ -33,3 +33,13 @@ The owner clarified that people do not deliberately choose unnecessary difficult
 ## 2026-08-23 — Practical-example campaign section
 
 The homepage now includes four clearly labelled illustrative workplace patterns: delayed approval, cross-team handoff, risk escalation, and the false choice between two bad options. Each follows the same sequence: **appears compulsory → detail to inspect → shared alternative**. The section explicitly says that its examples do not promise every constraint can disappear. It was reviewed in the full homepage at **1280×720** and **375×812**; the four examples retain their sequence, contrast, and readable single-column mobile order.
+
+## 2026-08-23 — Catalog and PayLock Reference Mark
+
+Two new public explanatory catalog routes were reviewed at **1280×720**: `/catalog` for DS&D and `/paylock/catalog` for PayLock. Both retain the porcelain/graphite/oxide/river system, use the shared header and return routes, and visibly separate current evidence from future or integration-specific work. The new PayLock Reference Mark communicates **event → reference → proof** through an abstract P–reference line–L composition; it intentionally avoids lock, card, custody, or payment imagery. The original product file now uses the same mark and links to the companion catalog.
+
+The same two catalog routes were then reviewed as full pages at **375×812**. The desktop grids became single-column reading sequences; the product mark remained legible, the SVG reference-mark link remained visible, no card or footer overflow was observed, and the mobile navigation control remained reachable.
+
+## 2026-08-23 — Wide-route quality pass
+
+The primary public routes were reviewed at **1876×870**: Home, DS&D Catalog, PayLock product file, PayLock Catalog, SSDD, HC-CXL, Technical Library, and Contact. All first-view compositions retain the same calm editorial geometry, shared header, restrained palette, and readable entry point. The route-aware navigation gives the current catalog, library, and PayLock sections a visible state without altering the scientific or product boundary language. No clipped hero content, empty visual failure, or broken route header was observed in this pass.

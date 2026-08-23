@@ -29,4 +29,24 @@ describe("public-site safety and discoverability regressions", () => {
     expect(home).toContain('aria-selected={activeState === index}');
     expect(paylock).toContain('aria-selected={activeStage === index}');
   });
+
+  it("keeps the new explanatory catalogs accessible and PayLock visibly bounded", () => {
+    const catalog = readProjectFile("client/src/pages/Catalog.tsx");
+    const paylockCatalog = readProjectFile("client/src/pages/PayLockCatalog.tsx");
+    const paylockMark = readProjectFile("client/src/components/PayLockMark.tsx");
+    expect(catalog).toContain('id="main-content"');
+    expect(catalog).toContain('Read the problem');
+    expect(paylockCatalog).toContain('does not move money');
+    expect(paylockCatalog).toContain('Reference mark / SVG');
+    expect(paylockMark).toContain("It intentionally avoids lock and payment imagery.");
+  });
+
+  it("preserves active-route orientation, anchored-section clearance, and reduced-motion support", () => {
+    const layout = readProjectFile("client/src/components/SiteLayout.tsx");
+    const css = readProjectFile("client/src/index.css");
+    expect(layout).toContain('aria-current={isCurrent("/catalog") ? "page" : undefined}');
+    expect(layout).toContain('isCurrent("/paylock") || isCurrent("/paylock/catalog")');
+    expect(css).toContain('scroll-margin-top:96px');
+    expect(css).toContain('@media (prefers-reduced-motion: reduce)');
+  });
 });

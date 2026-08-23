@@ -18,6 +18,7 @@ export default function SiteLayout({ children }: { children: React.ReactNode }) 
 
   const isHome = location === "/";
   const closeMenu = () => setMenuOpen(false);
+  const isCurrent = (path: string) => location === path;
 
   return (
     <div className="site-shell reference-route-shell">
@@ -29,15 +30,16 @@ export default function SiteLayout({ children }: { children: React.ReactNode }) 
         </Link>
         <nav className="desktop-nav reference-nav" aria-label="Primary navigation">
           <Link href="/#method">Method</Link>
+          <Link className={isCurrent("/catalog") ? "nav-link-active" : undefined} aria-current={isCurrent("/catalog") ? "page" : undefined} href="/catalog">Catalog</Link>
           <Link href="/#work">Work</Link>
-          <Link href="/evidence">Evidence</Link>
-          <Link href="/technical-library">Library</Link>
-          <Link href="/about">About</Link>
-          <Link className="nav-paylock" href="/paylock">PayLock</Link>
+          <Link className={isCurrent("/evidence") ? "nav-link-active" : undefined} aria-current={isCurrent("/evidence") ? "page" : undefined} href="/evidence">Evidence</Link>
+          <Link className={isCurrent("/technical-library") || isCurrent("/library") ? "nav-link-active" : undefined} aria-current={isCurrent("/technical-library") || isCurrent("/library") ? "page" : undefined} href="/technical-library">Library</Link>
+          <Link className={isCurrent("/about") ? "nav-link-active" : undefined} aria-current={isCurrent("/about") ? "page" : undefined} href="/about">About</Link>
+          <Link className="nav-paylock" aria-current={isCurrent("/paylock") || isCurrent("/paylock/catalog") ? "page" : undefined} href="/paylock">PayLock</Link>
         </nav>
         <Link className="reference-route-contact" href="/contact">Contact <ArrowUpRight size={14} /></Link>
         <button className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)} aria-label={menuOpen ? "Close navigation" : "Open navigation"} aria-expanded={menuOpen} aria-controls="mobile-primary-navigation">{menuOpen ? <X size={20} /> : <Menu size={20} />}</button>
-        {menuOpen && <nav className="mobile-menu reference-mobile-menu" id="mobile-primary-navigation" aria-label="Primary navigation"><Link href="/#method" onClick={closeMenu}>Method</Link><Link href="/#work" onClick={closeMenu}>Work</Link><Link href="/evidence" onClick={closeMenu}>Evidence</Link><Link href="/technical-library" onClick={closeMenu}>Technical library</Link><Link href="/about" onClick={closeMenu}>About DS&amp;D</Link><Link className="nav-paylock" href="/paylock" onClick={closeMenu}>Explore PayLock</Link><Link href="/contact" onClick={closeMenu}>Contact <ArrowUpRight size={14} /></Link></nav>}
+        {menuOpen && <nav className="mobile-menu reference-mobile-menu" id="mobile-primary-navigation" aria-label="Primary navigation"><Link href="/#method" onClick={closeMenu}>Method</Link><Link aria-current={isCurrent("/catalog") ? "page" : undefined} href="/catalog" onClick={closeMenu}>Catalog</Link><Link href="/#work" onClick={closeMenu}>Work</Link><Link aria-current={isCurrent("/evidence") ? "page" : undefined} href="/evidence" onClick={closeMenu}>Evidence</Link><Link aria-current={isCurrent("/technical-library") || isCurrent("/library") ? "page" : undefined} href="/technical-library" onClick={closeMenu}>Technical library</Link><Link aria-current={isCurrent("/about") ? "page" : undefined} href="/about" onClick={closeMenu}>About DS&amp;D</Link><Link className="nav-paylock" aria-current={isCurrent("/paylock") || isCurrent("/paylock/catalog") ? "page" : undefined} href="/paylock" onClick={closeMenu}>Explore PayLock</Link><Link href="/contact" onClick={closeMenu}>Contact <ArrowUpRight size={14} /></Link></nav>}
       </header>
       <div id="main-content" tabIndex={-1}>{children}</div>
       <footer className="reference-footer container">
